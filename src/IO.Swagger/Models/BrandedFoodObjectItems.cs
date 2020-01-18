@@ -187,9 +187,9 @@ namespace IO.Swagger.Models
         public List<string> Traces { get; set; }
 
         /// <summary>
-        /// An array of vitamins that can be found in this item
+        /// An array of vitamins that are found in this item
         /// </summary>
-        /// <value>An array of vitamins that can be found in this item</value>
+        /// <value>An array of vitamins that are found in this item</value>
         [DataMember(Name="vitamins")]
         public List<string> Vitamins { get; set; }
 
