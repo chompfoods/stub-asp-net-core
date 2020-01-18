@@ -605,6 +605,7 @@
               "fat_value" : 1.4894159098541704
             },
             "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
+            "vitamins" : [ "vitamins", "vitamins" ],
             "name" : "name",
             "brand_list" : [ "brand_list", "brand_list" ]
           }, {
@@ -768,6 +769,7 @@
               "fat_value" : 1.4894159098541704
             },
             "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
+            "vitamins" : [ "vitamins", "vitamins" ],
             "name" : "name",
             "brand_list" : [ "brand_list", "brand_list" ]
           } ]
@@ -1687,6 +1689,13 @@
               "type" : "string"
             }
           },
+          "vitamins" : {
+            "type" : "array",
+            "description" : "An array of vitamins that this item contains",
+            "items" : {
+              "type" : "string"
+            }
+          },
           "common_name" : {
             "type" : "string",
             "description" : "Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")"
@@ -1869,6 +1878,7 @@
             "fat_value" : 1.4894159098541704
           },
           "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
+          "vitamins" : [ "vitamins", "vitamins" ],
           "name" : "name",
           "brand_list" : [ "brand_list", "brand_list" ]
         }
