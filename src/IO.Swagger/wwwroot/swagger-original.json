@@ -350,7 +350,7 @@
         } ]
       }
     },
-    "/ingredient/search.php" : {
+    "/food/ingredient/search.php" : {
       "get" : {
         "summary" : "Get raw/generic food ingredient item(s)",
         "description" : "# Get data for a specific ingredient or a specific set of ingredients.\n\n__Example:__ ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=STRING/LIST&list=BOOLEAN&raw=BOOLEAN```\n",

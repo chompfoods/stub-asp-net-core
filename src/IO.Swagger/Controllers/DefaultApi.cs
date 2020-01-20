@@ -237,12 +237,12 @@ namespace IO.Swagger.Controllers
         /// <response code="404">__Not found__ - No food items exist that match your query parameters.</response>
         /// <response code="500">__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._</response>
         [HttpGet]
-        [Route("/api/v2/ingredient/search.php")]
+        [Route("/api/v2/food/ingredient/search.php")]
         [Authorize(AuthenticationSchemes = ApiKeyAuthenticationHandler.SchemeName)]
         [ValidateModelState]
-        [SwaggerOperation("IngredientSearchPhpGet")]
+        [SwaggerOperation("FoodIngredientSearchPhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(IngredientObject), description: "__Valid__ - Will return an object containing any matching ingredient foods.")]
-        public virtual IActionResult IngredientSearchPhpGet([FromQuery][Required()]int? find, [FromQuery][Required()]bool? list, [FromQuery]bool? raw, [FromQuery]int? limit)
+        public virtual IActionResult FoodIngredientSearchPhpGet([FromQuery][Required()]int? find, [FromQuery][Required()]bool? list, [FromQuery]bool? raw, [FromQuery]int? limit)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(IngredientObject));
