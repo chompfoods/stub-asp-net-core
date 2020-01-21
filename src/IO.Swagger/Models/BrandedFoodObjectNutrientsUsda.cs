@@ -76,6 +76,13 @@ namespace IO.Swagger.Models
         public decimal? Median { get; set; }
 
         /// <summary>
+        /// Nutrient rank
+        /// </summary>
+        /// <value>Nutrient rank</value>
+        [DataMember(Name="rank")]
+        public int? Rank { get; set; }
+
+        /// <summary>
         /// Number of observations on which the value is based
         /// </summary>
         /// <value>Number of observations on which the value is based</value>
@@ -93,13 +100,6 @@ namespace IO.Swagger.Models
         /// Description of the nutrient source
         /// </summary>
         /// <value>Description of the nutrient source</value>
-        [DataMember(Name="source")]
-        public string Source { get; set; }
-
-        /// <summary>
-        /// Description of how the food nutrient value was obtained
-        /// </summary>
-        /// <value>Description of how the food nutrient value was obtained</value>
         [DataMember(Name="description")]
         public string Description { get; set; }
 
@@ -118,9 +118,9 @@ namespace IO.Swagger.Models
             sb.Append("  Min: ").Append(Min).Append("\n");
             sb.Append("  Max: ").Append(Max).Append("\n");
             sb.Append("  Median: ").Append(Median).Append("\n");
+            sb.Append("  Rank: ").Append(Rank).Append("\n");
             sb.Append("  DataPoints: ").Append(DataPoints).Append("\n");
             sb.Append("  Footnote: ").Append(Footnote).Append("\n");
-            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -194,6 +194,11 @@ namespace IO.Swagger.Models
                     Median.Equals(other.Median)
                 ) && 
                 (
+                    Rank == other.Rank ||
+                    Rank != null &&
+                    Rank.Equals(other.Rank)
+                ) && 
+                (
                     DataPoints == other.DataPoints ||
                     DataPoints != null &&
                     DataPoints.Equals(other.DataPoints)
@@ -202,11 +207,6 @@ namespace IO.Swagger.Models
                     Footnote == other.Footnote ||
                     Footnote != null &&
                     Footnote.Equals(other.Footnote)
-                ) && 
-                (
-                    Source == other.Source ||
-                    Source != null &&
-                    Source.Equals(other.Source)
                 ) && 
                 (
                     Description == other.Description ||
@@ -239,12 +239,12 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Max.GetHashCode();
                     if (Median != null)
                     hashCode = hashCode * 59 + Median.GetHashCode();
+                    if (Rank != null)
+                    hashCode = hashCode * 59 + Rank.GetHashCode();
                     if (DataPoints != null)
                     hashCode = hashCode * 59 + DataPoints.GetHashCode();
                     if (Footnote != null)
                     hashCode = hashCode * 59 + Footnote.GetHashCode();
-                    if (Source != null)
-                    hashCode = hashCode * 59 + Source.GetHashCode();
                     if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
                 return hashCode;
