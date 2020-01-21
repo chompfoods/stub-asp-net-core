@@ -17,7 +17,7 @@
         "parameters" : [ {
           "name" : "code",
           "in" : "query",
-          "description" : "UPC/EAN barcode\n\n__Example:__ 0842234000988\n\n__Resources:__ [Database search](https://chompthis.com/api/lookup.php)\n\n_Read [this article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do) for tips and tricks._\n",
+          "description" : "UPC/EAN barcode\n\n__Example:__ &code=0842234000988\n\n__Tips:__ \n  - Use our [food lookup tool](https://chompthis.com/api/lookup.php).\n  - Read [this article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do) for general tips and tricks.\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -64,7 +64,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "query",
-          "description" : "Chomp branded food ID.\n\n_Set \"source=USDA\" if you wish to pass in the food's FoodData Central ID (fdc_id)._\n\n__Example #1:__ 15\n\n__Resources:__ [Find branded food\nIDs](https://chompthis.com/api/lookup.php)\n",
+          "description" : "The ID number of a branded food item.\n\n__Example #1:__ &id=15\n\n__Example #2:__ &id=FDC_ID&source=USDA\n\n___Tip:__ Get started by using our  [ood lookup tool](https://chompthis.com/api/lookup.php)._\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -74,12 +74,13 @@
         }, {
           "name" : "source",
           "in" : "query",
-          "description" : "Specify the data source (optional).\n\nYou must pass in \"USDA\" if you want to look up a food item using a USDA FDC ID.\n\n__Example:__ USDA _(defaults to \"Chomp\")_\n",
+          "description" : "Configure the endpoint to accept food IDs from various data sources. This endpoint defaults to Chomp but can accept FDC IDs.\n\n__Example:__ &source=Chomp\n\n___Important Note:__ Pass in &source=USDA if you want to look up food items using a USDA FDC ID._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "Chomp", "USDA" ]
           }
         } ],
         "responses" : {
@@ -117,11 +118,11 @@
     "/food/branded/name.php" : {
       "get" : {
         "summary" : "Get a branded food item by name",
-        "description" : "# Search for branded food items by name.\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n",
+        "description" : "# Search for branded food items by name.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n",
         "parameters" : [ {
           "name" : "name",
           "in" : "query",
-          "description" : "Branded food name\n\n__Example:__ Starburst\n\n__Resources:__ [Find branded food\nnames](https://chompthis.com/api/lookup.php)\n",
+          "description" : "Search for branded food items using a general food name keyword. This does not have to exactly match the \"official\" name for the food.\n\n__Example:__ &name=Starburst\n\n___Tip:__ Get started by using our [food lookup tool](https://chompthis.com/api/lookup.php)._\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -131,13 +132,23 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return.\n\n___Note:__ The maximum value is 10._\n\n__Example:__ 3 _(defaults to 10)_\n",
+          "description" : "Set maximum number of records you want the API to return.\n\n__Example:__ &limit=10\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
             "type" : "integer",
             "enum" : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n__Example__: &page=1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
           }
         } ],
         "responses" : {
@@ -175,11 +186,11 @@
     "/food/branded/search.php" : {
       "get" : {
         "summary" : "Get data for branded food items using various search parameters",
-        "description" : "# Search for branded food items using various parameters.\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n___Tip:__ Get started by using the [Query Builder](https://chompthis.com/api/build.php)._\n",
+        "description" : "# Search for branded food items using various parameters.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n___Tip:__ Get started by using the [Query Builder](https://chompthis.com/api/build.php)._\n",
         "parameters" : [ {
           "name" : "allergen",
           "in" : "query",
-          "description" : "Specify a required allergen ingredient (optional)\n\n__Example__: Peanuts\n\n__Resources__: [List of\nallergens](https://chompthis.com/api/data/allergen.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific allergen.\n\n__Example__: &allergen=Peanuts\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -189,7 +200,7 @@
         }, {
           "name" : "brand",
           "in" : "query",
-          "description" : "Specify a required brand (optional)\n\n__Example__: Starbucks\n\n__Resources__: [List of\nbrands](https://chompthis.com/api/data/brand.php)\n",
+          "description" : "Filter the search to only include branded foods that are owned by a specific brand.\n\n__Example__: &brand=Starbucks\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -199,7 +210,7 @@
         }, {
           "name" : "category",
           "in" : "query",
-          "description" : "Specify a required category (optional)\n\n__Example__: Pasta Dishes\n\n__Resources__: [List of\ncategories](https://chompthis.com/api/data/category.php)\n",
+          "description" : "Filter the search to only include branded foods from a specific category.\n\n__Example__: &category=Plant Based Foods\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -209,7 +220,7 @@
         }, {
           "name" : "country",
           "in" : "query",
-          "description" : "Specify a required country (optional)\n\n__Example__: United States\n\n__Resources__: [List of\ncountries](https://chompthis.com/api/data/country.php)\n",
+          "description" : "Filter the search to only include branded foods that are sold in a specific country.\n\n__Example__: &country=United States\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -219,17 +230,18 @@
         }, {
           "name" : "diet",
           "in" : "query",
-          "description" : "Specify a required diet (optional)\n\n_Filters the search to only include food items that are considered compatible with the following diets: Vegan, Vegetarian, Gluten Free_\n\n__Example__: Gluten Free\n\n__Resources__: [List of\ndiets](https://chompthis.com/api/data/lifestyle.php)\n",
+          "description" : "Filter the search to only include branded foods that are considered compatible with a specific diet.\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "Vegan", "Vegetarian", "Gluten Free" ]
           }
         }, {
           "name" : "ingredient",
           "in" : "query",
-          "description" : "Specify a required ingredient (optional)\n\n__Example__: Salt\n\n__Resources__: [List of\ningredients](https://chompthis.com/api/data/ingredient.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific ingredient.\n\n__Example__: &ingredient=Salt\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -239,7 +251,7 @@
         }, {
           "name" : "keyword",
           "in" : "query",
-          "description" : "Specify a required keyword (optional)\n\n__Example__: Starbucks\n\n__Resources__: [List of\nbrands](https://chompthis.com/api/data/brand.php)\n",
+          "description" : "Filter the search to only include branded foods that are associated with a specific keyword.\n\n__Example__: &keyword=Organic\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -249,7 +261,7 @@
         }, {
           "name" : "mineral",
           "in" : "query",
-          "description" : "Specify a required mineral (optional)\n\n__Example__: Potassium\n\n__Resources__: [List of\nminerals](https://chompthis.com/api/data/mineral.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific mineral.\n\n__Example__: &mineral=Potassium\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -259,7 +271,7 @@
         }, {
           "name" : "nutrient",
           "in" : "query",
-          "description" : "Specify a required nutrition label item (optional)\n\n__Example__: Caffeine\n\n__Resources__: [List of nutrition label\nitems](https://chompthis.com/api/data/nutrition.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific nutrient.\n\n__Example__: &nutrient=Caffeine\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -269,7 +281,7 @@
         }, {
           "name" : "palm_oil",
           "in" : "query",
-          "description" : "Specify a required palm oil ingredient (optional)\n\n__Example__: E160a Beta Carotene\n\n__Resources__: [List of palm oil\ningredients](https://chompthis.com/api/data/palm-oil.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific ingredient made using palm oil.\n\n__Example__: &palm_oil=E160a Beta Carotene\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -279,7 +291,7 @@
         }, {
           "name" : "trace",
           "in" : "query",
-          "description" : "Specify a required trace ingredient (optional)\n\n__Example__: Tree Nuts\n\n__Resources__: [List of trace\ningredients](https://chompthis.com/api/data/trace.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific trace ingredient.\n\n__Example__: &trace=Tree Nuts\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -289,7 +301,7 @@
         }, {
           "name" : "vitamin",
           "in" : "query",
-          "description" : "Specify a required vitamin (optional)\n\n__Example__: Biotin\n\n__Resources__: [List of\nvitamins](https://chompthis.com/api/data/vitamin.php)\n",
+          "description" : "Filter the search to only include branded foods that contain a specific vitamin.\n\n__Example__: &vitamin=Biotin\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -299,7 +311,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return.\n\n___Note:__ The maximum value is 10._\n\n__Example:__ 3 _(defaults to 10)_\n",
+          "description" : "Set maximum number of records you want the API to return.\n\n__Example:__ &limit=10\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -310,7 +322,7 @@
         }, {
           "name" : "page",
           "in" : "query",
-          "description" : "Specify the search response page number.\n\n_Each page will contain up to 10 items._\n\n__Example__: 1 _(default)_\n",
+          "description" : "This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n__Example__: &page=1\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -353,11 +365,11 @@
     "/food/ingredient/search.php" : {
       "get" : {
         "summary" : "Get raw/generic food ingredient item(s)",
-        "description" : "# Get data for a specific ingredient or a specific set of ingredients.\n\n__Example:__ ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=STRING/LIST&list=BOOLEAN&raw=BOOLEAN```\n",
+        "description" : "# Get data for a specific ingredient or a specific set of ingredients.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=STRING/LIST&list=BOOLEAN&raw=BOOLEAN```\n",
         "parameters" : [ {
           "name" : "find",
           "in" : "query",
-          "description" : "Specify the ingredient name(s).\n\n__Example #1:__ broccoli\n\n__Example #2:__ broccoli,cauliflower,spinach\n\n___Important Note:__ Set the \"is_list\" parameter to true before passing in a comma-separated list of ingredients._\n",
+          "description" : "Search our database for a single ingredient or a specific set of ingredients.\n\n__Example #1:__ &find=broccoli\n\n__Example #2:__ &find=broccoli,cauliflower,spinach&list=true\n\n__Important List Notes:__ \n  - Set the \"list\" parameter to \"true\" before passing in a comma-separated list of ingredients.\n  - Comma-separated lists cannot contain more than __15 ingredients__. You must perform additional API calls if you are looking up more than 15 ingredients.\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -367,27 +379,29 @@
         }, {
           "name" : "list",
           "in" : "query",
-          "description" : "Specify if you are searching for multiple ingredients.\n\n_Setting this to true will configure this endpoint so that it accepts a comma-separated list of ingredients._\n\n_By default, this endpoint expects a single ingredient._\n\n__Example:__ true _(defaults to false)_\n",
+          "description" : "Setting _&list=true_ will configure this endpoint to allow searching for ingredients using a comma-separated list. By default, this endpoint will __only__ return results for the first ingredient.\n\n__Example:__ &list=true\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "enum" : [ true, false ]
           }
         }, {
           "name" : "raw",
           "in" : "query",
-          "description" : "Specify if you only want data for raw ingredients.\n\n__Example:__ true _(defaults to true)_\n",
+          "description" : "Optionally filter the search result to only include raw ingredients.\n\n__Example:__ &raw=true\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "enum" : [ true, false ]
           }
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return.\n\n___Important Note:__ Setting this to \"1\" will return 1 record per search term._\n\n__Example:__ 1 _(defaults to 1, max is 3)_\n",
+          "description" : "Set maximum number of records you want the API to return, per search term.\n\n__Example:__ &limit=3\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
