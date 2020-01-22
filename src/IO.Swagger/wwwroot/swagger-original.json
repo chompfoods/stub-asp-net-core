@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Chomp Food Database API Documentation",
-    "description" : "__Important:__\n  - An __[API key](https://chompthis.com/api/)__ is required for access to this API. Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.\n\n-----\n\n__Getting Started:__\n  - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.\n  - Scroll down and click the \"__Authorize__\" button.\n  - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.\n  - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.\n  - Click the \"__Try it out__\" button.\n  - Enter the information the endpoint requires.\n  - Click the \"__Execute__\" button.\n\n__Example:__ \n  - Branded Food: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)__ API response object.\n  - Ingredient: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)__ API response object.\n\n-----\n\n__How Do I Find My API Key?__\n  - Your API key was sent to the email address you used to create your subscription.\n  - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.\n  - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._\n\n|||\n| ------- | -------- |\n| [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) |\n| [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) |\n| [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) |\n| [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) |\n| [Client Center](https://chompthis.com/api/manage.php) | |\n",
+    "description" : "## Important\nAn **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.\n\n### Getting Started\n  * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.\n  * Scroll down and click the \"**Authorize**\" button.\n  * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.\n  * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.\n  * Click the \"**Try it out**\" button.\n  * Enter the information the endpoint requires.\n  * Click the \"**Execute**\" button.\n\n### Example \n  * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**\n  * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**\n\n### How Do I Find My API Key?\n  * Your API key was sent to the email address you used to create your subscription.\n  * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.\n  * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.\n\n|||\n| ------- | -------- |\n| [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) |\n| [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) |\n| [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) |\n| [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) |\n| [Client Center](https://chompthis.com/api/manage.php) | |\n",
     "version" : "1.0.0-oas3"
   },
   "servers" : [ {
@@ -13,11 +13,11 @@
     "/food/branded/barcode.php" : {
       "get" : {
         "summary" : "Get a branded food item using a barcode",
-        "description" : "# Get data for a branded food using the food's UPC/EAN barcode.\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/barcode.php?api_key=API_KEY&code=CODE```\n",
+        "description" : "## Get data for a branded food using the food's UPC/EAN barcode.\n\n**Example** \n> ```https://chompthis.com/api/v2/food/branded/barcode.php?api_key=API_KEY&code=CODE```\n\n**Tips**\n  * Read our **[Knowledge Base article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do)** for helpful tips and tricks.\n",
         "parameters" : [ {
           "name" : "code",
           "in" : "query",
-          "description" : "UPC/EAN barcode\n\n__Example:__ &code=0842234000988\n\n__Tips:__ \n  - Use our [food lookup tool](https://chompthis.com/api/lookup.php).\n  - Read [this article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do) for general tips and tricks.\n",
+          "description" : "#### UPC/EAN barcode\n\n**Example**\n> ```&code=0842234000988```\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -27,7 +27,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "__Valid__ - Will return an object containing any matching foods.",
+            "description" : "**Valid** - Will return an object containing any matching foods. \n",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -37,19 +37,19 @@
             }
           },
           "400" : {
-            "description" : "__Validation error__ - Invalid parameters or request."
+            "description" : "**Validation error** - Invalid parameters or request.\n"
           },
           "401" : {
-            "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+            "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "__Forbidden__ - Disallowed entity."
+            "description" : "**Forbidden** - Disallowed entity.\n"
           },
           "404" : {
-            "description" : "__Not found__ - No food items exist that match your query parameters."
+            "description" : "**Not found** - No food items exist that match your query parameters.\n"
           },
           "500" : {
-            "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
           }
         },
         "security" : [ {
@@ -60,11 +60,11 @@
     "/food/branded/id.php" : {
       "get" : {
         "summary" : "Get a branded food item using an ID number",
-        "description" : "# Get data for a branded food using Chomp's internal ID number.\n\n_Alternatively, set the \"source\" parameter to \"USDA\" and use the food's FDC ID._\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/id.php?api_key=API_KEY&id=ID```\n",
+        "description" : "## Get data for a branded food using Chomp's internal ID number.\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/id.php?api_key=API_KEY&id=ID```\n\n**Tips**\n  * Find a food's ID by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n  * Alternatively, set the \"source\" parameter to \"USDA\" and use the food's FDC ID.\n",
         "parameters" : [ {
           "name" : "id",
           "in" : "query",
-          "description" : "The ID number of a branded food item.\n\n__Example #1:__ &id=15\n\n__Example #2:__ &id=FDC_ID&source=USDA\n\n___Tip:__ Get started by using our  [ood lookup tool](https://chompthis.com/api/lookup.php)._\n",
+          "description" : "#### The ID number of a branded food item.\n\n**Example #1: Using Chomp ID**\n> ```&id=15```\n\n**Example #2: Using FDC ID**\n> ```&id=FDC_ID&source=USDA```\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -74,7 +74,7 @@
         }, {
           "name" : "source",
           "in" : "query",
-          "description" : "Configure the endpoint to accept food IDs from various data sources. This endpoint defaults to Chomp but can accept FDC IDs.\n\n__Example:__ &source=Chomp\n\n___Important Note:__ Pass in &source=USDA if you want to look up food items using a USDA FDC ID._\n",
+          "description" : "#### Configure the endpoint to accept food IDs from various data sources. This endpoint defaults to Chomp but can accept FDC IDs.\n\n**Example**\n> ```&source=Chomp```\n\n**Tips**\n  * Pass in ```&source=USDA``` if you want to look up food items using a USDA FDC ID.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -85,7 +85,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "__Valid__ - Will return an object containing any matching foods.",
+            "description" : "**Valid** - Will return an object containing any matching foods. \n",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -95,19 +95,19 @@
             }
           },
           "400" : {
-            "description" : "__Validation error__ - Invalid parameters or request."
+            "description" : "**Validation error** - Invalid parameters or request.\n"
           },
           "401" : {
-            "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+            "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "__Forbidden__ - Disallowed entity."
+            "description" : "**Forbidden** - Disallowed entity.\n"
           },
           "404" : {
-            "description" : "__Not found__ - No food items exist that match your query parameters."
+            "description" : "**Not found** - No food items exist that match your query parameters.\n"
           },
           "500" : {
-            "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
           }
         },
         "security" : [ {
@@ -118,11 +118,11 @@
     "/food/branded/name.php" : {
       "get" : {
         "summary" : "Get a branded food item by name",
-        "description" : "# Search for branded food items by name.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n",
+        "description" : "## Search for branded food items by name.\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n\n**Tips**\n  * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "name",
           "in" : "query",
-          "description" : "Search for branded food items using a general food name keyword. This does not have to exactly match the \"official\" name for the food.\n\n__Example:__ &name=Starburst\n\n___Tip:__ Get started by using our [food lookup tool](https://chompthis.com/api/lookup.php)._\n",
+          "description" : "#### Search for branded food items using a general food name keyword. This does not have to exactly match the \"official\" name for the food.\n\n**Example**\n> ```&name=Starburst```\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -132,7 +132,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return.\n\n__Example:__ &limit=10\n",
+          "description" : "#### Set maximum number of records you want the API to return.\n\n**Example**\n> ```&limit=10```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -143,7 +143,7 @@
         }, {
           "name" : "page",
           "in" : "query",
-          "description" : "This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n__Example__: &page=1\n",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n**Example**\n> ```&page=1```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -153,7 +153,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "__Valid__ - Will return an object containing any matching foods.",
+            "description" : "**Valid** - Will return an object containing any matching foods. \n",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -163,19 +163,19 @@
             }
           },
           "400" : {
-            "description" : "__Validation error__ - Invalid parameters or request."
+            "description" : "**Validation error** - Invalid parameters or request.\n"
           },
           "401" : {
-            "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+            "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "__Forbidden__ - Disallowed entity."
+            "description" : "**Forbidden** - Disallowed entity.\n"
           },
           "404" : {
-            "description" : "__Not found__ - No food items exist that match your query parameters."
+            "description" : "**Not found** - No food items exist that match your query parameters.\n"
           },
           "500" : {
-            "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
           }
         },
         "security" : [ {
@@ -186,11 +186,11 @@
     "/food/branded/search.php" : {
       "get" : {
         "summary" : "Get data for branded food items using various search parameters",
-        "description" : "# Search for branded food items using various parameters.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n___Tip:__ Get started by using the [Query Builder](https://chompthis.com/api/build.php)._\n",
+        "description" : "## Search for branded food items using various parameters.\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n**Tips** \n  * Get started by using the **[Query Builder](https://chompthis.com/api/build.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "allergen",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific allergen.\n\n__Example__: &allergen=Peanuts\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific allergen.\n\n**Example**\n> ```&allergen=Peanuts```\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -200,7 +200,7 @@
         }, {
           "name" : "brand",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that are owned by a specific brand.\n\n__Example__: &brand=Starbucks\n",
+          "description" : "#### Filter the search to only include branded foods that are owned by a specific brand.\n\n**Example**\n> ```&brand=Starbucks```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -210,7 +210,7 @@
         }, {
           "name" : "category",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods from a specific category.\n\n__Example__: &category=Plant Based Foods\n",
+          "description" : "#### Filter the search to only include branded foods from a specific category.\n\n**Example**\n> ```&category=Plant Based Foods```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -220,7 +220,7 @@
         }, {
           "name" : "country",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that are sold in a specific country.\n\n__Example__: &country=United States\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "#### Filter the search to only include branded foods that are sold in a specific country.\n\n**Example**\n> ```&country=United States```\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -230,7 +230,7 @@
         }, {
           "name" : "diet",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that are considered compatible with a specific diet.\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "#### Filter the search to only include branded foods that are considered compatible with a specific diet.\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -241,7 +241,7 @@
         }, {
           "name" : "ingredient",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific ingredient.\n\n__Example__: &ingredient=Salt\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific ingredient.\n\n**Example**\n> ```&ingredient=Salt```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -251,7 +251,7 @@
         }, {
           "name" : "keyword",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that are associated with a specific keyword.\n\n__Example__: &keyword=Organic\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "#### Filter the search to only include branded foods that are associated with a specific keyword.\n\n**Example**\n> ```&keyword=Organic```\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -261,7 +261,7 @@
         }, {
           "name" : "mineral",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific mineral.\n\n__Example__: &mineral=Potassium\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific mineral.\n\n**Example**\n> ```&mineral=Potassium```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -271,7 +271,7 @@
         }, {
           "name" : "nutrient",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific nutrient.\n\n__Example__: &nutrient=Caffeine\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific nutrient.\n\n**Example**\n> ```&nutrient=Caffeine```\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -281,7 +281,7 @@
         }, {
           "name" : "palm_oil",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific ingredient made using palm oil.\n\n__Example__: &palm_oil=E160a Beta Carotene\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific ingredient made using palm oil.\n\n**Example**\n> ```&palm_oil=E160a Beta Carotene```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -291,7 +291,7 @@
         }, {
           "name" : "trace",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific trace ingredient.\n\n__Example__: &trace=Tree Nuts\n\n___Important Note:__ This parameter cannot be used alone. It must be paired with at least 1 additional parameter._\n",
+          "description" : "### Filter the search to only include branded foods that contain a specific trace ingredient.\n\n**Example**\n> ```&trace=Tree Nuts```\n\n**Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter.\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -301,7 +301,7 @@
         }, {
           "name" : "vitamin",
           "in" : "query",
-          "description" : "Filter the search to only include branded foods that contain a specific vitamin.\n\n__Example__: &vitamin=Biotin\n",
+          "description" : "#### Filter the search to only include branded foods that contain a specific vitamin.\n\n**Example**\n> ```&vitamin=Biotin```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -311,7 +311,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return.\n\n__Example:__ &limit=10\n",
+          "description" : "#### Set maximum number of records you want the API to return.\n\n**Example**\n> ```&limit=10```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -322,7 +322,7 @@
         }, {
           "name" : "page",
           "in" : "query",
-          "description" : "This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n__Example__: &page=1\n",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n**Example**\n> ```&page=1```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -332,7 +332,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "__Valid__ - Will return an object containing any matching foods.",
+            "description" : "**Valid** - Will return an object containing any matching foods. \n",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -342,19 +342,19 @@
             }
           },
           "400" : {
-            "description" : "__Validation error__ - Invalid parameters or request."
+            "description" : "**Validation error** - Invalid parameters or request.\n"
           },
           "401" : {
-            "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+            "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "__Forbidden__ - Disallowed entity."
+            "description" : "**Forbidden** - Disallowed entity.\n"
           },
           "404" : {
-            "description" : "__Not found__ - No food items exist that match your query parameters."
+            "description" : "**Not found** - No food items exist that match your query parameters.\n"
           },
           "500" : {
-            "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
           }
         },
         "security" : [ {
@@ -365,11 +365,11 @@
     "/food/ingredient/search.php" : {
       "get" : {
         "summary" : "Get raw/generic food ingredient item(s)",
-        "description" : "# Get data for a specific ingredient or a specific set of ingredients.\n\nThis API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. _[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription) if you aren't sure how to upgrade your subscription._\n\n__Example:__ ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=STRING/LIST&list=BOOLEAN&raw=BOOLEAN```\n",
+        "description" : "## Get data for a specific ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli&raw=true```\n\n**Example #2: Set of Ingredients**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli,cauliflower,spinach&list=true&raw=true```\n\n**Tips**\n  * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "find",
           "in" : "query",
-          "description" : "Search our database for a single ingredient or a specific set of ingredients.\n\n__Example #1:__ &find=broccoli\n\n__Example #2:__ &find=broccoli,cauliflower,spinach&list=true\n\n__Important List Notes:__ \n  - Set the \"list\" parameter to \"true\" before passing in a comma-separated list of ingredients.\n  - Comma-separated lists cannot contain more than __15 ingredients__. You must perform additional API calls if you are looking up more than 15 ingredients.\n",
+          "description" : "Search our database for a single ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```&find=broccoli```\n\n**Example #2: Set of Ingredients**\n> ```&find=broccoli,cauliflower,spinach&list=true```\n\n**Important Notes** \n  * Set the \"list\" parameter to \"true\" before passing in a comma-separated list of ingredients.\n  * Comma-separated lists cannot contain more than **15 ingredients**. You must perform additional API calls if you are looking up more than 15 ingredients.\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -379,7 +379,7 @@
         }, {
           "name" : "list",
           "in" : "query",
-          "description" : "Setting _&list=true_ will configure this endpoint to allow searching for ingredients using a comma-separated list. By default, this endpoint will __only__ return results for the first ingredient.\n\n__Example:__ &list=true\n",
+          "description" : "#### Setting ```&list=true``` will configure this endpoint to allow searching for ingredients using a comma-separated list. By default, this endpoint will **only** return results for the first ingredient.\n\n**Example**\n> ```&list=true```\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
@@ -390,7 +390,7 @@
         }, {
           "name" : "raw",
           "in" : "query",
-          "description" : "Optionally filter the search result to only include raw ingredients.\n\n__Example:__ &raw=true\n",
+          "description" : "#### Optionally filter the search result to only include raw ingredients.\n\n**Example**\n> ```&raw=true```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -401,7 +401,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "Set maximum number of records you want the API to return, per search term.\n\n__Example:__ &limit=3\n",
+          "description" : "#### Set maximum number of records you want the API to return, per search term.\n\n**Example**\n> ```&limit=3```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -412,7 +412,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "__Valid__ - Will return an object containing any matching ingredient foods.",
+            "description" : "**Valid** - Will return an object containing any matching ingredient foods. \n",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -422,19 +422,19 @@
             }
           },
           "400" : {
-            "description" : "__Validation error__ - Invalid parameters or request."
+            "description" : "**Validation error** - Invalid parameters or request.\n"
           },
           "401" : {
-            "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+            "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "__Forbidden__ - Disallowed entity."
+            "description" : "**Forbidden** - Disallowed entity.\n"
           },
           "404" : {
-            "description" : "__Not found__ - No food items exist that match your query parameters."
+            "description" : "**Not found** - No food items exist that match your query parameters.\n"
           },
           "500" : {
-            "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
           }
         },
         "security" : [ {
@@ -456,7 +456,7 @@
             }
           }
         },
-        "description" : "Please read the description of each field in this API response object example. By default, the value of each field is __null__. This indicates an unknown state or that no data exists.",
+        "description" : "Please read the description of each field in this API response object example. By default, the value of each field is **null**. This indicates an unknown state or that no data exists.",
         "example" : {
           "items" : [ {
             "minerals" : [ "minerals", "minerals" ],
@@ -814,7 +814,7 @@
             }
           }
         },
-        "description" : "Please read the description of each field in this API response object example. By default, the value of each field is __null__. This indicates an unknown state or that no data exists.",
+        "description" : "Please read the description of each field in this API response object example. By default, the value of each field is **null**. This indicates an unknown state or that no data exists.",
         "example" : {
           "items" : [ {
             "protein_conversion_factor" : 0.8008281904610115,
@@ -2158,7 +2158,7 @@
     },
     "responses" : {
       "200BrandedResponse" : {
-        "description" : "__Valid__ - Will return an object containing any matching foods.",
+        "description" : "**Valid** - Will return an object containing any matching foods. \n",
         "content" : {
           "application/json" : {
             "schema" : {
@@ -2168,7 +2168,7 @@
         }
       },
       "200IngredientResponse" : {
-        "description" : "__Valid__ - Will return an object containing any matching ingredient foods.",
+        "description" : "**Valid** - Will return an object containing any matching ingredient foods. \n",
         "content" : {
           "application/json" : {
             "schema" : {
@@ -2178,19 +2178,19 @@
         }
       },
       "400Error" : {
-        "description" : "__Validation error__ - Invalid parameters or request."
+        "description" : "**Validation error** - Invalid parameters or request.\n"
       },
       "401Error" : {
-        "description" : "__Unauthorized__ - Invalid API key or usage limits exceeded. _[More information](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)_"
+        "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
       },
       "403Error" : {
-        "description" : "__Forbidden__ - Disallowed entity."
+        "description" : "**Forbidden** - Disallowed entity.\n"
       },
       "404Error" : {
-        "description" : "__Not found__ - No food items exist that match your query parameters."
+        "description" : "**Not found** - No food items exist that match your query parameters.\n"
       },
       "500Error" : {
-        "description" : "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._"
+        "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
       }
     },
     "securitySchemes" : {
