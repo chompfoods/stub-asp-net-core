@@ -21,22 +21,17 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing serving information for this item
+    /// Serving information from as seen on ChompThis.com
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectServing : IEquatable<BrandedFoodObjectServing>
+    public partial class BrandedFoodObjectServingChomp : IEquatable<BrandedFoodObjectServingChomp>
     { 
         /// <summary>
-        /// Gets or Sets Chomp
+        /// Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
         /// </summary>
-        [DataMember(Name="chomp")]
-        public BrandedFoodObjectServingChomp Chomp { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Usda
-        /// </summary>
-        [DataMember(Name="usda")]
-        public BrandedFoodObjectServingUsda Usda { get; set; }
+        /// <value>Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)</value>
+        [DataMember(Name="size")]
+        public string Size { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -45,9 +40,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectServing {\n");
-            sb.Append("  Chomp: ").Append(Chomp).Append("\n");
-            sb.Append("  Usda: ").Append(Usda).Append("\n");
+            sb.Append("class BrandedFoodObjectServingChomp {\n");
+            sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,29 +64,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectServing)obj);
+            return obj.GetType() == GetType() && Equals((BrandedFoodObjectServingChomp)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectServing instances are equal
+        /// Returns true if BrandedFoodObjectServingChomp instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectServing to be compared</param>
+        /// <param name="other">Instance of BrandedFoodObjectServingChomp to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectServing other)
+        public bool Equals(BrandedFoodObjectServingChomp other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Chomp == other.Chomp ||
-                    Chomp != null &&
-                    Chomp.Equals(other.Chomp)
-                ) && 
-                (
-                    Usda == other.Usda ||
-                    Usda != null &&
-                    Usda.Equals(other.Usda)
+                    Size == other.Size ||
+                    Size != null &&
+                    Size.Equals(other.Size)
                 );
         }
 
@@ -106,10 +95,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Chomp != null)
-                    hashCode = hashCode * 59 + Chomp.GetHashCode();
-                    if (Usda != null)
-                    hashCode = hashCode * 59 + Usda.GetHashCode();
+                    if (Size != null)
+                    hashCode = hashCode * 59 + Size.GetHashCode();
                 return hashCode;
             }
         }
@@ -117,12 +104,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectServing left, BrandedFoodObjectServing right)
+        public static bool operator ==(BrandedFoodObjectServingChomp left, BrandedFoodObjectServingChomp right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectServing left, BrandedFoodObjectServing right)
+        public static bool operator !=(BrandedFoodObjectServingChomp left, BrandedFoodObjectServingChomp right)
         {
             return !Equals(left, right);
         }
