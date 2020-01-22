@@ -1004,7 +1004,7 @@
         "properties" : {
           "chomp" : {
             "type" : "string",
-            "description" : "This item's ingredients as seen on ChompThis.com"
+            "description" : "Ingredients for this item from Chomp's internal database"
           },
           "usda" : {
             "type" : "string",
@@ -1043,7 +1043,7 @@
             "description" : "Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)"
           }
         },
-        "description" : "Serving information from as seen on ChompThis.com",
+        "description" : "Serving information from Chomp's internal database",
         "example" : {
           "size" : "size"
         }

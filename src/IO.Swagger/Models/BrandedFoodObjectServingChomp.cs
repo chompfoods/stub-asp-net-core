@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// Serving information from as seen on ChompThis.com
+    /// Serving information from Chomp&#x27;s internal database
     /// </summary>
     [DataContract]
     public partial class BrandedFoodObjectServingChomp : IEquatable<BrandedFoodObjectServingChomp>

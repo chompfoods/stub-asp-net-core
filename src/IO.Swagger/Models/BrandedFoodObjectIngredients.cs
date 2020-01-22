@@ -27,9 +27,9 @@ namespace IO.Swagger.Models
     public partial class BrandedFoodObjectIngredients : IEquatable<BrandedFoodObjectIngredients>
     { 
         /// <summary>
-        /// This item&#x27;s ingredients as seen on ChompThis.com
+        /// Ingredients for this item from Chomp&#x27;s internal database
         /// </summary>
-        /// <value>This item&#x27;s ingredients as seen on ChompThis.com</value>
+        /// <value>Ingredients for this item from Chomp&#x27;s internal database</value>
         [DataMember(Name="chomp")]
         public string Chomp { get; set; }
 
