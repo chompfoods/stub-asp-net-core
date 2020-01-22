@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Chomp Food Database API Documentation",
-    "description" : "__Important:__\n  - An __[API key](https://chompthis.com/api/)__ is required for access to this API.\n  - Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.\n\n-----\n\n__Getting Started:__\n  - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.\n  - Scroll down and click the \"__Authorize__\" button.\n  - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.\n  - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.\n  - Click the \"__Try it out__\" button.\n  - Enter the information the endpoint requires.\n  - Click the \"__Execute__\" button.\n\n__Example:__ \n  - Branded Food: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)__ API response object.\n  - Ingredient: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)__ API response object.\n\n-----\n\n__How Do I Find My API Key?__\n  - Your API key was sent to the email address you used to create your subscription.\n  - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.\n  - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._\n\n|||\n| ------- | -------- |\n| [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) |\n| [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) |\n| [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) |\n| [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) |\n| [Client Center](https://chompthis.com/api/manage.php) | |\n",
+    "description" : "__Important:__\n  - An __[API key](https://chompthis.com/api/)__ is required for access to this API. Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.\n\n-----\n\n__Getting Started:__\n  - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.\n  - Scroll down and click the \"__Authorize__\" button.\n  - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.\n  - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.\n  - Click the \"__Try it out__\" button.\n  - Enter the information the endpoint requires.\n  - Click the \"__Execute__\" button.\n\n__Example:__ \n  - Branded Food: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)__ API response object.\n  - Ingredient: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)__ API response object.\n\n-----\n\n__How Do I Find My API Key?__\n  - Your API key was sent to the email address you used to create your subscription.\n  - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.\n  - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._\n\n|||\n| ------- | -------- |\n| [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) |\n| [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) |\n| [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) |\n| [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) |\n| [Client Center](https://chompthis.com/api/manage.php) | |\n",
     "version" : "1.0.0-oas3"
   },
   "servers" : [ {
@@ -860,10 +860,10 @@
               }
             },
             "name" : "name",
+            "common_names" : "common_names",
             "description" : "description",
             "categories" : [ "categories", "categories" ],
             "footnote" : "footnote",
-            "common_name" : "common_name",
             "nutrients" : {
               "usda" : [ {
                 "data_points" : 4,
@@ -950,10 +950,10 @@
               }
             },
             "name" : "name",
+            "common_names" : "common_names",
             "description" : "description",
             "categories" : [ "categories", "categories" ],
             "footnote" : "footnote",
-            "common_name" : "common_name",
             "nutrients" : {
               "usda" : [ {
                 "data_points" : 4,
@@ -1008,7 +1008,7 @@
           },
           "usda" : {
             "type" : "string",
-            "description" : "This branded food item's ingredients according to the USDA"
+            "description" : "This branded food item's ingredients, according to the USDA"
           }
         },
         "description" : "An object containing this item's ingredients in order of highest value to least",
@@ -2049,7 +2049,7 @@
               "$ref" : "#/components/schemas/BrandedFoodObject_portions"
             }
           },
-          "common_name" : {
+          "common_names" : {
             "type" : "string",
             "description" : "Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")"
           },
@@ -2107,10 +2107,10 @@
             }
           },
           "name" : "name",
+          "common_names" : "common_names",
           "description" : "description",
           "categories" : [ "categories", "categories" ],
           "footnote" : "footnote",
-          "common_name" : "common_name",
           "nutrients" : {
             "usda" : [ {
               "data_points" : 4,

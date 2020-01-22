@@ -1,7 +1,7 @@
 /*
  * Chomp Food Database API Documentation
  *
- * __Important:__   - An __[API key](https://chompthis.com/api/)__ is required for access to this API.   - Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.  - -- --  __Getting Started:__   - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.   - Scroll down and click the \"__Authorize__\" button.   - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.   - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.   - Click the \"__Try it out__\" button.   - Enter the information the endpoint requires.   - Click the \"__Execute__\" button.  __Example:__    - Branded Food: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)__ API response object.   - Ingredient: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)__ API response object.  - -- --  __How Do I Find My API Key?__   - Your API key was sent to the email address you used to create your subscription.   - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.   - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._  ||| | - -- -- -- | - -- -- -- - | | [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) | | [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) | | [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) | | [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) | | [Client Center](https://chompthis.com/api/manage.php) | | 
+ * __Important:__   - An __[API key](https://chompthis.com/api/)__ is required for access to this API. Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.  - -- --  __Getting Started:__   - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.   - Scroll down and click the \"__Authorize__\" button.   - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.   - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.   - Click the \"__Try it out__\" button.   - Enter the information the endpoint requires.   - Click the \"__Execute__\" button.  __Example:__    - Branded Food: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)__ API response object.   - Ingredient: __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)__ API response object.  - -- --  __How Do I Find My API Key?__   - Your API key was sent to the email address you used to create your subscription.   - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.   - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._  ||| | - -- -- -- | - -- -- -- - | | [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) | | [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) | | [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) | | [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) | | [Client Center](https://chompthis.com/api/manage.php) | | 
  *
  * OpenAPI spec version: 1.0.0-oas3
  * 
@@ -82,8 +82,8 @@ namespace IO.Swagger.Models
         /// Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)
         /// </summary>
         /// <value>Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)</value>
-        [DataMember(Name="common_name")]
-        public string CommonName { get; set; }
+        [DataMember(Name="common_names")]
+        public string CommonNames { get; set; }
 
         /// <summary>
         /// A description of this item
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             sb.Append("  DietLabels: ").Append(DietLabels).Append("\n");
             sb.Append("  Components: ").Append(Components).Append("\n");
             sb.Append("  Portions: ").Append(Portions).Append("\n");
-            sb.Append("  CommonName: ").Append(CommonName).Append("\n");
+            sb.Append("  CommonNames: ").Append(CommonNames).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Footnote: ").Append(Footnote).Append("\n");
             sb.Append("}\n");
@@ -195,9 +195,9 @@ namespace IO.Swagger.Models
                     Portions.SequenceEqual(other.Portions)
                 ) && 
                 (
-                    CommonName == other.CommonName ||
-                    CommonName != null &&
-                    CommonName.Equals(other.CommonName)
+                    CommonNames == other.CommonNames ||
+                    CommonNames != null &&
+                    CommonNames.Equals(other.CommonNames)
                 ) && 
                 (
                     Description == other.Description ||
@@ -237,8 +237,8 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Components.GetHashCode();
                     if (Portions != null)
                     hashCode = hashCode * 59 + Portions.GetHashCode();
-                    if (CommonName != null)
-                    hashCode = hashCode * 59 + CommonName.GetHashCode();
+                    if (CommonNames != null)
+                    hashCode = hashCode * 59 + CommonNames.GetHashCode();
                     if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
                     if (Footnote != null)
