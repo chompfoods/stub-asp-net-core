@@ -461,73 +461,73 @@
           "items" : [ {
             "minerals" : [ "minerals", "minerals" ],
             "components" : [ {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             }, {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             } ],
             "keywords" : [ "keywords", "keywords" ],
             "country_details" : {
-              "english_speaking" : 6,
+              "english_speaking" : 2,
               "non_english_speaking" : 6
             },
             "description" : "description",
             "has_english_ingredients" : true,
             "palm_oil_ingredients" : [ "palm_oil_ingredients", "palm_oil_ingredients" ],
             "serving" : {
-              "total" : 5,
+              "total" : 1,
               "size_fulltext" : "size_fulltext",
-              "size" : 1,
+              "size" : 6,
               "measurement_unit" : "measurement_unit"
             },
             "nutrients" : {
               "chomp" : [ {
-                "total" : 7.061401241503109,
+                "total" : 2.3021358869347655,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "per_100g" : 5.637376656633329,
-                "per_serving" : 2.3021358869347655
+                "per_100g" : 5.962133916683182,
+                "per_serving" : 5.637376656633329
               }, {
-                "total" : 7.061401241503109,
+                "total" : 2.3021358869347655,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "per_100g" : 5.637376656633329,
-                "per_serving" : 2.3021358869347655
+                "per_100g" : 5.962133916683182,
+                "per_serving" : 5.637376656633329
               } ],
               "usda" : [ {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               }, {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               } ]
             },
-            "protein_conversion_factor" : 1.1730742509559433,
+            "protein_conversion_factor" : 7.457744773683766,
             "packaging_photos" : {
               "nutrition" : {
                 "small" : "small",
@@ -550,54 +550,57 @@
                 "confidence_description" : "confidence_description",
                 "confidence" : 9,
                 "name" : "name",
-                "compatibility_level" : 9,
+                "compatibility_level" : 5,
                 "is_compatible" : true
               },
               "vegan" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 5,
+                "confidence" : 4,
                 "name" : "name",
-                "compatibility_level" : 4,
+                "compatibility_level" : 1,
                 "is_compatible" : true
               },
               "gluten_free" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 8,
+                "confidence" : 6,
                 "name" : "name",
-                "compatibility_level" : 6,
+                "compatibility_level" : 9,
                 "is_compatible" : true
               }
             },
-            "ingredients" : "ingredients",
+            "ingredients" : {
+              "chomp" : "chomp",
+              "usda" : "usda"
+            },
             "categories" : [ "categories", "categories" ],
             "common_name" : "common_name",
             "barcode" : "barcode",
             "brand" : "brand",
             "portions" : [ {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             }, {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             } ],
             "package" : {
               "quantity" : 0,
-              "size" : 6
+              "size" : "size"
             },
             "traces" : [ "traces", "traces" ],
             "diet_flags" : [ {
               "ingredient" : "ingredient",
               "is_allergen" : true,
               "ingredient_description" : "ingredient_description",
-              "compatibility_level" : 9,
+              "compatibility_level" : 8,
               "is_compatible" : "is_compatible",
               "diet_label" : "diet_label",
               "compatibility_description" : "compatibility_description"
@@ -605,7 +608,7 @@
               "ingredient" : "ingredient",
               "is_allergen" : true,
               "ingredient_description" : "ingredient_description",
-              "compatibility_level" : 9,
+              "compatibility_level" : 8,
               "is_compatible" : "is_compatible",
               "diet_label" : "diet_label",
               "compatibility_description" : "compatibility_description"
@@ -614,9 +617,9 @@
             "footnote" : "footnote",
             "allergens" : [ "allergens", "allergens" ],
             "calorie_conversion_factor" : {
-              "carbohydrate_value" : 7.457744773683766,
-              "protein_value" : 1.4894159098541704,
-              "fat_value" : 6.84685269835264
+              "carbohydrate_value" : 6.84685269835264,
+              "protein_value" : 1.0246457001441578,
+              "fat_value" : 1.4894159098541704
             },
             "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
             "vitamins" : [ "vitamins", "vitamins" ],
@@ -625,73 +628,73 @@
           }, {
             "minerals" : [ "minerals", "minerals" ],
             "components" : [ {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             }, {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             } ],
             "keywords" : [ "keywords", "keywords" ],
             "country_details" : {
-              "english_speaking" : 6,
+              "english_speaking" : 2,
               "non_english_speaking" : 6
             },
             "description" : "description",
             "has_english_ingredients" : true,
             "palm_oil_ingredients" : [ "palm_oil_ingredients", "palm_oil_ingredients" ],
             "serving" : {
-              "total" : 5,
+              "total" : 1,
               "size_fulltext" : "size_fulltext",
-              "size" : 1,
+              "size" : 6,
               "measurement_unit" : "measurement_unit"
             },
             "nutrients" : {
               "chomp" : [ {
-                "total" : 7.061401241503109,
+                "total" : 2.3021358869347655,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "per_100g" : 5.637376656633329,
-                "per_serving" : 2.3021358869347655
+                "per_100g" : 5.962133916683182,
+                "per_serving" : 5.637376656633329
               }, {
-                "total" : 7.061401241503109,
+                "total" : 2.3021358869347655,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "per_100g" : 5.637376656633329,
-                "per_serving" : 2.3021358869347655
+                "per_100g" : 5.962133916683182,
+                "per_serving" : 5.637376656633329
               } ],
               "usda" : [ {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               }, {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               } ]
             },
-            "protein_conversion_factor" : 1.1730742509559433,
+            "protein_conversion_factor" : 7.457744773683766,
             "packaging_photos" : {
               "nutrition" : {
                 "small" : "small",
@@ -714,54 +717,57 @@
                 "confidence_description" : "confidence_description",
                 "confidence" : 9,
                 "name" : "name",
-                "compatibility_level" : 9,
+                "compatibility_level" : 5,
                 "is_compatible" : true
               },
               "vegan" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 5,
+                "confidence" : 4,
                 "name" : "name",
-                "compatibility_level" : 4,
+                "compatibility_level" : 1,
                 "is_compatible" : true
               },
               "gluten_free" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 8,
+                "confidence" : 6,
                 "name" : "name",
-                "compatibility_level" : 6,
+                "compatibility_level" : 9,
                 "is_compatible" : true
               }
             },
-            "ingredients" : "ingredients",
+            "ingredients" : {
+              "chomp" : "chomp",
+              "usda" : "usda"
+            },
             "categories" : [ "categories", "categories" ],
             "common_name" : "common_name",
             "barcode" : "barcode",
             "brand" : "brand",
             "portions" : [ {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             }, {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             } ],
             "package" : {
               "quantity" : 0,
-              "size" : 6
+              "size" : "size"
             },
             "traces" : [ "traces", "traces" ],
             "diet_flags" : [ {
               "ingredient" : "ingredient",
               "is_allergen" : true,
               "ingredient_description" : "ingredient_description",
-              "compatibility_level" : 9,
+              "compatibility_level" : 8,
               "is_compatible" : "is_compatible",
               "diet_label" : "diet_label",
               "compatibility_description" : "compatibility_description"
@@ -769,7 +775,7 @@
               "ingredient" : "ingredient",
               "is_allergen" : true,
               "ingredient_description" : "ingredient_description",
-              "compatibility_level" : 9,
+              "compatibility_level" : 8,
               "is_compatible" : "is_compatible",
               "diet_label" : "diet_label",
               "compatibility_description" : "compatibility_description"
@@ -778,9 +784,9 @@
             "footnote" : "footnote",
             "allergens" : [ "allergens", "allergens" ],
             "calorie_conversion_factor" : {
-              "carbohydrate_value" : 7.457744773683766,
-              "protein_value" : 1.4894159098541704,
-              "fat_value" : 6.84685269835264
+              "carbohydrate_value" : 6.84685269835264,
+              "protein_value" : 1.0246457001441578,
+              "fat_value" : 1.4894159098541704
             },
             "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
             "vitamins" : [ "vitamins", "vitamins" ],
@@ -805,20 +811,20 @@
           "items" : [ {
             "protein_conversion_factor" : 0.8008281904610115,
             "calorie_conversion_factor" : {
-              "carbohydrate_value" : 7.457744773683766,
-              "protein_value" : 1.4894159098541704,
-              "fat_value" : 6.84685269835264
+              "carbohydrate_value" : 6.84685269835264,
+              "protein_value" : 1.0246457001441578,
+              "fat_value" : 1.4894159098541704
             },
             "components" : [ {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             }, {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             } ],
@@ -827,21 +833,21 @@
                 "confidence_description" : "confidence_description",
                 "confidence" : 9,
                 "name" : "name",
-                "compatibility_level" : 9,
+                "compatibility_level" : 5,
                 "is_compatible" : true
               },
               "vegan" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 5,
+                "confidence" : 4,
                 "name" : "name",
-                "compatibility_level" : 4,
+                "compatibility_level" : 1,
                 "is_compatible" : true
               },
               "gluten_free" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 8,
+                "confidence" : 6,
                 "name" : "name",
-                "compatibility_level" : 6,
+                "compatibility_level" : 9,
                 "is_compatible" : true
               }
             },
@@ -853,41 +859,41 @@
             "nutrients" : {
               "usda" : [ {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               }, {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               } ]
             },
             "portions" : [ {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             }, {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
@@ -895,20 +901,20 @@
           }, {
             "protein_conversion_factor" : 0.8008281904610115,
             "calorie_conversion_factor" : {
-              "carbohydrate_value" : 7.457744773683766,
-              "protein_value" : 1.4894159098541704,
-              "fat_value" : 6.84685269835264
+              "carbohydrate_value" : 6.84685269835264,
+              "protein_value" : 1.0246457001441578,
+              "fat_value" : 1.4894159098541704
             },
             "components" : [ {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             }, {
-              "data_points" : 6,
-              "pct_weight" : 6.438423552598547,
-              "gram_weight" : 3.5571952270680973,
+              "data_points" : 3,
+              "pct_weight" : 9.018348186070783,
+              "gram_weight" : 6.438423552598547,
               "name" : "name",
               "is_refuse" : true
             } ],
@@ -917,21 +923,21 @@
                 "confidence_description" : "confidence_description",
                 "confidence" : 9,
                 "name" : "name",
-                "compatibility_level" : 9,
+                "compatibility_level" : 5,
                 "is_compatible" : true
               },
               "vegan" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 5,
+                "confidence" : 4,
                 "name" : "name",
-                "compatibility_level" : 4,
+                "compatibility_level" : 1,
                 "is_compatible" : true
               },
               "gluten_free" : {
                 "confidence_description" : "confidence_description",
-                "confidence" : 8,
+                "confidence" : 6,
                 "name" : "name",
-                "compatibility_level" : 6,
+                "compatibility_level" : 9,
                 "is_compatible" : true
               }
             },
@@ -943,46 +949,64 @@
             "nutrients" : {
               "usda" : [ {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               }, {
                 "data_points" : 1,
-                "min" : 2.027123023002322,
-                "median" : 7.386281948385884,
-                "max" : 4.145608029883936,
+                "min" : 3.616076749251911,
+                "median" : 4.145608029883936,
+                "max" : 2.027123023002322,
                 "name" : "name",
                 "measurement_unit" : "measurement_unit",
-                "rank" : 1,
+                "rank" : 7,
                 "description" : "description",
-                "id" : 9,
-                "per_100g" : 3.616076749251911,
+                "id" : 7,
+                "per_100g" : 9.301444243932576,
                 "footnote" : "footnote"
               } ]
             },
             "portions" : [ {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             }, {
-              "data_points" : 2,
+              "data_points" : 1,
               "modifier" : "modifier",
-              "gram_weight" : 1.284659006116532,
+              "gram_weight" : 6.965117697638846,
               "measurement_unit" : "measurement_unit",
               "description" : "description",
               "footnote" : "footnote"
             } ]
           } ]
+        }
+      },
+      "BrandedFoodObject_ingredients" : {
+        "type" : "object",
+        "properties" : {
+          "chomp" : {
+            "type" : "string",
+            "description" : "This item's ingredients as seen on ChompThis.com"
+          },
+          "usda" : {
+            "type" : "string",
+            "description" : "This branded food item's ingredients according to the USDA"
+          }
+        },
+        "description" : "An object containing this item's ingredients in order of highest value to least",
+        "example" : {
+          "chomp" : "chomp",
+          "usda" : "usda"
         }
       },
       "BrandedFoodObject_package" : {
@@ -993,14 +1017,14 @@
             "description" : "Package quantity"
           },
           "size" : {
-            "type" : "integer",
+            "type" : "string",
             "description" : "Package size"
           }
         },
         "description" : "An object containing basic packaging information about this item",
         "example" : {
           "quantity" : 0,
-          "size" : 6
+          "size" : "size"
         }
       },
       "BrandedFoodObject_serving" : {
@@ -1025,9 +1049,9 @@
         },
         "description" : "An object containing serving information for this item",
         "example" : {
-          "total" : 5,
+          "total" : 1,
           "size_fulltext" : "size_fulltext",
-          "size" : 1,
+          "size" : 6,
           "measurement_unit" : "measurement_unit"
         }
       },
@@ -1056,11 +1080,11 @@
           }
         },
         "example" : {
-          "total" : 7.061401241503109,
+          "total" : 2.3021358869347655,
           "name" : "name",
           "measurement_unit" : "measurement_unit",
-          "per_100g" : 5.637376656633329,
-          "per_serving" : 2.3021358869347655
+          "per_100g" : 5.962133916683182,
+          "per_serving" : 5.637376656633329
         }
       },
       "BrandedFoodObject_nutrients_usda" : {
@@ -1113,15 +1137,15 @@
         },
         "example" : {
           "data_points" : 1,
-          "min" : 2.027123023002322,
-          "median" : 7.386281948385884,
-          "max" : 4.145608029883936,
+          "min" : 3.616076749251911,
+          "median" : 4.145608029883936,
+          "max" : 2.027123023002322,
           "name" : "name",
           "measurement_unit" : "measurement_unit",
-          "rank" : 1,
+          "rank" : 7,
           "description" : "description",
-          "id" : 9,
-          "per_100g" : 3.616076749251911,
+          "id" : 7,
+          "per_100g" : 9.301444243932576,
           "footnote" : "footnote"
         }
       },
@@ -1146,41 +1170,41 @@
         "description" : "An object containing nutrient information from multiple sources",
         "example" : {
           "chomp" : [ {
-            "total" : 7.061401241503109,
+            "total" : 2.3021358869347655,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "per_100g" : 5.637376656633329,
-            "per_serving" : 2.3021358869347655
+            "per_100g" : 5.962133916683182,
+            "per_serving" : 5.637376656633329
           }, {
-            "total" : 7.061401241503109,
+            "total" : 2.3021358869347655,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "per_100g" : 5.637376656633329,
-            "per_serving" : 2.3021358869347655
+            "per_100g" : 5.962133916683182,
+            "per_serving" : 5.637376656633329
           } ],
           "usda" : [ {
             "data_points" : 1,
-            "min" : 2.027123023002322,
-            "median" : 7.386281948385884,
-            "max" : 4.145608029883936,
+            "min" : 3.616076749251911,
+            "median" : 4.145608029883936,
+            "max" : 2.027123023002322,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "rank" : 1,
+            "rank" : 7,
             "description" : "description",
-            "id" : 9,
-            "per_100g" : 3.616076749251911,
+            "id" : 7,
+            "per_100g" : 9.301444243932576,
             "footnote" : "footnote"
           }, {
             "data_points" : 1,
-            "min" : 2.027123023002322,
-            "median" : 7.386281948385884,
-            "max" : 4.145608029883936,
+            "min" : 3.616076749251911,
+            "median" : 4.145608029883936,
+            "max" : 2.027123023002322,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "rank" : 1,
+            "rank" : 7,
             "description" : "description",
-            "id" : 9,
-            "per_100g" : 3.616076749251911,
+            "id" : 7,
+            "per_100g" : 9.301444243932576,
             "footnote" : "footnote"
           } ]
         }
@@ -1203,9 +1227,9 @@
         },
         "description" : "An object containing the multiplication factors to be used when calculating energy from macronutrients for a specific food.",
         "example" : {
-          "carbohydrate_value" : 7.457744773683766,
-          "protein_value" : 1.4894159098541704,
-          "fat_value" : 6.84685269835264
+          "carbohydrate_value" : 6.84685269835264,
+          "protein_value" : 1.0246457001441578,
+          "fat_value" : 1.4894159098541704
         }
       },
       "BrandedFoodObject_diet_labels_vegan" : {
@@ -1235,9 +1259,9 @@
         "description" : "An object containing information on this item's compatibility with the Vegan diets",
         "example" : {
           "confidence_description" : "confidence_description",
-          "confidence" : 5,
+          "confidence" : 4,
           "name" : "name",
-          "compatibility_level" : 4,
+          "compatibility_level" : 1,
           "is_compatible" : true
         }
       },
@@ -1270,7 +1294,7 @@
           "confidence_description" : "confidence_description",
           "confidence" : 9,
           "name" : "name",
-          "compatibility_level" : 9,
+          "compatibility_level" : 5,
           "is_compatible" : true
         }
       },
@@ -1301,9 +1325,9 @@
         "description" : "An object containing information on this item's compatibility with Gluten Free diets",
         "example" : {
           "confidence_description" : "confidence_description",
-          "confidence" : 8,
+          "confidence" : 6,
           "name" : "name",
-          "compatibility_level" : 6,
+          "compatibility_level" : 9,
           "is_compatible" : true
         }
       },
@@ -1326,21 +1350,21 @@
             "confidence_description" : "confidence_description",
             "confidence" : 9,
             "name" : "name",
-            "compatibility_level" : 9,
+            "compatibility_level" : 5,
             "is_compatible" : true
           },
           "vegan" : {
             "confidence_description" : "confidence_description",
-            "confidence" : 5,
+            "confidence" : 4,
             "name" : "name",
-            "compatibility_level" : 4,
+            "compatibility_level" : 1,
             "is_compatible" : true
           },
           "gluten_free" : {
             "confidence_description" : "confidence_description",
-            "confidence" : 8,
+            "confidence" : 6,
             "name" : "name",
-            "compatibility_level" : 6,
+            "compatibility_level" : 9,
             "is_compatible" : true
           }
         }
@@ -1382,7 +1406,7 @@
           "ingredient" : "ingredient",
           "is_allergen" : true,
           "ingredient_description" : "ingredient_description",
-          "compatibility_level" : 9,
+          "compatibility_level" : 8,
           "is_compatible" : "is_compatible",
           "diet_label" : "diet_label",
           "compatibility_description" : "compatibility_description"
@@ -1515,9 +1539,9 @@
         },
         "description" : "An object containing information on a specific component of this food item",
         "example" : {
-          "data_points" : 6,
-          "pct_weight" : 6.438423552598547,
-          "gram_weight" : 3.5571952270680973,
+          "data_points" : 3,
+          "pct_weight" : 9.018348186070783,
+          "gram_weight" : 6.438423552598547,
           "name" : "name",
           "is_refuse" : true
         }
@@ -1552,9 +1576,9 @@
         },
         "description" : "An object containing information on a specific food portion found in this item",
         "example" : {
-          "data_points" : 2,
+          "data_points" : 1,
           "modifier" : "modifier",
-          "gram_weight" : 1.284659006116532,
+          "gram_weight" : 6.965117697638846,
           "measurement_unit" : "measurement_unit",
           "description" : "description",
           "footnote" : "footnote"
@@ -1574,7 +1598,7 @@
         },
         "description" : "An object containing additional information on the countries where this item is found",
         "example" : {
-          "english_speaking" : 6,
+          "english_speaking" : 2,
           "non_english_speaking" : 6
         }
       },
@@ -1594,8 +1618,7 @@
             "description" : "The brand name that owns this item"
           },
           "ingredients" : {
-            "type" : "string",
-            "description" : "Ingredients in order of highest value to least"
+            "$ref" : "#/components/schemas/BrandedFoodObject_ingredients"
           },
           "package" : {
             "$ref" : "#/components/schemas/BrandedFoodObject_package"
@@ -1734,73 +1757,73 @@
         "example" : {
           "minerals" : [ "minerals", "minerals" ],
           "components" : [ {
-            "data_points" : 6,
-            "pct_weight" : 6.438423552598547,
-            "gram_weight" : 3.5571952270680973,
+            "data_points" : 3,
+            "pct_weight" : 9.018348186070783,
+            "gram_weight" : 6.438423552598547,
             "name" : "name",
             "is_refuse" : true
           }, {
-            "data_points" : 6,
-            "pct_weight" : 6.438423552598547,
-            "gram_weight" : 3.5571952270680973,
+            "data_points" : 3,
+            "pct_weight" : 9.018348186070783,
+            "gram_weight" : 6.438423552598547,
             "name" : "name",
             "is_refuse" : true
           } ],
           "keywords" : [ "keywords", "keywords" ],
           "country_details" : {
-            "english_speaking" : 6,
+            "english_speaking" : 2,
             "non_english_speaking" : 6
           },
           "description" : "description",
           "has_english_ingredients" : true,
           "palm_oil_ingredients" : [ "palm_oil_ingredients", "palm_oil_ingredients" ],
           "serving" : {
-            "total" : 5,
+            "total" : 1,
             "size_fulltext" : "size_fulltext",
-            "size" : 1,
+            "size" : 6,
             "measurement_unit" : "measurement_unit"
           },
           "nutrients" : {
             "chomp" : [ {
-              "total" : 7.061401241503109,
+              "total" : 2.3021358869347655,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "per_100g" : 5.637376656633329,
-              "per_serving" : 2.3021358869347655
+              "per_100g" : 5.962133916683182,
+              "per_serving" : 5.637376656633329
             }, {
-              "total" : 7.061401241503109,
+              "total" : 2.3021358869347655,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "per_100g" : 5.637376656633329,
-              "per_serving" : 2.3021358869347655
+              "per_100g" : 5.962133916683182,
+              "per_serving" : 5.637376656633329
             } ],
             "usda" : [ {
               "data_points" : 1,
-              "min" : 2.027123023002322,
-              "median" : 7.386281948385884,
-              "max" : 4.145608029883936,
+              "min" : 3.616076749251911,
+              "median" : 4.145608029883936,
+              "max" : 2.027123023002322,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "rank" : 1,
+              "rank" : 7,
               "description" : "description",
-              "id" : 9,
-              "per_100g" : 3.616076749251911,
+              "id" : 7,
+              "per_100g" : 9.301444243932576,
               "footnote" : "footnote"
             }, {
               "data_points" : 1,
-              "min" : 2.027123023002322,
-              "median" : 7.386281948385884,
-              "max" : 4.145608029883936,
+              "min" : 3.616076749251911,
+              "median" : 4.145608029883936,
+              "max" : 2.027123023002322,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "rank" : 1,
+              "rank" : 7,
               "description" : "description",
-              "id" : 9,
-              "per_100g" : 3.616076749251911,
+              "id" : 7,
+              "per_100g" : 9.301444243932576,
               "footnote" : "footnote"
             } ]
           },
-          "protein_conversion_factor" : 1.1730742509559433,
+          "protein_conversion_factor" : 7.457744773683766,
           "packaging_photos" : {
             "nutrition" : {
               "small" : "small",
@@ -1823,54 +1846,57 @@
               "confidence_description" : "confidence_description",
               "confidence" : 9,
               "name" : "name",
-              "compatibility_level" : 9,
+              "compatibility_level" : 5,
               "is_compatible" : true
             },
             "vegan" : {
               "confidence_description" : "confidence_description",
-              "confidence" : 5,
+              "confidence" : 4,
               "name" : "name",
-              "compatibility_level" : 4,
+              "compatibility_level" : 1,
               "is_compatible" : true
             },
             "gluten_free" : {
               "confidence_description" : "confidence_description",
-              "confidence" : 8,
+              "confidence" : 6,
               "name" : "name",
-              "compatibility_level" : 6,
+              "compatibility_level" : 9,
               "is_compatible" : true
             }
           },
-          "ingredients" : "ingredients",
+          "ingredients" : {
+            "chomp" : "chomp",
+            "usda" : "usda"
+          },
           "categories" : [ "categories", "categories" ],
           "common_name" : "common_name",
           "barcode" : "barcode",
           "brand" : "brand",
           "portions" : [ {
-            "data_points" : 2,
+            "data_points" : 1,
             "modifier" : "modifier",
-            "gram_weight" : 1.284659006116532,
+            "gram_weight" : 6.965117697638846,
             "measurement_unit" : "measurement_unit",
             "description" : "description",
             "footnote" : "footnote"
           }, {
-            "data_points" : 2,
+            "data_points" : 1,
             "modifier" : "modifier",
-            "gram_weight" : 1.284659006116532,
+            "gram_weight" : 6.965117697638846,
             "measurement_unit" : "measurement_unit",
             "description" : "description",
             "footnote" : "footnote"
           } ],
           "package" : {
             "quantity" : 0,
-            "size" : 6
+            "size" : "size"
           },
           "traces" : [ "traces", "traces" ],
           "diet_flags" : [ {
             "ingredient" : "ingredient",
             "is_allergen" : true,
             "ingredient_description" : "ingredient_description",
-            "compatibility_level" : 9,
+            "compatibility_level" : 8,
             "is_compatible" : "is_compatible",
             "diet_label" : "diet_label",
             "compatibility_description" : "compatibility_description"
@@ -1878,7 +1904,7 @@
             "ingredient" : "ingredient",
             "is_allergen" : true,
             "ingredient_description" : "ingredient_description",
-            "compatibility_level" : 9,
+            "compatibility_level" : 8,
             "is_compatible" : "is_compatible",
             "diet_label" : "diet_label",
             "compatibility_description" : "compatibility_description"
@@ -1887,9 +1913,9 @@
           "footnote" : "footnote",
           "allergens" : [ "allergens", "allergens" ],
           "calorie_conversion_factor" : {
-            "carbohydrate_value" : 7.457744773683766,
-            "protein_value" : 1.4894159098541704,
-            "fat_value" : 6.84685269835264
+            "carbohydrate_value" : 6.84685269835264,
+            "protein_value" : 1.0246457001441578,
+            "fat_value" : 1.4894159098541704
           },
           "ingredient_list" : [ "ingredient_list", "ingredient_list" ],
           "vitamins" : [ "vitamins", "vitamins" ],
@@ -1912,27 +1938,27 @@
         "example" : {
           "usda" : [ {
             "data_points" : 1,
-            "min" : 2.027123023002322,
-            "median" : 7.386281948385884,
-            "max" : 4.145608029883936,
+            "min" : 3.616076749251911,
+            "median" : 4.145608029883936,
+            "max" : 2.027123023002322,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "rank" : 1,
+            "rank" : 7,
             "description" : "description",
-            "id" : 9,
-            "per_100g" : 3.616076749251911,
+            "id" : 7,
+            "per_100g" : 9.301444243932576,
             "footnote" : "footnote"
           }, {
             "data_points" : 1,
-            "min" : 2.027123023002322,
-            "median" : 7.386281948385884,
-            "max" : 4.145608029883936,
+            "min" : 3.616076749251911,
+            "median" : 4.145608029883936,
+            "max" : 2.027123023002322,
             "name" : "name",
             "measurement_unit" : "measurement_unit",
-            "rank" : 1,
+            "rank" : 7,
             "description" : "description",
-            "id" : 9,
-            "per_100g" : 3.616076749251911,
+            "id" : 7,
+            "per_100g" : 9.301444243932576,
             "footnote" : "footnote"
           } ]
         }
@@ -1995,20 +2021,20 @@
         "example" : {
           "protein_conversion_factor" : 0.8008281904610115,
           "calorie_conversion_factor" : {
-            "carbohydrate_value" : 7.457744773683766,
-            "protein_value" : 1.4894159098541704,
-            "fat_value" : 6.84685269835264
+            "carbohydrate_value" : 6.84685269835264,
+            "protein_value" : 1.0246457001441578,
+            "fat_value" : 1.4894159098541704
           },
           "components" : [ {
-            "data_points" : 6,
-            "pct_weight" : 6.438423552598547,
-            "gram_weight" : 3.5571952270680973,
+            "data_points" : 3,
+            "pct_weight" : 9.018348186070783,
+            "gram_weight" : 6.438423552598547,
             "name" : "name",
             "is_refuse" : true
           }, {
-            "data_points" : 6,
-            "pct_weight" : 6.438423552598547,
-            "gram_weight" : 3.5571952270680973,
+            "data_points" : 3,
+            "pct_weight" : 9.018348186070783,
+            "gram_weight" : 6.438423552598547,
             "name" : "name",
             "is_refuse" : true
           } ],
@@ -2017,21 +2043,21 @@
               "confidence_description" : "confidence_description",
               "confidence" : 9,
               "name" : "name",
-              "compatibility_level" : 9,
+              "compatibility_level" : 5,
               "is_compatible" : true
             },
             "vegan" : {
               "confidence_description" : "confidence_description",
-              "confidence" : 5,
+              "confidence" : 4,
               "name" : "name",
-              "compatibility_level" : 4,
+              "compatibility_level" : 1,
               "is_compatible" : true
             },
             "gluten_free" : {
               "confidence_description" : "confidence_description",
-              "confidence" : 8,
+              "confidence" : 6,
               "name" : "name",
-              "compatibility_level" : 6,
+              "compatibility_level" : 9,
               "is_compatible" : true
             }
           },
@@ -2043,41 +2069,41 @@
           "nutrients" : {
             "usda" : [ {
               "data_points" : 1,
-              "min" : 2.027123023002322,
-              "median" : 7.386281948385884,
-              "max" : 4.145608029883936,
+              "min" : 3.616076749251911,
+              "median" : 4.145608029883936,
+              "max" : 2.027123023002322,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "rank" : 1,
+              "rank" : 7,
               "description" : "description",
-              "id" : 9,
-              "per_100g" : 3.616076749251911,
+              "id" : 7,
+              "per_100g" : 9.301444243932576,
               "footnote" : "footnote"
             }, {
               "data_points" : 1,
-              "min" : 2.027123023002322,
-              "median" : 7.386281948385884,
-              "max" : 4.145608029883936,
+              "min" : 3.616076749251911,
+              "median" : 4.145608029883936,
+              "max" : 2.027123023002322,
               "name" : "name",
               "measurement_unit" : "measurement_unit",
-              "rank" : 1,
+              "rank" : 7,
               "description" : "description",
-              "id" : 9,
-              "per_100g" : 3.616076749251911,
+              "id" : 7,
+              "per_100g" : 9.301444243932576,
               "footnote" : "footnote"
             } ]
           },
           "portions" : [ {
-            "data_points" : 2,
+            "data_points" : 1,
             "modifier" : "modifier",
-            "gram_weight" : 1.284659006116532,
+            "gram_weight" : 6.965117697638846,
             "measurement_unit" : "measurement_unit",
             "description" : "description",
             "footnote" : "footnote"
           }, {
-            "data_points" : 2,
+            "data_points" : 1,
             "modifier" : "modifier",
-            "gram_weight" : 1.284659006116532,
+            "gram_weight" : 6.965117697638846,
             "measurement_unit" : "measurement_unit",
             "description" : "description",
             "footnote" : "footnote"

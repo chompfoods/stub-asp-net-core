@@ -21,24 +21,24 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing basic packaging information about this item
+    /// An object containing this item&#x27;s ingredients in order of highest value to least
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackage : IEquatable<BrandedFoodObjectPackage>
+    public partial class BrandedFoodObjectIngredients : IEquatable<BrandedFoodObjectIngredients>
     { 
         /// <summary>
-        /// Package quantity
+        /// This item&#x27;s ingredients as seen on ChompThis.com
         /// </summary>
-        /// <value>Package quantity</value>
-        [DataMember(Name="quantity")]
-        public int? Quantity { get; set; }
+        /// <value>This item&#x27;s ingredients as seen on ChompThis.com</value>
+        [DataMember(Name="chomp")]
+        public string Chomp { get; set; }
 
         /// <summary>
-        /// Package size
+        /// This branded food item&#x27;s ingredients according to the USDA
         /// </summary>
-        /// <value>Package size</value>
-        [DataMember(Name="size")]
-        public string Size { get; set; }
+        /// <value>This branded food item&#x27;s ingredients according to the USDA</value>
+        [DataMember(Name="usda")]
+        public string Usda { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -47,9 +47,9 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackage {\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("class BrandedFoodObjectIngredients {\n");
+            sb.Append("  Chomp: ").Append(Chomp).Append("\n");
+            sb.Append("  Usda: ").Append(Usda).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -72,29 +72,29 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackage)obj);
+            return obj.GetType() == GetType() && Equals((BrandedFoodObjectIngredients)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackage instances are equal
+        /// Returns true if BrandedFoodObjectIngredients instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackage to be compared</param>
+        /// <param name="other">Instance of BrandedFoodObjectIngredients to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackage other)
+        public bool Equals(BrandedFoodObjectIngredients other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Quantity == other.Quantity ||
-                    Quantity != null &&
-                    Quantity.Equals(other.Quantity)
+                    Chomp == other.Chomp ||
+                    Chomp != null &&
+                    Chomp.Equals(other.Chomp)
                 ) && 
                 (
-                    Size == other.Size ||
-                    Size != null &&
-                    Size.Equals(other.Size)
+                    Usda == other.Usda ||
+                    Usda != null &&
+                    Usda.Equals(other.Usda)
                 );
         }
 
@@ -108,10 +108,10 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Quantity != null)
-                    hashCode = hashCode * 59 + Quantity.GetHashCode();
-                    if (Size != null)
-                    hashCode = hashCode * 59 + Size.GetHashCode();
+                    if (Chomp != null)
+                    hashCode = hashCode * 59 + Chomp.GetHashCode();
+                    if (Usda != null)
+                    hashCode = hashCode * 59 + Usda.GetHashCode();
                 return hashCode;
             }
         }
@@ -119,12 +119,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackage left, BrandedFoodObjectPackage right)
+        public static bool operator ==(BrandedFoodObjectIngredients left, BrandedFoodObjectIngredients right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackage left, BrandedFoodObjectPackage right)
+        public static bool operator !=(BrandedFoodObjectIngredients left, BrandedFoodObjectIngredients right)
         {
             return !Equals(left, right);
         }

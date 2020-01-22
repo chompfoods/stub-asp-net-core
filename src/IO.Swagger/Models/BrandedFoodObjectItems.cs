@@ -48,11 +48,10 @@ namespace IO.Swagger.Models
         public string Brand { get; set; }
 
         /// <summary>
-        /// Ingredients in order of highest value to least
+        /// Gets or Sets Ingredients
         /// </summary>
-        /// <value>Ingredients in order of highest value to least</value>
         [DataMember(Name="ingredients")]
-        public string Ingredients { get; set; }
+        public BrandedFoodObjectIngredients Ingredients { get; set; }
 
         /// <summary>
         /// Gets or Sets Package
