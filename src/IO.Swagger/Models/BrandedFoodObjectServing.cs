@@ -27,18 +27,11 @@ namespace IO.Swagger.Models
     public partial class BrandedFoodObjectServing : IEquatable<BrandedFoodObjectServing>
     { 
         /// <summary>
-        /// Serving size
+        /// Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
         /// </summary>
-        /// <value>Serving size</value>
+        /// <value>Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)</value>
         [DataMember(Name="size")]
-        public int? Size { get; set; }
-
-        /// <summary>
-        /// Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
-        /// </summary>
-        /// <value>Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)</value>
-        [DataMember(Name="measurement_unit")]
-        public string MeasurementUnit { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// Serving size description
@@ -63,7 +56,6 @@ namespace IO.Swagger.Models
             var sb = new StringBuilder();
             sb.Append("class BrandedFoodObjectServing {\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
-            sb.Append("  MeasurementUnit: ").Append(MeasurementUnit).Append("\n");
             sb.Append("  SizeFulltext: ").Append(SizeFulltext).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
@@ -108,11 +100,6 @@ namespace IO.Swagger.Models
                     Size.Equals(other.Size)
                 ) && 
                 (
-                    MeasurementUnit == other.MeasurementUnit ||
-                    MeasurementUnit != null &&
-                    MeasurementUnit.Equals(other.MeasurementUnit)
-                ) && 
-                (
                     SizeFulltext == other.SizeFulltext ||
                     SizeFulltext != null &&
                     SizeFulltext.Equals(other.SizeFulltext)
@@ -136,8 +123,6 @@ namespace IO.Swagger.Models
                 // Suitable nullity checks etc, of course :)
                     if (Size != null)
                     hashCode = hashCode * 59 + Size.GetHashCode();
-                    if (MeasurementUnit != null)
-                    hashCode = hashCode * 59 + MeasurementUnit.GetHashCode();
                     if (SizeFulltext != null)
                     hashCode = hashCode * 59 + SizeFulltext.GetHashCode();
                     if (Total != null)
