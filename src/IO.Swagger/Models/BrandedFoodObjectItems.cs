@@ -193,13 +193,6 @@ namespace IO.Swagger.Models
         public List<string> Vitamins { get; set; }
 
         /// <summary>
-        /// An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; a common name may be \&quot;Chicken enchilada\&quot;)
-        /// </summary>
-        /// <value>An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; a common name may be \&quot;Chicken enchilada\&quot;)</value>
-        [DataMember(Name="common_names")]
-        public List<string> CommonNames { get; set; }
-
-        /// <summary>
         /// A description of this item
         /// </summary>
         /// <value>A description of this item</value>
@@ -253,7 +246,6 @@ namespace IO.Swagger.Models
             sb.Append("  Minerals: ").Append(Minerals).Append("\n");
             sb.Append("  Traces: ").Append(Traces).Append("\n");
             sb.Append("  Vitamins: ").Append(Vitamins).Append("\n");
-            sb.Append("  CommonNames: ").Append(CommonNames).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
             sb.Append("  Footnote: ").Append(Footnote).Append("\n");
@@ -419,11 +411,6 @@ namespace IO.Swagger.Models
                     Vitamins.SequenceEqual(other.Vitamins)
                 ) && 
                 (
-                    CommonNames == other.CommonNames ||
-                    CommonNames != null &&
-                    CommonNames.SequenceEqual(other.CommonNames)
-                ) && 
-                (
                     Description == other.Description ||
                     Description != null &&
                     Description.Equals(other.Description)
@@ -500,8 +487,6 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Traces.GetHashCode();
                     if (Vitamins != null)
                     hashCode = hashCode * 59 + Vitamins.GetHashCode();
-                    if (CommonNames != null)
-                    hashCode = hashCode * 59 + CommonNames.GetHashCode();
                     if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
                     if (Keywords != null)

@@ -576,7 +576,6 @@
               "chomp" : "chomp",
               "usda" : "usda"
             },
-            "common_names" : [ "common_names", "common_names" ],
             "categories" : [ "categories", "categories" ],
             "barcode" : "barcode",
             "brand" : "brand",
@@ -747,7 +746,6 @@
               "chomp" : "chomp",
               "usda" : "usda"
             },
-            "common_names" : [ "common_names", "common_names" ],
             "categories" : [ "categories", "categories" ],
             "barcode" : "barcode",
             "brand" : "brand",
@@ -1771,13 +1769,6 @@
               "type" : "string"
             }
           },
-          "common_names" : {
-            "type" : "array",
-            "description" : "An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" a common name may be \"Chicken enchilada\")",
-            "items" : {
-              "type" : "string"
-            }
-          },
           "description" : {
             "type" : "string",
             "description" : "A description of this item"
@@ -1913,7 +1904,6 @@
             "chomp" : "chomp",
             "usda" : "usda"
           },
-          "common_names" : [ "common_names", "common_names" ],
           "categories" : [ "categories", "categories" ],
           "barcode" : "barcode",
           "brand" : "brand",
