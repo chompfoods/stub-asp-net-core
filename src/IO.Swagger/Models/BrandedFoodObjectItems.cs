@@ -193,13 +193,6 @@ namespace IO.Swagger.Models
         public List<string> Keywords { get; set; }
 
         /// <summary>
-        /// Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
-        /// </summary>
-        /// <value>Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.</value>
-        [DataMember(Name="footnote")]
-        public string Footnote { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -232,7 +225,6 @@ namespace IO.Swagger.Models
             sb.Append("  Vitamins: ").Append(Vitamins).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
-            sb.Append("  Footnote: ").Append(Footnote).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -393,11 +385,6 @@ namespace IO.Swagger.Models
                     Keywords == other.Keywords ||
                     Keywords != null &&
                     Keywords.SequenceEqual(other.Keywords)
-                ) && 
-                (
-                    Footnote == other.Footnote ||
-                    Footnote != null &&
-                    Footnote.Equals(other.Footnote)
                 );
         }
 
@@ -461,8 +448,6 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Description.GetHashCode();
                     if (Keywords != null)
                     hashCode = hashCode * 59 + Keywords.GetHashCode();
-                    if (Footnote != null)
-                    hashCode = hashCode * 59 + Footnote.GetHashCode();
                 return hashCode;
             }
         }

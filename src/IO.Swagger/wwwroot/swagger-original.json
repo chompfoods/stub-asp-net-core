@@ -589,7 +589,6 @@
               "compatibility_description" : "compatibility_description"
             } ],
             "countries" : [ "countries", "countries" ],
-            "footnote" : "footnote",
             "allergens" : [ "allergens", "allergens" ],
             "calorie_conversion_factor" : {
               "carbohydrate_value" : 1.0246457001441578,
@@ -731,7 +730,6 @@
               "compatibility_description" : "compatibility_description"
             } ],
             "countries" : [ "countries", "countries" ],
-            "footnote" : "footnote",
             "allergens" : [ "allergens", "allergens" ],
             "calorie_conversion_factor" : {
               "carbohydrate_value" : 1.0246457001441578,
@@ -1638,10 +1636,6 @@
             "items" : {
               "type" : "string"
             }
-          },
-          "footnote" : {
-            "type" : "string",
-            "description" : "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall."
           }
         },
         "description" : "An object containing information for this specific item.",
@@ -1776,7 +1770,6 @@
             "compatibility_description" : "compatibility_description"
           } ],
           "countries" : [ "countries", "countries" ],
-          "footnote" : "footnote",
           "allergens" : [ "allergens", "allergens" ],
           "calorie_conversion_factor" : {
             "carbohydrate_value" : 1.0246457001441578,
