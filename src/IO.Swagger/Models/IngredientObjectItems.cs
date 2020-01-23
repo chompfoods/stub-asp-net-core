@@ -49,7 +49,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets CalorieConversionFactor
         /// </summary>
         [DataMember(Name="calorie_conversion_factor")]
-        public BrandedFoodObjectCalorieConversionFactor CalorieConversionFactor { get; set; }
+        public IngredientObjectCalorieConversionFactor CalorieConversionFactor { get; set; }
 
         /// <summary>
         /// The multiplication factor used to calculate protein from nitrogen

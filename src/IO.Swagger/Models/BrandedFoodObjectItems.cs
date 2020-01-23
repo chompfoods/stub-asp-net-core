@@ -78,19 +78,6 @@ namespace IO.Swagger.Models
         public BrandedFoodObjectNutrients Nutrients { get; set; }
 
         /// <summary>
-        /// Gets or Sets CalorieConversionFactor
-        /// </summary>
-        [DataMember(Name="calorie_conversion_factor")]
-        public BrandedFoodObjectCalorieConversionFactor CalorieConversionFactor { get; set; }
-
-        /// <summary>
-        /// The multiplication factor used to calculate protein from nitrogen
-        /// </summary>
-        /// <value>The multiplication factor used to calculate protein from nitrogen</value>
-        [DataMember(Name="protein_conversion_factor")]
-        public decimal? ProteinConversionFactor { get; set; }
-
-        /// <summary>
         /// Gets or Sets DietLabels
         /// </summary>
         [DataMember(Name="diet_labels")]
@@ -208,8 +195,6 @@ namespace IO.Swagger.Models
             sb.Append("  Serving: ").Append(Serving).Append("\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("  Nutrients: ").Append(Nutrients).Append("\n");
-            sb.Append("  CalorieConversionFactor: ").Append(CalorieConversionFactor).Append("\n");
-            sb.Append("  ProteinConversionFactor: ").Append(ProteinConversionFactor).Append("\n");
             sb.Append("  DietLabels: ").Append(DietLabels).Append("\n");
             sb.Append("  DietFlags: ").Append(DietFlags).Append("\n");
             sb.Append("  PackagingPhotos: ").Append(PackagingPhotos).Append("\n");
@@ -300,16 +285,6 @@ namespace IO.Swagger.Models
                     Nutrients == other.Nutrients ||
                     Nutrients != null &&
                     Nutrients.Equals(other.Nutrients)
-                ) && 
-                (
-                    CalorieConversionFactor == other.CalorieConversionFactor ||
-                    CalorieConversionFactor != null &&
-                    CalorieConversionFactor.Equals(other.CalorieConversionFactor)
-                ) && 
-                (
-                    ProteinConversionFactor == other.ProteinConversionFactor ||
-                    ProteinConversionFactor != null &&
-                    ProteinConversionFactor.Equals(other.ProteinConversionFactor)
                 ) && 
                 (
                     DietLabels == other.DietLabels ||
@@ -414,10 +389,6 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Categories.GetHashCode();
                     if (Nutrients != null)
                     hashCode = hashCode * 59 + Nutrients.GetHashCode();
-                    if (CalorieConversionFactor != null)
-                    hashCode = hashCode * 59 + CalorieConversionFactor.GetHashCode();
-                    if (ProteinConversionFactor != null)
-                    hashCode = hashCode * 59 + ProteinConversionFactor.GetHashCode();
                     if (DietLabels != null)
                     hashCode = hashCode * 59 + DietLabels.GetHashCode();
                     if (DietFlags != null)
