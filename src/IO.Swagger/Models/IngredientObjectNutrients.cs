@@ -21,17 +21,80 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing nutrient information from each source
+    /// An object containing information for a specific nutrient found in this food item
     /// </summary>
     [DataContract]
     public partial class IngredientObjectNutrients : IEquatable<IngredientObjectNutrients>
     { 
         /// <summary>
-        /// An array containing an object for each nutrient data point as found in the USDA database
+        /// Nutrient name
         /// </summary>
-        /// <value>An array containing an object for each nutrient data point as found in the USDA database</value>
-        [DataMember(Name="usda")]
-        public List<BrandedFoodObjectNutrientsUsda> Usda { get; set; }
+        /// <value>Nutrient name</value>
+        [DataMember(Name="name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Amount of the nutrient per 100g of food
+        /// </summary>
+        /// <value>Amount of the nutrient per 100g of food</value>
+        [DataMember(Name="per_100g")]
+        public decimal? Per100g { get; set; }
+
+        /// <summary>
+        /// The unit used for the measure of this nutrient
+        /// </summary>
+        /// <value>The unit used for the measure of this nutrient</value>
+        [DataMember(Name="measurement_unit")]
+        public string MeasurementUnit { get; set; }
+
+        /// <summary>
+        /// Minimum nutrient value
+        /// </summary>
+        /// <value>Minimum nutrient value</value>
+        [DataMember(Name="min")]
+        public decimal? Min { get; set; }
+
+        /// <summary>
+        /// Maximum nutrient value
+        /// </summary>
+        /// <value>Maximum nutrient value</value>
+        [DataMember(Name="max")]
+        public decimal? Max { get; set; }
+
+        /// <summary>
+        /// Median nutrient value
+        /// </summary>
+        /// <value>Median nutrient value</value>
+        [DataMember(Name="median")]
+        public decimal? Median { get; set; }
+
+        /// <summary>
+        /// Nutrient rank
+        /// </summary>
+        /// <value>Nutrient rank</value>
+        [DataMember(Name="rank")]
+        public int? Rank { get; set; }
+
+        /// <summary>
+        /// Number of observations on which the value is based
+        /// </summary>
+        /// <value>Number of observations on which the value is based</value>
+        [DataMember(Name="data_points")]
+        public int? DataPoints { get; set; }
+
+        /// <summary>
+        /// Comments on any unusual aspect of the food nutrient. Examples might include why a nutrient value is different than typically expected.
+        /// </summary>
+        /// <value>Comments on any unusual aspect of the food nutrient. Examples might include why a nutrient value is different than typically expected.</value>
+        [DataMember(Name="footnote")]
+        public string Footnote { get; set; }
+
+        /// <summary>
+        /// Description of the nutrient source
+        /// </summary>
+        /// <value>Description of the nutrient source</value>
+        [DataMember(Name="description")]
+        public string Description { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -41,7 +104,16 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class IngredientObjectNutrients {\n");
-            sb.Append("  Usda: ").Append(Usda).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Per100g: ").Append(Per100g).Append("\n");
+            sb.Append("  MeasurementUnit: ").Append(MeasurementUnit).Append("\n");
+            sb.Append("  Min: ").Append(Min).Append("\n");
+            sb.Append("  Max: ").Append(Max).Append("\n");
+            sb.Append("  Median: ").Append(Median).Append("\n");
+            sb.Append("  Rank: ").Append(Rank).Append("\n");
+            sb.Append("  DataPoints: ").Append(DataPoints).Append("\n");
+            sb.Append("  Footnote: ").Append(Footnote).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,9 +151,54 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Usda == other.Usda ||
-                    Usda != null &&
-                    Usda.SequenceEqual(other.Usda)
+                    Name == other.Name ||
+                    Name != null &&
+                    Name.Equals(other.Name)
+                ) && 
+                (
+                    Per100g == other.Per100g ||
+                    Per100g != null &&
+                    Per100g.Equals(other.Per100g)
+                ) && 
+                (
+                    MeasurementUnit == other.MeasurementUnit ||
+                    MeasurementUnit != null &&
+                    MeasurementUnit.Equals(other.MeasurementUnit)
+                ) && 
+                (
+                    Min == other.Min ||
+                    Min != null &&
+                    Min.Equals(other.Min)
+                ) && 
+                (
+                    Max == other.Max ||
+                    Max != null &&
+                    Max.Equals(other.Max)
+                ) && 
+                (
+                    Median == other.Median ||
+                    Median != null &&
+                    Median.Equals(other.Median)
+                ) && 
+                (
+                    Rank == other.Rank ||
+                    Rank != null &&
+                    Rank.Equals(other.Rank)
+                ) && 
+                (
+                    DataPoints == other.DataPoints ||
+                    DataPoints != null &&
+                    DataPoints.Equals(other.DataPoints)
+                ) && 
+                (
+                    Footnote == other.Footnote ||
+                    Footnote != null &&
+                    Footnote.Equals(other.Footnote)
+                ) && 
+                (
+                    Description == other.Description ||
+                    Description != null &&
+                    Description.Equals(other.Description)
                 );
         }
 
@@ -95,8 +212,26 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Usda != null)
-                    hashCode = hashCode * 59 + Usda.GetHashCode();
+                    if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                    if (Per100g != null)
+                    hashCode = hashCode * 59 + Per100g.GetHashCode();
+                    if (MeasurementUnit != null)
+                    hashCode = hashCode * 59 + MeasurementUnit.GetHashCode();
+                    if (Min != null)
+                    hashCode = hashCode * 59 + Min.GetHashCode();
+                    if (Max != null)
+                    hashCode = hashCode * 59 + Max.GetHashCode();
+                    if (Median != null)
+                    hashCode = hashCode * 59 + Median.GetHashCode();
+                    if (Rank != null)
+                    hashCode = hashCode * 59 + Rank.GetHashCode();
+                    if (DataPoints != null)
+                    hashCode = hashCode * 59 + DataPoints.GetHashCode();
+                    if (Footnote != null)
+                    hashCode = hashCode * 59 + Footnote.GetHashCode();
+                    if (Description != null)
+                    hashCode = hashCode * 59 + Description.GetHashCode();
                 return hashCode;
             }
         }

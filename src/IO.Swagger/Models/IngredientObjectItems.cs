@@ -40,10 +40,11 @@ namespace IO.Swagger.Models
         public List<string> Categories { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nutrients
+        /// An array containing nutrient informatio objects for this food item
         /// </summary>
+        /// <value>An array containing nutrient informatio objects for this food item</value>
         [DataMember(Name="nutrients")]
-        public IngredientObjectNutrients Nutrients { get; set; }
+        public List<IngredientObjectNutrients> Nutrients { get; set; }
 
         /// <summary>
         /// Gets or Sets CalorieConversionFactor
@@ -167,7 +168,7 @@ namespace IO.Swagger.Models
                 (
                     Nutrients == other.Nutrients ||
                     Nutrients != null &&
-                    Nutrients.Equals(other.Nutrients)
+                    Nutrients.SequenceEqual(other.Nutrients)
                 ) && 
                 (
                     CalorieConversionFactor == other.CalorieConversionFactor ||

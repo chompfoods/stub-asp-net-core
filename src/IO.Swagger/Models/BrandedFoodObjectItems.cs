@@ -48,10 +48,11 @@ namespace IO.Swagger.Models
         public string Brand { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ingredients
+        /// This food item&#x27;s ingredients from greatest quantity to least
         /// </summary>
+        /// <value>This food item&#x27;s ingredients from greatest quantity to least</value>
         [DataMember(Name="ingredients")]
-        public BrandedFoodObjectIngredients Ingredients { get; set; }
+        public string Ingredients { get; set; }
 
         /// <summary>
         /// Gets or Sets Package
@@ -72,10 +73,11 @@ namespace IO.Swagger.Models
         public List<string> Categories { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nutrients
+        /// An array containing nutrient informatio objects for this food item
         /// </summary>
+        /// <value>An array containing nutrient informatio objects for this food item</value>
         [DataMember(Name="nutrients")]
-        public BrandedFoodObjectNutrients Nutrients { get; set; }
+        public List<BrandedFoodObjectNutrients> Nutrients { get; set; }
 
         /// <summary>
         /// Gets or Sets DietLabels
@@ -284,7 +286,7 @@ namespace IO.Swagger.Models
                 (
                     Nutrients == other.Nutrients ||
                     Nutrients != null &&
-                    Nutrients.Equals(other.Nutrients)
+                    Nutrients.SequenceEqual(other.Nutrients)
                 ) && 
                 (
                     DietLabels == other.DietLabels ||
