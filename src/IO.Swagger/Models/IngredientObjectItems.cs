@@ -69,14 +69,14 @@ namespace IO.Swagger.Models
         /// </summary>
         /// <value>An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)</value>
         [DataMember(Name="components")]
-        public List<BrandedFoodObjectComponents> Components { get; set; }
+        public List<IngredientObjectComponents> Components { get; set; }
 
         /// <summary>
         /// An array of objects containing information on discrete amounts of a food found in this item
         /// </summary>
         /// <value>An array of objects containing information on discrete amounts of a food found in this item</value>
         [DataMember(Name="portions")]
-        public List<BrandedFoodObjectPortions> Portions { get; set; }
+        public List<IngredientObjectPortions> Portions { get; set; }
 
         /// <summary>
         /// Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)

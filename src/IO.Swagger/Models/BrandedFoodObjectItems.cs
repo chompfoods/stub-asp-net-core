@@ -110,20 +110,6 @@ namespace IO.Swagger.Models
         public BrandedFoodObjectPackagingPhotos PackagingPhotos { get; set; }
 
         /// <summary>
-        /// An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)
-        /// </summary>
-        /// <value>An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)</value>
-        [DataMember(Name="components")]
-        public List<BrandedFoodObjectComponents> Components { get; set; }
-
-        /// <summary>
-        /// An array of objects containing information on discrete amounts of a food found in this item
-        /// </summary>
-        /// <value>An array of objects containing information on discrete amounts of a food found in this item</value>
-        [DataMember(Name="portions")]
-        public List<BrandedFoodObjectPortions> Portions { get; set; }
-
-        /// <summary>
         /// An array of ingredients in this item that may cause allergic reactions in people
         /// </summary>
         /// <value>An array of ingredients in this item that may cause allergic reactions in people</value>
@@ -234,8 +220,6 @@ namespace IO.Swagger.Models
             sb.Append("  DietLabels: ").Append(DietLabels).Append("\n");
             sb.Append("  DietFlags: ").Append(DietFlags).Append("\n");
             sb.Append("  PackagingPhotos: ").Append(PackagingPhotos).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
-            sb.Append("  Portions: ").Append(Portions).Append("\n");
             sb.Append("  Allergens: ").Append(Allergens).Append("\n");
             sb.Append("  BrandList: ").Append(BrandList).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
@@ -351,16 +335,6 @@ namespace IO.Swagger.Models
                     PackagingPhotos.Equals(other.PackagingPhotos)
                 ) && 
                 (
-                    Components == other.Components ||
-                    Components != null &&
-                    Components.SequenceEqual(other.Components)
-                ) && 
-                (
-                    Portions == other.Portions ||
-                    Portions != null &&
-                    Portions.SequenceEqual(other.Portions)
-                ) && 
-                (
                     Allergens == other.Allergens ||
                     Allergens != null &&
                     Allergens.SequenceEqual(other.Allergens)
@@ -463,10 +437,6 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + DietFlags.GetHashCode();
                     if (PackagingPhotos != null)
                     hashCode = hashCode * 59 + PackagingPhotos.GetHashCode();
-                    if (Components != null)
-                    hashCode = hashCode * 59 + Components.GetHashCode();
-                    if (Portions != null)
-                    hashCode = hashCode * 59 + Portions.GetHashCode();
                     if (Allergens != null)
                     hashCode = hashCode * 59 + Allergens.GetHashCode();
                     if (BrandList != null)
