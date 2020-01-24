@@ -35,7 +35,6 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403"></response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -54,9 +53,6 @@ namespace IO.Swagger.Controllers
 
             //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(401);
-
-            //TODO: Uncomment the next line to return response 403 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(403);
 
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(404);
@@ -82,7 +78,6 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403"></response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -101,9 +96,6 @@ namespace IO.Swagger.Controllers
 
             //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(401);
-
-            //TODO: Uncomment the next line to return response 403 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(403);
 
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(404);
@@ -140,7 +132,6 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403"></response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -159,9 +150,6 @@ namespace IO.Swagger.Controllers
 
             //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(401);
-
-            //TODO: Uncomment the next line to return response 403 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(403);
 
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(404);
@@ -188,7 +176,6 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching ingredient foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403"></response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -207,9 +194,6 @@ namespace IO.Swagger.Controllers
 
             //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(401);
-
-            //TODO: Uncomment the next line to return response 403 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(403);
 
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(404);
