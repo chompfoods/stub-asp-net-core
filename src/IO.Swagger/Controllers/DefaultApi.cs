@@ -35,8 +35,8 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403">**Forbidden** - Disallowed entity. </response>
-        /// <response code="404">**Not found** - No food items exist that match your query parameters. </response>
+        /// <response code="403"></response>
+        /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
         [Route("/api/v2/food/branded/barcode.php")]
@@ -82,8 +82,8 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403">**Forbidden** - Disallowed entity. </response>
-        /// <response code="404">**Not found** - No food items exist that match your query parameters. </response>
+        /// <response code="403"></response>
+        /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
         [Route("/api/v2/food/branded/name.php")]
@@ -140,8 +140,8 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403">**Forbidden** - Disallowed entity. </response>
-        /// <response code="404">**Not found** - No food items exist that match your query parameters. </response>
+        /// <response code="403"></response>
+        /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
         [Route("/api/v2/food/branded/search.php")]
@@ -188,8 +188,8 @@ namespace IO.Swagger.Controllers
         /// <response code="200">**Valid** - Will return an object containing any matching ingredient foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
-        /// <response code="403">**Forbidden** - Disallowed entity. </response>
-        /// <response code="404">**Not found** - No food items exist that match your query parameters. </response>
+        /// <response code="403"></response>
+        /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
         [Route("/api/v2/food/ingredient/search.php")]

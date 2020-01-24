@@ -43,10 +43,10 @@
             "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "**Forbidden** - Disallowed entity.\n"
+            "$ref" : "#/components/responses/403Error"
           },
           "404" : {
-            "description" : "**Not found** - No food items exist that match your query parameters.\n"
+            "description" : "**Not found** - No food items were found.\n"
           },
           "500" : {
             "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
@@ -111,10 +111,10 @@
             "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "**Forbidden** - Disallowed entity.\n"
+            "$ref" : "#/components/responses/403Error"
           },
           "404" : {
-            "description" : "**Not found** - No food items exist that match your query parameters.\n"
+            "description" : "**Not found** - No food items were found.\n"
           },
           "500" : {
             "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
@@ -290,10 +290,10 @@
             "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "**Forbidden** - Disallowed entity.\n"
+            "$ref" : "#/components/responses/403Error"
           },
           "404" : {
-            "description" : "**Not found** - No food items exist that match your query parameters.\n"
+            "description" : "**Not found** - No food items were found.\n"
           },
           "500" : {
             "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
@@ -370,10 +370,10 @@
             "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
           },
           "403" : {
-            "description" : "**Forbidden** - Disallowed entity.\n"
+            "$ref" : "#/components/responses/403Error"
           },
           "404" : {
-            "description" : "**Not found** - No food items exist that match your query parameters.\n"
+            "description" : "**Not found** - No food items were found.\n"
           },
           "500" : {
             "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
@@ -1732,11 +1732,8 @@
       "401Error" : {
         "description" : "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
       },
-      "403Error" : {
-        "description" : "**Forbidden** - Disallowed entity.\n"
-      },
       "404Error" : {
-        "description" : "**Not found** - No food items exist that match your query parameters.\n"
+        "description" : "**Not found** - No food items were found.\n"
       },
       "500Error" : {
         "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
