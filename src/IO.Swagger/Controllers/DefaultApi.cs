@@ -34,7 +34,7 @@ namespace IO.Swagger.Controllers
         /// <param name="code">#### UPC/EAN barcode  **Example** &gt; &#x60;&#x60;&#x60;&amp;code&#x3D;0842234000988&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
-        /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -77,7 +77,7 @@ namespace IO.Swagger.Controllers
         /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
-        /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -131,7 +131,7 @@ namespace IO.Swagger.Controllers
         /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
-        /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
@@ -175,7 +175,7 @@ namespace IO.Swagger.Controllers
         /// <param name="limit">#### Set maximum number of records you want the API to return, per search term.  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;3&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching ingredient foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
-        /// <response code="401">**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
         /// <response code="404">**Not found** - No food items were found. </response>
         /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
         [HttpGet]
