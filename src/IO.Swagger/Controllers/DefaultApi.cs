@@ -183,7 +183,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("FoodIngredientSearchPhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(IngredientObject), description: "**Valid** - Will return an object containing any matching ingredient foods.  ")]
-        public virtual IActionResult FoodIngredientSearchPhpGet([FromQuery][Required()]int? find, [FromQuery]bool? raw, [FromQuery]int? limit)
+        public virtual IActionResult FoodIngredientSearchPhpGet([FromQuery][Required()]string find, [FromQuery]bool? raw, [FromQuery]int? limit)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(IngredientObject));
