@@ -71,7 +71,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "#### Set maximum number of records you want the API to return.\n\n**Example**\n> ```&limit=10```\n",
+          "description" : "#### Set maximum number of records you want the API to return. The default value is \"**10**.\"\n\n**Example**\n> ```&limit=10```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -82,7 +82,7 @@
         }, {
           "name" : "page",
           "in" : "query",
-          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n**Example**\n> ```&page=1```\n",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is \"**1**.\"\n\n**Example**\n> ```&page=1```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -247,7 +247,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "#### Set maximum number of records you want the API to return.\n\n**Example**\n> ```&limit=10```\n",
+          "description" : "#### Set maximum number of records you want the API to return. The default value is \"**10**.\"\n\n**Example**\n> ```&limit=10```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -258,7 +258,7 @@
         }, {
           "name" : "page",
           "in" : "query",
-          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on.\n\n**Example**\n> ```&page=1```\n",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is \"**1**.\"\n\n**Example**\n> ```&page=1```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -312,7 +312,7 @@
         }, {
           "name" : "raw",
           "in" : "query",
-          "description" : "#### Optionally filter the search result to only include raw ingredients.\n\n**Example**\n> ```&raw=true```\n",
+          "description" : "#### Optionally filter the search result to only include raw ingredients. The default value is \"**false**.\"\n\n**Example**\n> ```&raw=true```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -323,7 +323,7 @@
         }, {
           "name" : "limit",
           "in" : "query",
-          "description" : "#### Set maximum number of records you want the API to return, per search term.\n\n**Example**\n> ```&limit=3```\n",
+          "description" : "#### Set maximum number of records you want the API to return, per search term. The default value is \"**1**.\"\n\n**Example**\n> ```&limit=3```\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
