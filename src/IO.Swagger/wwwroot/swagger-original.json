@@ -298,27 +298,16 @@
     "/food/ingredient/search.php" : {
       "get" : {
         "summary" : "Get raw/generic food ingredient item(s)",
-        "description" : "## Get data for a specific ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli&raw=true```\n\n**Example #2: Set of Ingredients**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli,cauliflower,spinach&list=true&raw=true```\n\n**Tips**\n  * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
+        "description" : "## Get data for a specific ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli```\n\n**Example #2: Set of Ingredients**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=broccoli,cauliflower,spinach```\n\n**Tips**\n  * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "find",
           "in" : "query",
-          "description" : "Search our database for a single ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```&find=broccoli```\n\n**Example #2: Set of Ingredients**\n> ```&find=broccoli,cauliflower,spinach&list=true```\n\n**Important Notes** \n  * Set the \"list\" parameter to \"true\" before passing in a comma-separated list of ingredients.\n  * Comma-separated lists cannot contain more than **15 ingredients**. You must perform additional API calls if you are looking up more than 15 ingredients.\n",
+          "description" : "Search our database for a single ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```&find=broccoli```\n\n**Example #2: Set of Ingredients**\n> ```&find=broccoli,cauliflower,spinach```\n\n**Important Notes** \n  * Comma-separated lists cannot contain more than **15 ingredients**. You must perform additional API calls if you are looking up more than 15 ingredients.\n",
           "required" : true,
           "style" : "form",
           "explode" : true,
           "schema" : {
             "type" : "integer"
-          }
-        }, {
-          "name" : "list",
-          "in" : "query",
-          "description" : "#### Setting ```&list=true``` will configure this endpoint to allow searching for ingredients using a comma-separated list. By default, this endpoint will **only** return results for the first ingredient.\n\n**Example**\n> ```&list=true```\n",
-          "required" : true,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "boolean",
-            "enum" : [ true, false ]
           }
         }, {
           "name" : "raw",
