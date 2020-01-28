@@ -606,31 +606,7 @@
               "name" : "name",
               "is_refuse" : true
             } ],
-            "diet_labels" : {
-              "vegetarian" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 9,
-                "name" : "name",
-                "compatibility_level" : 7,
-                "is_compatible" : true
-              },
-              "vegan" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 2,
-                "name" : "name",
-                "compatibility_level" : 5,
-                "is_compatible" : true
-              },
-              "gluten_free" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 2,
-                "name" : "name",
-                "compatibility_level" : 3,
-                "is_compatible" : true
-              }
-            },
             "name" : "name",
-            "description" : "description",
             "categories" : [ "categories", "categories" ],
             "footnote" : "footnote",
             "common_name" : "common_name",
@@ -692,31 +668,7 @@
               "name" : "name",
               "is_refuse" : true
             } ],
-            "diet_labels" : {
-              "vegetarian" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 9,
-                "name" : "name",
-                "compatibility_level" : 7,
-                "is_compatible" : true
-              },
-              "vegan" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 2,
-                "name" : "name",
-                "compatibility_level" : 5,
-                "is_compatible" : true
-              },
-              "gluten_free" : {
-                "confidence_description" : "confidence_description",
-                "confidence" : 2,
-                "name" : "name",
-                "compatibility_level" : 3,
-                "is_compatible" : true
-              }
-            },
             "name" : "name",
-            "description" : "description",
             "categories" : [ "categories", "categories" ],
             "footnote" : "footnote",
             "common_name" : "common_name",
@@ -1551,9 +1503,6 @@
             "type" : "number",
             "description" : "The multiplication factor used to calculate protein from nitrogen"
           },
-          "diet_labels" : {
-            "$ref" : "#/components/schemas/BrandedFoodObject_diet_labels"
-          },
           "components" : {
             "type" : "array",
             "description" : "An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)",
@@ -1571,10 +1520,6 @@
           "common_name" : {
             "type" : "string",
             "description" : "Common name associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")"
-          },
-          "description" : {
-            "type" : "string",
-            "description" : "A description of this item"
           },
           "footnote" : {
             "type" : "string",
@@ -1602,31 +1547,7 @@
             "name" : "name",
             "is_refuse" : true
           } ],
-          "diet_labels" : {
-            "vegetarian" : {
-              "confidence_description" : "confidence_description",
-              "confidence" : 9,
-              "name" : "name",
-              "compatibility_level" : 7,
-              "is_compatible" : true
-            },
-            "vegan" : {
-              "confidence_description" : "confidence_description",
-              "confidence" : 2,
-              "name" : "name",
-              "compatibility_level" : 5,
-              "is_compatible" : true
-            },
-            "gluten_free" : {
-              "confidence_description" : "confidence_description",
-              "confidence" : 2,
-              "name" : "name",
-              "compatibility_level" : 3,
-              "is_compatible" : true
-            }
-          },
           "name" : "name",
-          "description" : "description",
           "categories" : [ "categories", "categories" ],
           "footnote" : "footnote",
           "common_name" : "common_name",

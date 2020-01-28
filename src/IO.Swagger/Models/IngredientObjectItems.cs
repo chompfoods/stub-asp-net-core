@@ -60,12 +60,6 @@ namespace IO.Swagger.Models
         public decimal? ProteinConversionFactor { get; set; }
 
         /// <summary>
-        /// Gets or Sets DietLabels
-        /// </summary>
-        [DataMember(Name="diet_labels")]
-        public BrandedFoodObjectDietLabels DietLabels { get; set; }
-
-        /// <summary>
         /// An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)
         /// </summary>
         /// <value>An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)</value>
@@ -87,13 +81,6 @@ namespace IO.Swagger.Models
         public string CommonName { get; set; }
 
         /// <summary>
-        /// A description of this item
-        /// </summary>
-        /// <value>A description of this item</value>
-        [DataMember(Name="description")]
-        public string Description { get; set; }
-
-        /// <summary>
         /// Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
         /// </summary>
         /// <value>Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.</value>
@@ -113,11 +100,9 @@ namespace IO.Swagger.Models
             sb.Append("  Nutrients: ").Append(Nutrients).Append("\n");
             sb.Append("  CalorieConversionFactor: ").Append(CalorieConversionFactor).Append("\n");
             sb.Append("  ProteinConversionFactor: ").Append(ProteinConversionFactor).Append("\n");
-            sb.Append("  DietLabels: ").Append(DietLabels).Append("\n");
             sb.Append("  Components: ").Append(Components).Append("\n");
             sb.Append("  Portions: ").Append(Portions).Append("\n");
             sb.Append("  CommonName: ").Append(CommonName).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Footnote: ").Append(Footnote).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -181,11 +166,6 @@ namespace IO.Swagger.Models
                     ProteinConversionFactor.Equals(other.ProteinConversionFactor)
                 ) && 
                 (
-                    DietLabels == other.DietLabels ||
-                    DietLabels != null &&
-                    DietLabels.Equals(other.DietLabels)
-                ) && 
-                (
                     Components == other.Components ||
                     Components != null &&
                     Components.SequenceEqual(other.Components)
@@ -199,11 +179,6 @@ namespace IO.Swagger.Models
                     CommonName == other.CommonName ||
                     CommonName != null &&
                     CommonName.Equals(other.CommonName)
-                ) && 
-                (
-                    Description == other.Description ||
-                    Description != null &&
-                    Description.Equals(other.Description)
                 ) && 
                 (
                     Footnote == other.Footnote ||
@@ -232,16 +207,12 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + CalorieConversionFactor.GetHashCode();
                     if (ProteinConversionFactor != null)
                     hashCode = hashCode * 59 + ProteinConversionFactor.GetHashCode();
-                    if (DietLabels != null)
-                    hashCode = hashCode * 59 + DietLabels.GetHashCode();
                     if (Components != null)
                     hashCode = hashCode * 59 + Components.GetHashCode();
                     if (Portions != null)
                     hashCode = hashCode * 59 + Portions.GetHashCode();
                     if (CommonName != null)
                     hashCode = hashCode * 59 + CommonName.GetHashCode();
-                    if (Description != null)
-                    hashCode = hashCode * 59 + Description.GetHashCode();
                     if (Footnote != null)
                     hashCode = hashCode * 59 + Footnote.GetHashCode();
                 return hashCode;
