@@ -88,6 +88,20 @@ namespace IO.Swagger.Models
         public string Footnote { get; set; }
 
         /// <summary>
+        /// The original search term that found this food item.
+        /// </summary>
+        /// <value>The original search term that found this food item.</value>
+        [DataMember(Name="search_term")]
+        public string SearchTerm { get; set; }
+
+        /// <summary>
+        /// A value that represents how similar the name of this food item is to the original search term.
+        /// </summary>
+        /// <value>A value that represents how similar the name of this food item is to the original search term.</value>
+        [DataMember(Name="score")]
+        public string Score { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +118,8 @@ namespace IO.Swagger.Models
             sb.Append("  Portions: ").Append(Portions).Append("\n");
             sb.Append("  CommonName: ").Append(CommonName).Append("\n");
             sb.Append("  Footnote: ").Append(Footnote).Append("\n");
+            sb.Append("  SearchTerm: ").Append(SearchTerm).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +200,16 @@ namespace IO.Swagger.Models
                     Footnote == other.Footnote ||
                     Footnote != null &&
                     Footnote.Equals(other.Footnote)
+                ) && 
+                (
+                    SearchTerm == other.SearchTerm ||
+                    SearchTerm != null &&
+                    SearchTerm.Equals(other.SearchTerm)
+                ) && 
+                (
+                    Score == other.Score ||
+                    Score != null &&
+                    Score.Equals(other.Score)
                 );
         }
 
@@ -215,6 +241,10 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + CommonName.GetHashCode();
                     if (Footnote != null)
                     hashCode = hashCode * 59 + Footnote.GetHashCode();
+                    if (SearchTerm != null)
+                    hashCode = hashCode * 59 + SearchTerm.GetHashCode();
+                    if (Score != null)
+                    hashCode = hashCode * 59 + Score.GetHashCode();
                 return hashCode;
             }
         }
