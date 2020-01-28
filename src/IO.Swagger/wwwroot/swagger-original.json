@@ -1527,15 +1527,15 @@
           },
           "footnote" : {
             "type" : "string",
-            "description" : "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall."
+            "description" : "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall"
           },
           "search_term" : {
             "type" : "string",
-            "description" : "The original search term that found this food item."
+            "description" : "The original search term that found this food item"
           },
           "score" : {
             "type" : "string",
-            "description" : "A value that represents how similar the name of this food item is to the original search term."
+            "description" : "A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term."
           }
         },
         "description" : "An object containing information for this specific item.",
