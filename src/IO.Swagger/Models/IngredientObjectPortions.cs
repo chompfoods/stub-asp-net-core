@@ -1,7 +1,7 @@
 /*
  * Chomp Food Database API Documentation
  *
- * __Important:__   - An __[API key](https://chompthis.com/api/)__ is required for access to this API.   - Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.  - -- --  __Getting Started:__   - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.   - Scroll down and click the \"__Authorize__\" button.   - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.   - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.   - Click the \"__Try it out__\" button.   - Enter the information the endpoint requires.   - Click the \"__Execute__\" button.  __Example:__    - __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/response-object.json)__ API response object.  - -- --  __How Do I Find My API Key?__   - Your API key was sent to the email address you used to create your subscription.   - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.   - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._  ||| | - -- -- -- | - -- -- -- - | | [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) | | [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) | | [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) | | [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) | | [Client Center](https://chompthis.com/api/manage.php) | | 
+ * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.  ### Getting Started   * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Subscription Options &raquo;](https://chompthis.com/api/)     * [Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
  *
  * OpenAPI spec version: 1.0.0-oas3
  * 
@@ -24,7 +24,7 @@ namespace IO.Swagger.Models
     /// An object containing information on a specific food portion found in this item
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPortions : IEquatable<BrandedFoodObjectPortions>
+    public partial class IngredientObjectPortions : IEquatable<IngredientObjectPortions>
     { 
         /// <summary>
         /// The unit used for measure (e.g. if mesure is 3 tsp, the unit is tsp)
@@ -75,7 +75,7 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPortions {\n");
+            sb.Append("class IngredientObjectPortions {\n");
             sb.Append("  MeasurementUnit: ").Append(MeasurementUnit).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Modifier: ").Append(Modifier).Append("\n");
@@ -104,15 +104,15 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPortions)obj);
+            return obj.GetType() == GetType() && Equals((IngredientObjectPortions)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPortions instances are equal
+        /// Returns true if IngredientObjectPortions instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPortions to be compared</param>
+        /// <param name="other">Instance of IngredientObjectPortions to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPortions other)
+        public bool Equals(IngredientObjectPortions other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -179,12 +179,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPortions left, BrandedFoodObjectPortions right)
+        public static bool operator ==(IngredientObjectPortions left, IngredientObjectPortions right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPortions left, BrandedFoodObjectPortions right)
+        public static bool operator !=(IngredientObjectPortions left, IngredientObjectPortions right)
         {
             return !Equals(left, right);
         }

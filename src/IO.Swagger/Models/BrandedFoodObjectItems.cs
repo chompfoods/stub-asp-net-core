@@ -1,7 +1,7 @@
 /*
  * Chomp Food Database API Documentation
  *
- * __Important:__   - An __[API key](https://chompthis.com/api/)__ is required for access to this API.   - Get yours at __[https://chompthis.com/api](https://chompthis.com/api/)__.  - -- --  __Getting Started:__   - __[Subscribe](https://chompthis.com/api/#pricing)__ to the API.   - Scroll down and click the \"__Authorize__\" button.   - Enter your API key into the \"__value__\" input, click the \"__Authorize__\" button, then click the \"__Close__\" button.   - Scroll down to the section titled \"__default__\" and click on the API endpoint you wish to use.   - Click the \"__Try it out__\" button.   - Enter the information the endpoint requires.   - Click the \"__Execute__\" button.  __Example:__    - __[View example](https://raw.githubusercontent.com/chompfoods/examples/master/response-object.json)__ API response object.  - -- --  __How Do I Find My API Key?__   - Your API key was sent to the email address you used to create your subscription.   - You will also find your API key in the __[Client Center](https://chompthis.com/api/manage.php)__.   - _Read __[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)__ for more information._  ||| | - -- -- -- | - -- -- -- - | | [Knowledge Base](https://desk.zoho.com/portal/chompthis/kb/chomp) | [Pricing](https://chompthis.com/api/) | | [Attribution](https://chompthis.com/api/docs/attribution.php) | [Cost Calculator](https://chompthis.com/api/cost-calculator.php) | | [Terms & License](https://chompthis.com/api/terms.php) | [Database Search](https://chompthis.com/api/lookup.php) | | [Support](https://chompthis.com/api/ticket-new.php) | [Query Builder](https://chompthis.com/api/build.php) | | [Client Center](https://chompthis.com/api/manage.php) | | 
+ * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.  ### Getting Started   * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Subscription Options &raquo;](https://chompthis.com/api/)     * [Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
  *
  * OpenAPI spec version: 1.0.0-oas3
  * 
@@ -48,9 +48,9 @@ namespace IO.Swagger.Models
         public string Brand { get; set; }
 
         /// <summary>
-        /// Ingredients in order of highest value to least
+        /// This food item&#x27;s ingredients from greatest quantity to least
         /// </summary>
-        /// <value>Ingredients in order of highest value to least</value>
+        /// <value>This food item&#x27;s ingredients from greatest quantity to least</value>
         [DataMember(Name="ingredients")]
         public string Ingredients { get; set; }
 
@@ -73,23 +73,11 @@ namespace IO.Swagger.Models
         public List<string> Categories { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nutrients
+        /// An array containing nutrient informatio objects for this food item
         /// </summary>
+        /// <value>An array containing nutrient informatio objects for this food item</value>
         [DataMember(Name="nutrients")]
-        public BrandedFoodObjectNutrients Nutrients { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CalorieConversionFactor
-        /// </summary>
-        [DataMember(Name="calorie_conversion_factor")]
-        public BrandedFoodObjectCalorieConversionFactor CalorieConversionFactor { get; set; }
-
-        /// <summary>
-        /// The multiplication factor used to calculate protein from nitrogen
-        /// </summary>
-        /// <value>The multiplication factor used to calculate protein from nitrogen</value>
-        [DataMember(Name="protein_conversion_factor")]
-        public decimal? ProteinConversionFactor { get; set; }
+        public List<BrandedFoodObjectNutrients> Nutrients { get; set; }
 
         /// <summary>
         /// Gets or Sets DietLabels
@@ -109,20 +97,6 @@ namespace IO.Swagger.Models
         /// </summary>
         [DataMember(Name="packaging_photos")]
         public BrandedFoodObjectPackagingPhotos PackagingPhotos { get; set; }
-
-        /// <summary>
-        /// An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)
-        /// </summary>
-        /// <value>An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)</value>
-        [DataMember(Name="components")]
-        public List<BrandedFoodObjectComponents> Components { get; set; }
-
-        /// <summary>
-        /// An array of objects containing information on discrete amounts of a food found in this item
-        /// </summary>
-        /// <value>An array of objects containing information on discrete amounts of a food found in this item</value>
-        [DataMember(Name="portions")]
-        public List<BrandedFoodObjectPortions> Portions { get; set; }
 
         /// <summary>
         /// An array of ingredients in this item that may cause allergic reactions in people
@@ -187,11 +161,11 @@ namespace IO.Swagger.Models
         public List<string> Traces { get; set; }
 
         /// <summary>
-        /// Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)
+        /// An array of vitamins that are found in this item
         /// </summary>
-        /// <value>Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)</value>
-        [DataMember(Name="common_name")]
-        public string CommonName { get; set; }
+        /// <value>An array of vitamins that are found in this item</value>
+        [DataMember(Name="vitamins")]
+        public List<string> Vitamins { get; set; }
 
         /// <summary>
         /// A description of this item
@@ -206,13 +180,6 @@ namespace IO.Swagger.Models
         /// <value>An array of keywords that can be used to describe this item</value>
         [DataMember(Name="keywords")]
         public List<string> Keywords { get; set; }
-
-        /// <summary>
-        /// Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
-        /// </summary>
-        /// <value>Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.</value>
-        [DataMember(Name="footnote")]
-        public string Footnote { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -230,13 +197,9 @@ namespace IO.Swagger.Models
             sb.Append("  Serving: ").Append(Serving).Append("\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("  Nutrients: ").Append(Nutrients).Append("\n");
-            sb.Append("  CalorieConversionFactor: ").Append(CalorieConversionFactor).Append("\n");
-            sb.Append("  ProteinConversionFactor: ").Append(ProteinConversionFactor).Append("\n");
             sb.Append("  DietLabels: ").Append(DietLabels).Append("\n");
             sb.Append("  DietFlags: ").Append(DietFlags).Append("\n");
             sb.Append("  PackagingPhotos: ").Append(PackagingPhotos).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
-            sb.Append("  Portions: ").Append(Portions).Append("\n");
             sb.Append("  Allergens: ").Append(Allergens).Append("\n");
             sb.Append("  BrandList: ").Append(BrandList).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
@@ -246,10 +209,9 @@ namespace IO.Swagger.Models
             sb.Append("  HasEnglishIngredients: ").Append(HasEnglishIngredients).Append("\n");
             sb.Append("  Minerals: ").Append(Minerals).Append("\n");
             sb.Append("  Traces: ").Append(Traces).Append("\n");
-            sb.Append("  CommonName: ").Append(CommonName).Append("\n");
+            sb.Append("  Vitamins: ").Append(Vitamins).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
-            sb.Append("  Footnote: ").Append(Footnote).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -324,17 +286,7 @@ namespace IO.Swagger.Models
                 (
                     Nutrients == other.Nutrients ||
                     Nutrients != null &&
-                    Nutrients.Equals(other.Nutrients)
-                ) && 
-                (
-                    CalorieConversionFactor == other.CalorieConversionFactor ||
-                    CalorieConversionFactor != null &&
-                    CalorieConversionFactor.Equals(other.CalorieConversionFactor)
-                ) && 
-                (
-                    ProteinConversionFactor == other.ProteinConversionFactor ||
-                    ProteinConversionFactor != null &&
-                    ProteinConversionFactor.Equals(other.ProteinConversionFactor)
+                    Nutrients.SequenceEqual(other.Nutrients)
                 ) && 
                 (
                     DietLabels == other.DietLabels ||
@@ -350,16 +302,6 @@ namespace IO.Swagger.Models
                     PackagingPhotos == other.PackagingPhotos ||
                     PackagingPhotos != null &&
                     PackagingPhotos.Equals(other.PackagingPhotos)
-                ) && 
-                (
-                    Components == other.Components ||
-                    Components != null &&
-                    Components.SequenceEqual(other.Components)
-                ) && 
-                (
-                    Portions == other.Portions ||
-                    Portions != null &&
-                    Portions.SequenceEqual(other.Portions)
                 ) && 
                 (
                     Allergens == other.Allergens ||
@@ -407,9 +349,9 @@ namespace IO.Swagger.Models
                     Traces.SequenceEqual(other.Traces)
                 ) && 
                 (
-                    CommonName == other.CommonName ||
-                    CommonName != null &&
-                    CommonName.Equals(other.CommonName)
+                    Vitamins == other.Vitamins ||
+                    Vitamins != null &&
+                    Vitamins.SequenceEqual(other.Vitamins)
                 ) && 
                 (
                     Description == other.Description ||
@@ -420,11 +362,6 @@ namespace IO.Swagger.Models
                     Keywords == other.Keywords ||
                     Keywords != null &&
                     Keywords.SequenceEqual(other.Keywords)
-                ) && 
-                (
-                    Footnote == other.Footnote ||
-                    Footnote != null &&
-                    Footnote.Equals(other.Footnote)
                 );
         }
 
@@ -454,20 +391,12 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Categories.GetHashCode();
                     if (Nutrients != null)
                     hashCode = hashCode * 59 + Nutrients.GetHashCode();
-                    if (CalorieConversionFactor != null)
-                    hashCode = hashCode * 59 + CalorieConversionFactor.GetHashCode();
-                    if (ProteinConversionFactor != null)
-                    hashCode = hashCode * 59 + ProteinConversionFactor.GetHashCode();
                     if (DietLabels != null)
                     hashCode = hashCode * 59 + DietLabels.GetHashCode();
                     if (DietFlags != null)
                     hashCode = hashCode * 59 + DietFlags.GetHashCode();
                     if (PackagingPhotos != null)
                     hashCode = hashCode * 59 + PackagingPhotos.GetHashCode();
-                    if (Components != null)
-                    hashCode = hashCode * 59 + Components.GetHashCode();
-                    if (Portions != null)
-                    hashCode = hashCode * 59 + Portions.GetHashCode();
                     if (Allergens != null)
                     hashCode = hashCode * 59 + Allergens.GetHashCode();
                     if (BrandList != null)
@@ -486,14 +415,12 @@ namespace IO.Swagger.Models
                     hashCode = hashCode * 59 + Minerals.GetHashCode();
                     if (Traces != null)
                     hashCode = hashCode * 59 + Traces.GetHashCode();
-                    if (CommonName != null)
-                    hashCode = hashCode * 59 + CommonName.GetHashCode();
+                    if (Vitamins != null)
+                    hashCode = hashCode * 59 + Vitamins.GetHashCode();
                     if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
                     if (Keywords != null)
                     hashCode = hashCode * 59 + Keywords.GetHashCode();
-                    if (Footnote != null)
-                    hashCode = hashCode * 59 + Footnote.GetHashCode();
                 return hashCode;
             }
         }
