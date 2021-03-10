@@ -21,31 +21,45 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// An object containing nutrient information for this recipe
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObjectNutrients : IEquatable<RecipeObjectNutrients>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// An array containing information for calories found in this recipe
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="small")]
-        public string Small { get; set; }
+        /// <value>An array containing information for calories found in this recipe</value>
+        [DataMember(Name="calories")]
+        public List<RecipeObjectNutrientsCalories> Calories { get; set; }
 
         /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
+        /// An array containing information for this recipe&#x27;s daily recommended value of certain nutrients
         /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
+        /// <value>An array containing information for this recipe&#x27;s daily recommended value of certain nutrients</value>
+        [DataMember(Name="daily_values")]
+        public List<RecipeObjectNutrientsCalories> DailyValues { get; set; }
 
         /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
+        /// An array containing information for fat found in this recipe
         /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>An array containing information for fat found in this recipe</value>
+        [DataMember(Name="fat")]
+        public List<RecipeObjectNutrientsCalories> Fat { get; set; }
+
+        /// <summary>
+        /// An array containing information for carbs found in this recipe
+        /// </summary>
+        /// <value>An array containing information for carbs found in this recipe</value>
+        [DataMember(Name="carbs")]
+        public List<RecipeObjectNutrientsCalories> Carbs { get; set; }
+
+        /// <summary>
+        /// An array containing information for vitamins found in this recipe
+        /// </summary>
+        /// <value>An array containing information for vitamins found in this recipe</value>
+        [DataMember(Name="vitamins")]
+        public List<RecipeObjectNutrientsCalories> Vitamins { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +68,12 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
-            sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("class RecipeObjectNutrients {\n");
+            sb.Append("  Calories: ").Append(Calories).Append("\n");
+            sb.Append("  DailyValues: ").Append(DailyValues).Append("\n");
+            sb.Append("  Fat: ").Append(Fat).Append("\n");
+            sb.Append("  Carbs: ").Append(Carbs).Append("\n");
+            sb.Append("  Vitamins: ").Append(Vitamins).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +96,44 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObjectNutrients)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObjectNutrients instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObjectNutrients to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObjectNutrients other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Small == other.Small ||
-                    Small != null &&
-                    Small.Equals(other.Small)
+                    Calories == other.Calories ||
+                    Calories != null &&
+                    Calories.SequenceEqual(other.Calories)
                 ) && 
                 (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
+                    DailyValues == other.DailyValues ||
+                    DailyValues != null &&
+                    DailyValues.SequenceEqual(other.DailyValues)
                 ) && 
                 (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    Fat == other.Fat ||
+                    Fat != null &&
+                    Fat.SequenceEqual(other.Fat)
+                ) && 
+                (
+                    Carbs == other.Carbs ||
+                    Carbs != null &&
+                    Carbs.SequenceEqual(other.Carbs)
+                ) && 
+                (
+                    Vitamins == other.Vitamins ||
+                    Vitamins != null &&
+                    Vitamins.SequenceEqual(other.Vitamins)
                 );
         }
 
@@ -121,12 +147,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Small != null)
-                    hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (Calories != null)
+                    hashCode = hashCode * 59 + Calories.GetHashCode();
+                    if (DailyValues != null)
+                    hashCode = hashCode * 59 + DailyValues.GetHashCode();
+                    if (Fat != null)
+                    hashCode = hashCode * 59 + Fat.GetHashCode();
+                    if (Carbs != null)
+                    hashCode = hashCode * 59 + Carbs.GetHashCode();
+                    if (Vitamins != null)
+                    hashCode = hashCode * 59 + Vitamins.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +164,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObjectNutrients left, RecipeObjectNutrients right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObjectNutrients left, RecipeObjectNutrients right)
         {
             return !Equals(left, right);
         }

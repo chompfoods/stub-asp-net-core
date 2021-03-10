@@ -1,7 +1,7 @@
 /*
- * Chomp Food Database API Documentation
+ * Chomp Food & Recipe Database API Documentation
  *
- * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.  ### Getting Started   * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Subscription Options &raquo;](https://chompthis.com/api/)     * [Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
+ * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. * Get a **Food Data API** key at **[https://chompthis.com/api](https://chompthis.com/api/)**. * Get a **Recipe Data API** key at **[https://chompthis.com/api/recipes](https://chompthis.com/api/recipes/)**.  ### Getting Started   * Subscribe to the **[Food Data API](https://chompthis.com/api/#pricing)** or the **[Recipe Data API](https://chompthis.com/api/recipes/#pricing)**.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Recipe response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/example-recipe-response.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### I'm a Premium subscriber. How do I access the API?   * All Premium subscribers must pass in a unique user ID for each user on their platform that is accessing data from the Chomp API. A user ID can be any string of letters and numbers that you assign to your user. Simply add \"user_id\" as a URL parameter when calling the API. *You must add a \"user_id\" URL parameter to every call you make to ANY endpoint.*     * **Example**        > ```ENDPOINT.php?api_key=API_KEY&code=CODE&user_id=USER_ID```  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Food Data API Subscription Options &raquo;](https://chompthis.com/api/)     * [Recipe Data API Subscription Options &raquo;](https://chompthis.com/api/recipes/)     * [Food Data API Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)     * [Recipe Data API Cost Calculator &raquo;](https://chompthis.com/api/recipes/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
  *
  * OpenAPI spec version: 1.0.0-oas3
  * 
@@ -9,19 +9,20 @@
  */
 using System;
 using System.IO;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using IO.Swagger.Filters;
 using IO.Swagger.Security;
-
-using Microsoft.AspNetCore.Authentication;
 
 namespace IO.Swagger
 {
@@ -30,7 +31,7 @@ namespace IO.Swagger
     /// </summary>
     public class Startup
     {
-        private readonly IHostingEnvironment _hostingEnv;
+        private readonly IWebHostEnvironment _hostingEnv;
 
         private IConfiguration Configuration { get; }
 
@@ -39,7 +40,7 @@ namespace IO.Swagger
         /// </summary>
         /// <param name="env"></param>
         /// <param name="configuration"></param>
-        public Startup(IHostingEnvironment env, IConfiguration configuration)
+        public Startup(IWebHostEnvironment env, IConfiguration configuration)
         {
             _hostingEnv = env;
             Configuration = configuration;
@@ -53,13 +54,15 @@ namespace IO.Swagger
         {
             // Add framework services.
             services
-                .AddMvc()
-                .AddJsonOptions(opts =>
+                .AddMvc(options =>
+                {
+                    options.InputFormatters.RemoveType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter>();
+                    options.OutputFormatters.RemoveType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter>();
+                })
+                .AddNewtonsoftJson(opts =>
                 {
                     opts.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                    opts.SerializerSettings.Converters.Add(new StringEnumConverter {
-                        CamelCaseText = true
-                    });
+                    opts.SerializerSettings.Converters.Add(new StringEnumConverter(new CamelCaseNamingStrategy()));
                 })
                 .AddXmlSerializerFormatters();
 
@@ -70,21 +73,20 @@ namespace IO.Swagger
             services
                 .AddSwaggerGen(c =>
                 {
-                    c.SwaggerDoc("1.0.0-oas3", new Info
+                    c.SwaggerDoc("1.0.0-oas3", new OpenApiInfo
                     {
                         Version = "1.0.0-oas3",
-                        Title = "Chomp Food Database API Documentation",
-                        Description = "Chomp Food Database API Documentation (ASP.NET Core 2.0)",
-                        Contact = new Contact()
+                        Title = "Chomp Food & Recipe Database API Documentation",
+                        Description = "Chomp Food & Recipe Database API Documentation (ASP.NET Core 3.1)",
+                        Contact = new OpenApiContact()
                         {
                            Name = "Swagger Codegen Contributors",
-                           Url = "https://github.com/swagger-api/swagger-codegen",
+                           Url = new Uri("https://github.com/swagger-api/swagger-codegen"),
                            Email = ""
                         },
-                        TermsOfService = ""
+                        TermsOfService = new Uri("")
                     });
-                    c.CustomSchemaIds(type => type.FriendlyId(true));
-                    c.DescribeAllEnumsAsStrings();
+                    c.CustomSchemaIds(type => type.FullName);
                     c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{_hostingEnv.ApplicationName}.xml");
                     // Sets the basePath property in the Swagger document generated
                     c.DocumentFilter<BasePathFilter>("/api/v2");
@@ -101,21 +103,32 @@ namespace IO.Swagger
         /// <param name="app"></param>
         /// <param name="env"></param>
         /// <param name="loggerFactory"></param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            app
-                .UseMvc()
-                .UseDefaultFiles()
-                .UseStaticFiles()
-                .UseSwagger()
-                .UseSwaggerUI(c =>
-                {
-                    //TODO: Either use the SwaggerGen generated Swagger contract (generated from C# classes)
-                    c.SwaggerEndpoint("/swagger/1.0.0-oas3/swagger.json", "Chomp Food Database API Documentation");
+            app.UseRouting();
 
-                    //TODO: Or alternatively use the original Swagger contract that's included in the static files
-                    // c.SwaggerEndpoint("/swagger-original.json", "Chomp Food Database API Documentation Original");
-                });
+            //TODO: Uncomment this if you need wwwroot folder
+            // app.UseStaticFiles();
+
+            app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                //TODO: Either use the SwaggerGen generated Swagger contract (generated from C# classes)
+                c.SwaggerEndpoint("/swagger/1.0.0-oas3/swagger.json", "Chomp Food & Recipe Database API Documentation");
+
+                //TODO: Or alternatively use the original Swagger contract that's included in the static files
+                // c.SwaggerEndpoint("/swagger-original.json", "Chomp Food & Recipe Database API Documentation Original");
+            });
+
+            //TODO: Use Https Redirection
+            // app.UseHttpsRedirection();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             if (env.IsDevelopment())
             {
@@ -124,7 +137,9 @@ namespace IO.Swagger
             else
             {
                 //TODO: Enable production exception handling (https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling)
-                // app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
+
+                app.UseHsts();
             }
         }
     }

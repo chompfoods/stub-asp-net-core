@@ -21,31 +21,59 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// An object containing this recipe&#x27;s image URLs
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObjectMetaImages : IEquatable<RecipeObjectMetaImages>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// Extra large recipe image
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
+        /// <value>Extra large recipe image</value>
+        [DataMember(Name="extra_large")]
+        public string ExtraLarge { get; set; }
+
+        /// <summary>
+        /// Large recipe image
+        /// </summary>
+        /// <value>Large recipe image</value>
+        [DataMember(Name="large")]
+        public string Large { get; set; }
+
+        /// <summary>
+        /// Standard recipe image
+        /// </summary>
+        /// <value>Standard recipe image</value>
+        [DataMember(Name="standard")]
+        public string Standard { get; set; }
+
+        /// <summary>
+        /// Grid view recipe image
+        /// </summary>
+        /// <value>Grid view recipe image</value>
+        [DataMember(Name="grid_view")]
+        public string GridView { get; set; }
+
+        /// <summary>
+        /// Small recipe image
+        /// </summary>
+        /// <value>Small recipe image</value>
         [DataMember(Name="small")]
         public string Small { get; set; }
 
         /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
+        /// Thumbnail recipe image
         /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
+        /// <value>Thumbnail recipe image</value>
+        [DataMember(Name="thumbnail")]
+        public string Thumbnail { get; set; }
 
         /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
+        /// Extra small recipe image
         /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>Extra small recipe image</value>
+        [DataMember(Name="extra_small")]
+        public string ExtraSmall { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +82,14 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
+            sb.Append("class RecipeObjectMetaImages {\n");
+            sb.Append("  ExtraLarge: ").Append(ExtraLarge).Append("\n");
+            sb.Append("  Large: ").Append(Large).Append("\n");
+            sb.Append("  Standard: ").Append(Standard).Append("\n");
+            sb.Append("  GridView: ").Append(GridView).Append("\n");
             sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("  Thumbnail: ").Append(Thumbnail).Append("\n");
+            sb.Append("  ExtraSmall: ").Append(ExtraSmall).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +112,54 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObjectMetaImages)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObjectMetaImages instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObjectMetaImages to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObjectMetaImages other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
+                    ExtraLarge == other.ExtraLarge ||
+                    ExtraLarge != null &&
+                    ExtraLarge.Equals(other.ExtraLarge)
+                ) && 
+                (
+                    Large == other.Large ||
+                    Large != null &&
+                    Large.Equals(other.Large)
+                ) && 
+                (
+                    Standard == other.Standard ||
+                    Standard != null &&
+                    Standard.Equals(other.Standard)
+                ) && 
+                (
+                    GridView == other.GridView ||
+                    GridView != null &&
+                    GridView.Equals(other.GridView)
+                ) && 
+                (
                     Small == other.Small ||
                     Small != null &&
                     Small.Equals(other.Small)
                 ) && 
                 (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
+                    Thumbnail == other.Thumbnail ||
+                    Thumbnail != null &&
+                    Thumbnail.Equals(other.Thumbnail)
                 ) && 
                 (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    ExtraSmall == other.ExtraSmall ||
+                    ExtraSmall != null &&
+                    ExtraSmall.Equals(other.ExtraSmall)
                 );
         }
 
@@ -121,12 +173,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
+                    if (ExtraLarge != null)
+                    hashCode = hashCode * 59 + ExtraLarge.GetHashCode();
+                    if (Large != null)
+                    hashCode = hashCode * 59 + Large.GetHashCode();
+                    if (Standard != null)
+                    hashCode = hashCode * 59 + Standard.GetHashCode();
+                    if (GridView != null)
+                    hashCode = hashCode * 59 + GridView.GetHashCode();
                     if (Small != null)
                     hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (Thumbnail != null)
+                    hashCode = hashCode * 59 + Thumbnail.GetHashCode();
+                    if (ExtraSmall != null)
+                    hashCode = hashCode * 59 + ExtraSmall.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +194,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObjectMetaImages left, RecipeObjectMetaImages right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObjectMetaImages left, RecipeObjectMetaImages right)
         {
             return !Equals(left, right);
         }

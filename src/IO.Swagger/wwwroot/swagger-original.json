@@ -1,8 +1,8 @@
 {
   "openapi" : "3.0.0",
   "info" : {
-    "title" : "Chomp Food Database API Documentation",
-    "description" : "## Important\nAn **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.\n\n### Getting Started\n  * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.\n  * Scroll down and click the \"**Authorize**\" button.\n  * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.\n  * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.\n  * Click the \"**Try it out**\" button.\n  * Enter the information the endpoint requires.\n  * Click the \"**Execute**\" button.\n\n### Example \n  * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**\n  * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**\n  * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**\n\n### How Do I Find My API Key?\n  * Your API key was sent to the email address you used to create your subscription.\n  * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.\n  * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.\n\n### Helpful Links\n  * **Help & Support**\n    * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)\n    * [Support &raquo;](https://chompthis.com/api/ticket-new.php)\n    * [Client Center &raquo;](https://chompthis.com/api/manage.php)\n  * **Pricing**\n    * [Subscription Options &raquo;](https://chompthis.com/api/)\n    * [Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)\n  * **Guidelines**\n    * [Terms & License &raquo;](https://chompthis.com/api/terms.php)\n    * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php)\n",
+    "title" : "Chomp Food & Recipe Database API Documentation",
+    "description" : "## Important\nAn **[API key](https://chompthis.com/api/)** is required for access to this API.\n* Get a **Food Data API** key at **[https://chompthis.com/api](https://chompthis.com/api/)**.\n* Get a **Recipe Data API** key at **[https://chompthis.com/api/recipes](https://chompthis.com/api/recipes/)**.\n\n### Getting Started\n  * Subscribe to the **[Food Data API](https://chompthis.com/api/#pricing)** or the **[Recipe Data API](https://chompthis.com/api/recipes/#pricing)**.\n  * Scroll down and click the \"**Authorize**\" button.\n  * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.\n  * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.\n  * Click the \"**Try it out**\" button.\n  * Enter the information the endpoint requires.\n  * Click the \"**Execute**\" button.\n\n### Example \n  * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**\n  * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**\n  * Recipe response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/example-recipe-response.json)**\n  * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**\n\n### How Do I Find My API Key?\n  * Your API key was sent to the email address you used to create your subscription.\n  * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.\n  * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.\n\n### I'm a Premium subscriber. How do I access the API?\n  * All Premium subscribers must pass in a unique user ID for each user on their platform that is accessing data from the Chomp API. A user ID can be any string of letters and numbers that you assign to your user. Simply add \"user_id\" as a URL parameter when calling the API. *You must add a \"user_id\" URL parameter to every call you make to ANY endpoint.*\n    * **Example** \n      > ```ENDPOINT.php?api_key=API_KEY&code=CODE&user_id=USER_ID```\n\n### Helpful Links\n  * **Help & Support**\n    * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)\n    * [Support &raquo;](https://chompthis.com/api/ticket-new.php)\n    * [Client Center &raquo;](https://chompthis.com/api/manage.php)\n  * **Pricing**\n    * [Food Data API Subscription Options &raquo;](https://chompthis.com/api/)\n    * [Recipe Data API Subscription Options &raquo;](https://chompthis.com/api/recipes/)\n    * [Food Data API Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)\n    * [Recipe Data API Cost Calculator &raquo;](https://chompthis.com/api/recipes/cost-calculator.php)\n  * **Guidelines**\n    * [Terms & License &raquo;](https://chompthis.com/api/terms.php)\n    * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php)\n",
     "version" : "1.0.0-oas3"
   },
   "servers" : [ {
@@ -13,12 +13,22 @@
     "/food/branded/barcode.php" : {
       "get" : {
         "summary" : "Get a branded food item using a barcode",
-        "description" : "## Get data for a branded food using the food's UPC/EAN barcode.\n\n**Example** \n> ```https://chompthis.com/api/v2/food/branded/barcode.php?api_key=API_KEY&code=CODE```\n\n**Tips**\n  * Read our **[Knowledge Base article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do)** for helpful tips and tricks.\n",
+        "description" : "## Get data for a branded food using the food's UPC/EAN barcode.\n\n**You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).\n\n**Example** \n> ```https://chompthis.com/api/v2/food/branded/barcode.php?api_key=API_KEY&code=CODE```\n\n**Tips**\n  * Read our **[Knowledge Base article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do)** for helpful tips and tricks.\n  * Perform a [check-digit](https://en.wikipedia.org/wiki/Check_digit#UPC) on the barcode you are using.\n  * Use a barcode from our website [ChompThis.com](https://chompthis.com/?r=api). Search for a food and use the barcode shown in the search results.\n  * It is possible that our database contains the food you're looking for, but does not have the same barcode you are using. This can happen if a manufacturer introduces a variation of the same food, or the barcode you got was from a 2 oz bag of chips when our database has the food packaged in a 4 oz bag.\n  * [Contact us](https://chompthis.com/contact.php?api=y) if you are having trouble.\n",
         "parameters" : [ {
           "name" : "code",
           "in" : "query",
           "description" : "#### UPC/EAN barcode\n\n**Example**\n> ```&code=0842234000988```\n",
           "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
@@ -57,7 +67,7 @@
     "/food/branded/name.php" : {
       "get" : {
         "summary" : "Get a branded food item by name",
-        "description" : "## Search for branded food items by name.\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n\n**Tips**\n  * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
+        "description" : "## Search for branded food items by name.\n\n**You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/name.php?api_key=API_KEY&name=NAME```\n\n**Tips**\n  * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "name",
           "in" : "query",
@@ -88,6 +98,16 @@
           "explode" : true,
           "schema" : {
             "type" : "integer"
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
           }
         } ],
         "responses" : {
@@ -122,7 +142,7 @@
     "/food/branded/search.php" : {
       "get" : {
         "summary" : "Get data for branded food items using various search parameters",
-        "description" : "## Search for branded food items using various parameters.\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n**Tips** \n  * Get started by using the **[Query Builder](https://chompthis.com/api/build.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
+        "description" : "## Search for branded food items using various parameters.\n\n**You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).\n\n**Example**\n> ```https://chompthis.com/api/v2/food/branded/search.php?api_key=API_KEY&brand=BRAND&country=COUNTRY&page=1```\n\n**Tips** \n  * Get started by using the **[Query Builder](https://chompthis.com/api/build.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "allergen",
           "in" : "query",
@@ -265,6 +285,16 @@
           "schema" : {
             "type" : "integer"
           }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -298,7 +328,7 @@
     "/food/ingredient/search.php" : {
       "get" : {
         "summary" : "Get raw/generic food ingredient item(s)",
-        "description" : "## Get data for a specific ingredient or a specific set of ingredients.\n\n**Example #1: Single Ingredient**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=raw broccoli```\n\n**Example #2: Set of Ingredients**\n> ```https://chompthis.com/api/v2/ingredient/search.php?api_key=API_KEY&find=raw broccoli,mashed potatoes,chicken drumstick```\n\n**Tips**\n  * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
+        "description" : "## Get data for a specific ingredient or a specific set of ingredients.\n\n**You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).\n\n**Example #1: Single Ingredient**\n> ```https://chompthis.com/api/v2/food/ingredient/search.php?api_key=API_KEY&find=raw broccoli```\n\n**Example #2: Set of Ingredients**\n> ```https://chompthis.com/api/v2/food/ingredient/search.php?api_key=API_KEY&find=raw broccoli,mashed potatoes,chicken drumstick```\n\n**Tips**\n  * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.\n\n> This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren't sure how to upgrade your subscription.\n",
         "parameters" : [ {
           "name" : "find",
           "in" : "query",
@@ -320,6 +350,16 @@
             "type" : "integer",
             "enum" : [ 1, 2, 3 ]
           }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -328,6 +368,316 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/IngredientObject"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "**Validation error** - Invalid parameters or request.\n"
+          },
+          "401" : {
+            "description" : "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
+          },
+          "404" : {
+            "description" : "**Not found** - No food items were found.\n"
+          },
+          "500" : {
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
+          }
+        },
+        "security" : [ {
+          "ApiKeyAuth" : [ ]
+        } ]
+      }
+    },
+    "/recipe/search.php" : {
+      "get" : {
+        "summary" : "Get recipes using a title and optional filters",
+        "description" : "## Get recipes using a title and optional filters.\n\n**You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).\n\n**Example** \n> ```https://chompthis.com/api/v2/recipe/search.php?api_key=API_KEY&title=TITLE```\n",
+        "parameters" : [ {
+          "name" : "title",
+          "in" : "query",
+          "description" : "#### A recipe title\n\n**Example**\n> ```&title=Banana Bread```\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "excluded_cuisine",
+          "in" : "query",
+          "description" : "#### A specific cuisine you want excluded from results\n\n**Example**\n> ```&excluded_cuisine=Italian```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "included_cuisine",
+          "in" : "query",
+          "description" : "#### A specific cuisine you want included in results\n\n**Example**\n> ```&included_cuisine=Chinese```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "excluded_ingredient",
+          "in" : "query",
+          "description" : "#### Recipes with this ingredient will be excluded from results\n\n**Example**\n> ```&excluded_ingredient=egg```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "included_ingredient",
+          "in" : "query",
+          "description" : "#### Only recipes with this ingredient will be returned\n\n**Example**\n> ```&included_ingredient=apple```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "nutrients_required",
+          "in" : "query",
+          "description" : "#### Optionally require all recipes to include nutrition info. Recipes with, or without, nutrition info are returned by default.\n\n**Example**\n> ```&nutrients_required=1```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "enum" : [ 1, 0 ]
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "#### Set maximum number of records you want the API to return. The default value is \"**5**.\"\n\n**Example**\n> ```&limit=3```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "enum" : [ 1, 2, 3, 4, 5 ]
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 5 records. You must increment the page number to access the next 5 records, and so on. The default value is \"**1**.\"\n\n**Example**\n> ```&page=1```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "**Valid** - Will return an object containing any matching recipes. \n",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RecipeObject"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "**Validation error** - Invalid parameters or request.\n"
+          },
+          "401" : {
+            "description" : "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
+          },
+          "404" : {
+            "description" : "**Not found** - No food items were found.\n"
+          },
+          "500" : {
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
+          }
+        },
+        "security" : [ {
+          "ApiKeyAuth" : [ ]
+        } ]
+      }
+    },
+    "/recipe/ingredient.php" : {
+      "get" : {
+        "summary" : "Get recipes using a list of ingredients",
+        "description" : "## Get recipes that include all ingredients from a list.\n\n**You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).\n\n**Example #1**\n> ```https://chompthis.com/api/v2/recipe/ingredient.php?api_key=API_KEY&list=INGREDIENT```\n\n**Example #2**\n> ```https://chompthis.com/api/v2/recipe/ingredient.php?api_key=API_KEY&list=INGREDIENT,INGREDIENT,INGREDIENT```\n",
+        "parameters" : [ {
+          "name" : "list",
+          "in" : "query",
+          "description" : "#### A single ingredient, or a comma-separated list of up to 3 ingredients. Recipes with each of these ingredients will be returned. **You can pass in up to 3 ingredients at a time.**\n\n**Example**\n> ```&list=cheese,tomato,milk```\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "#### Set maximum number of records you want the API to return. The default value is \"**3**.\"\n\n**Example**\n> ```&limit=3```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "enum" : [ 1, 2, 3 ]
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "#### This is how you paginate the search result. By default, you will see the first 3 records. You must increment the page number to access the next 3 records, and so on. The default value is \"**1**.\"\n\n**Example**\n> ```&page=1```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "**Valid** - Will return an object containing any matching recipes. \n",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RecipeObject"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "**Validation error** - Invalid parameters or request.\n"
+          },
+          "401" : {
+            "description" : "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
+          },
+          "404" : {
+            "description" : "**Not found** - No food items were found.\n"
+          },
+          "500" : {
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
+          }
+        },
+        "security" : [ {
+          "ApiKeyAuth" : [ ]
+        } ]
+      }
+    },
+    "/recipe/random.php" : {
+      "get" : {
+        "summary" : "Get random popular recipes",
+        "description" : "## Get random recipes that have instructions and nutrients\n\n**You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).\n\n**Example**\n> ```https://chompthis.com/api/v2/recipe/random.php?api_key=API_KEY```\n",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "#### Set maximum number of records you want the API to return. The default value is \"**5**.\"\n\n**Example**\n> ```&limit=5```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "enum" : [ 1, 2, 3, 4, 5 ]
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "**Valid** - Will return an object containing any matching recipes. \n",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RecipeObject"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "**Validation error** - Invalid parameters or request.\n"
+          },
+          "401" : {
+            "description" : "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)***\n"
+          },
+          "404" : {
+            "description" : "**Not found** - No food items were found.\n"
+          },
+          "500" : {
+            "description" : "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.*\n"
+          }
+        },
+        "security" : [ {
+          "ApiKeyAuth" : [ ]
+        } ]
+      }
+    },
+    "/recipe/id.php" : {
+      "get" : {
+        "summary" : "Get a recipe by ID",
+        "description" : "## Get a specific recipe using an ID.\n\n**You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).\n\n**Example**\n> ```https://chompthis.com/api/v2/recipe/id.php?api_key=API_KEY&id=RECIPE_ID```\n",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "#### A recipe ID. Recipe IDs are exposed in the /recipe/search and /recipe/ingredient endpoints.\n\n**Example**\n> ```&list=tdm_1143_0459d0028fcf8990724785b9e6775037```\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn't have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)\n\n**Example**\n> ```&user_id=fehef8w4ha```\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "**Valid** - Will return an object containing any matching recipes. \n",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RecipeObject"
                 }
               }
             }
@@ -714,6 +1064,130 @@
               "description" : "description",
               "footnote" : "footnote"
             } ]
+          } ]
+        }
+      },
+      "RecipeObject" : {
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "description" : "An array containing an object for each individual item returned by your API call.",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_items"
+            }
+          }
+        },
+        "description" : "Please read the description of each field in this API response object example. By default, the value of each field is **null**. This indicates an unknown state or that no data exists.",
+        "example" : {
+          "items" : [ {
+            "base_ingredients" : [ "base_ingredients", "base_ingredients" ],
+            "diabetic_exchanges" : [ "diabetic_exchanges", "diabetic_exchanges" ],
+            "keywords" : [ "keywords", "keywords" ],
+            "meta" : {
+              "images" : {
+                "standard" : "standard",
+                "small" : "small",
+                "thumbnail" : "thumbnail",
+                "extra_large" : "extra_large",
+                "large" : "large",
+                "extra_small" : "extra_small",
+                "grid_view" : "grid_view"
+              },
+              "created" : "created",
+              "cuisine" : "cuisine",
+              "modified" : "modified",
+              "source" : "source",
+              "url" : "url",
+              "nutrients_notice" : "nutrients_notice"
+            },
+            "author" : "author",
+            "topics" : [ "topics", "topics" ],
+            "ingredients" : [ {
+              "quantity" : "quantity",
+              "description" : "description"
+            }, {
+              "quantity" : "quantity",
+              "description" : "description"
+            } ],
+            "attributes" : {
+              "servings" : "servings",
+              "prep_time" : "prep_time",
+              "serving_size" : "serving_size",
+              "total_time" : "total_time"
+            },
+            "id" : "id",
+            "categories" : [ "categories", "categories" ],
+            "title" : "title",
+            "nutrients" : {
+              "vitamins" : [ null, null ],
+              "carbs" : [ null, null ],
+              "daily_values" : [ null, null ],
+              "fat" : [ null, null ],
+              "calories" : [ {
+                "title" : "title",
+                "value" : "value",
+                "percent" : "percent"
+              }, {
+                "title" : "title",
+                "value" : "value",
+                "percent" : "percent"
+              } ]
+            }
+          }, {
+            "base_ingredients" : [ "base_ingredients", "base_ingredients" ],
+            "diabetic_exchanges" : [ "diabetic_exchanges", "diabetic_exchanges" ],
+            "keywords" : [ "keywords", "keywords" ],
+            "meta" : {
+              "images" : {
+                "standard" : "standard",
+                "small" : "small",
+                "thumbnail" : "thumbnail",
+                "extra_large" : "extra_large",
+                "large" : "large",
+                "extra_small" : "extra_small",
+                "grid_view" : "grid_view"
+              },
+              "created" : "created",
+              "cuisine" : "cuisine",
+              "modified" : "modified",
+              "source" : "source",
+              "url" : "url",
+              "nutrients_notice" : "nutrients_notice"
+            },
+            "author" : "author",
+            "topics" : [ "topics", "topics" ],
+            "ingredients" : [ {
+              "quantity" : "quantity",
+              "description" : "description"
+            }, {
+              "quantity" : "quantity",
+              "description" : "description"
+            } ],
+            "attributes" : {
+              "servings" : "servings",
+              "prep_time" : "prep_time",
+              "serving_size" : "serving_size",
+              "total_time" : "total_time"
+            },
+            "id" : "id",
+            "categories" : [ "categories", "categories" ],
+            "title" : "title",
+            "nutrients" : {
+              "vitamins" : [ null, null ],
+              "carbs" : [ null, null ],
+              "daily_values" : [ null, null ],
+              "fat" : [ null, null ],
+              "calories" : [ {
+                "title" : "title",
+                "value" : "value",
+                "percent" : "percent"
+              }, {
+                "title" : "title",
+                "value" : "value",
+                "percent" : "percent"
+              } ]
+            }
           } ]
         }
       },
@@ -1604,6 +2078,346 @@
             "footnote" : "footnote"
           } ]
         }
+      },
+      "RecipeObject_meta_images" : {
+        "type" : "object",
+        "properties" : {
+          "extra_large" : {
+            "type" : "string",
+            "description" : "Extra large recipe image"
+          },
+          "large" : {
+            "type" : "string",
+            "description" : "Large recipe image"
+          },
+          "standard" : {
+            "type" : "string",
+            "description" : "Standard recipe image"
+          },
+          "grid_view" : {
+            "type" : "string",
+            "description" : "Grid view recipe image"
+          },
+          "small" : {
+            "type" : "string",
+            "description" : "Small recipe image"
+          },
+          "thumbnail" : {
+            "type" : "string",
+            "description" : "Thumbnail recipe image"
+          },
+          "extra_small" : {
+            "type" : "string",
+            "description" : "Extra small recipe image"
+          }
+        },
+        "description" : "An object containing this recipe's image URLs",
+        "example" : {
+          "standard" : "standard",
+          "small" : "small",
+          "thumbnail" : "thumbnail",
+          "extra_large" : "extra_large",
+          "large" : "large",
+          "extra_small" : "extra_small",
+          "grid_view" : "grid_view"
+        }
+      },
+      "RecipeObject_meta" : {
+        "type" : "object",
+        "properties" : {
+          "url" : {
+            "type" : "string",
+            "description" : "URL to the recipe. You must link back to the recipe when displaying it."
+          },
+          "images" : {
+            "$ref" : "#/components/schemas/RecipeObject_meta_images"
+          },
+          "source" : {
+            "type" : "string",
+            "description" : "The source of the recipe. You must attribute this source when displaying this recipe."
+          },
+          "cuisine" : {
+            "type" : "string",
+            "description" : "This recipe's cuisine"
+          },
+          "created" : {
+            "type" : "string",
+            "description" : "The date when this recipe was created"
+          },
+          "modified" : {
+            "type" : "string",
+            "description" : "The date when this recipe was most recently modified"
+          },
+          "nutrients_notice" : {
+            "type" : "string",
+            "description" : "Additional information about this recipe's nutrients"
+          }
+        },
+        "description" : "An object containing this item's compatibility grades for each supported diet",
+        "example" : {
+          "images" : {
+            "standard" : "standard",
+            "small" : "small",
+            "thumbnail" : "thumbnail",
+            "extra_large" : "extra_large",
+            "large" : "large",
+            "extra_small" : "extra_small",
+            "grid_view" : "grid_view"
+          },
+          "created" : "created",
+          "cuisine" : "cuisine",
+          "modified" : "modified",
+          "source" : "source",
+          "url" : "url",
+          "nutrients_notice" : "nutrients_notice"
+        }
+      },
+      "RecipeObject_attributes" : {
+        "type" : "object",
+        "properties" : {
+          "prep_time" : {
+            "type" : "string",
+            "description" : "The time it takes to prep this recipe"
+          },
+          "total_time" : {
+            "type" : "string",
+            "description" : "The total time it takes to make this recipe"
+          },
+          "servings" : {
+            "type" : "string",
+            "description" : "The number of servings this recipe makes"
+          },
+          "serving_size" : {
+            "type" : "string",
+            "description" : "The size of each serving"
+          }
+        },
+        "description" : "An object containing recipe attributes",
+        "example" : {
+          "servings" : "servings",
+          "prep_time" : "prep_time",
+          "serving_size" : "serving_size",
+          "total_time" : "total_time"
+        }
+      },
+      "RecipeObject_ingredients" : {
+        "type" : "object",
+        "properties" : {
+          "quantity" : {
+            "type" : "string",
+            "description" : "The quantity of this ingredient"
+          },
+          "description" : {
+            "type" : "string",
+            "description" : "A description of this ingredient"
+          }
+        },
+        "description" : "An object containing information about a specific recipe ingredient",
+        "example" : {
+          "quantity" : "quantity",
+          "description" : "description"
+        }
+      },
+      "RecipeObject_nutrients_calories" : {
+        "properties" : {
+          "title" : {
+            "type" : "string",
+            "description" : "Nutrient name"
+          },
+          "value" : {
+            "type" : "string",
+            "description" : "The amount of this nutrient in this recipe"
+          },
+          "percent" : {
+            "type" : "string",
+            "description" : "The daily recommended percent total for this nutrient"
+          }
+        },
+        "example" : {
+          "title" : "title",
+          "value" : "value",
+          "percent" : "percent"
+        }
+      },
+      "RecipeObject_nutrients" : {
+        "type" : "object",
+        "properties" : {
+          "calories" : {
+            "type" : "array",
+            "description" : "An array containing information for calories found in this recipe",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_nutrients_calories"
+            }
+          },
+          "daily_values" : {
+            "type" : "array",
+            "description" : "An array containing information for this recipe's daily recommended value of certain nutrients",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_nutrients_calories"
+            }
+          },
+          "fat" : {
+            "type" : "array",
+            "description" : "An array containing information for fat found in this recipe",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_nutrients_calories"
+            }
+          },
+          "carbs" : {
+            "type" : "array",
+            "description" : "An array containing information for carbs found in this recipe",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_nutrients_calories"
+            }
+          },
+          "vitamins" : {
+            "type" : "array",
+            "description" : "An array containing information for vitamins found in this recipe",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_nutrients_calories"
+            }
+          }
+        },
+        "description" : "An object containing nutrient information for this recipe",
+        "example" : {
+          "vitamins" : [ null, null ],
+          "carbs" : [ null, null ],
+          "daily_values" : [ null, null ],
+          "fat" : [ null, null ],
+          "calories" : [ {
+            "title" : "title",
+            "value" : "value",
+            "percent" : "percent"
+          }, {
+            "title" : "title",
+            "value" : "value",
+            "percent" : "percent"
+          } ]
+        }
+      },
+      "RecipeObject_items" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Unique recipe ID"
+          },
+          "title" : {
+            "type" : "string",
+            "description" : "Recipe title"
+          },
+          "meta" : {
+            "$ref" : "#/components/schemas/RecipeObject_meta"
+          },
+          "categories" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "An array of categories for this recipe"
+            }
+          },
+          "author" : {
+            "type" : "string",
+            "description" : "The author of this recipe. You must attribute this author when displaying this recipe."
+          },
+          "keywords" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "An array of keywords for this recipe"
+            }
+          },
+          "topics" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "An array of topics for this recipe"
+            }
+          },
+          "attributes" : {
+            "$ref" : "#/components/schemas/RecipeObject_attributes"
+          },
+          "ingredients" : {
+            "type" : "array",
+            "description" : "An array containing this recipe's ingredients",
+            "items" : {
+              "$ref" : "#/components/schemas/RecipeObject_ingredients"
+            }
+          },
+          "base_ingredients" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "The base ingredient for each ingredient in this recipe"
+            }
+          },
+          "nutrients" : {
+            "$ref" : "#/components/schemas/RecipeObject_nutrients"
+          },
+          "diabetic_exchanges" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "An array of alternate ingredients that can be used to make this recipe diabetic-friendly."
+            }
+          }
+        },
+        "description" : "An object containing information for this specific item.",
+        "example" : {
+          "base_ingredients" : [ "base_ingredients", "base_ingredients" ],
+          "diabetic_exchanges" : [ "diabetic_exchanges", "diabetic_exchanges" ],
+          "keywords" : [ "keywords", "keywords" ],
+          "meta" : {
+            "images" : {
+              "standard" : "standard",
+              "small" : "small",
+              "thumbnail" : "thumbnail",
+              "extra_large" : "extra_large",
+              "large" : "large",
+              "extra_small" : "extra_small",
+              "grid_view" : "grid_view"
+            },
+            "created" : "created",
+            "cuisine" : "cuisine",
+            "modified" : "modified",
+            "source" : "source",
+            "url" : "url",
+            "nutrients_notice" : "nutrients_notice"
+          },
+          "author" : "author",
+          "topics" : [ "topics", "topics" ],
+          "ingredients" : [ {
+            "quantity" : "quantity",
+            "description" : "description"
+          }, {
+            "quantity" : "quantity",
+            "description" : "description"
+          } ],
+          "attributes" : {
+            "servings" : "servings",
+            "prep_time" : "prep_time",
+            "serving_size" : "serving_size",
+            "total_time" : "total_time"
+          },
+          "id" : "id",
+          "categories" : [ "categories", "categories" ],
+          "title" : "title",
+          "nutrients" : {
+            "vitamins" : [ null, null ],
+            "carbs" : [ null, null ],
+            "daily_values" : [ null, null ],
+            "fat" : [ null, null ],
+            "calories" : [ {
+              "title" : "title",
+              "value" : "value",
+              "percent" : "percent"
+            }, {
+              "title" : "title",
+              "value" : "value",
+              "percent" : "percent"
+            } ]
+          }
+        }
       }
     },
     "responses" : {
@@ -1623,6 +2437,16 @@
           "application/json" : {
             "schema" : {
               "$ref" : "#/components/schemas/IngredientObject"
+            }
+          }
+        }
+      },
+      "200RecipeResponse" : {
+        "description" : "**Valid** - Will return an object containing any matching recipes. \n",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/RecipeObject"
             }
           }
         }

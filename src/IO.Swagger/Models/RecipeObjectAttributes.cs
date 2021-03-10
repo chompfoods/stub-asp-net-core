@@ -21,31 +21,38 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// An object containing recipe attributes
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObjectAttributes : IEquatable<RecipeObjectAttributes>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// The time it takes to prep this recipe
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="small")]
-        public string Small { get; set; }
+        /// <value>The time it takes to prep this recipe</value>
+        [DataMember(Name="prep_time")]
+        public string PrepTime { get; set; }
 
         /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
+        /// The total time it takes to make this recipe
         /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
+        /// <value>The total time it takes to make this recipe</value>
+        [DataMember(Name="total_time")]
+        public string TotalTime { get; set; }
 
         /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
+        /// The number of servings this recipe makes
         /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>The number of servings this recipe makes</value>
+        [DataMember(Name="servings")]
+        public string Servings { get; set; }
+
+        /// <summary>
+        /// The size of each serving
+        /// </summary>
+        /// <value>The size of each serving</value>
+        [DataMember(Name="serving_size")]
+        public string ServingSize { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +61,11 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
-            sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("class RecipeObjectAttributes {\n");
+            sb.Append("  PrepTime: ").Append(PrepTime).Append("\n");
+            sb.Append("  TotalTime: ").Append(TotalTime).Append("\n");
+            sb.Append("  Servings: ").Append(Servings).Append("\n");
+            sb.Append("  ServingSize: ").Append(ServingSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +88,39 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObjectAttributes)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObjectAttributes instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObjectAttributes to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObjectAttributes other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Small == other.Small ||
-                    Small != null &&
-                    Small.Equals(other.Small)
+                    PrepTime == other.PrepTime ||
+                    PrepTime != null &&
+                    PrepTime.Equals(other.PrepTime)
                 ) && 
                 (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
+                    TotalTime == other.TotalTime ||
+                    TotalTime != null &&
+                    TotalTime.Equals(other.TotalTime)
                 ) && 
                 (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    Servings == other.Servings ||
+                    Servings != null &&
+                    Servings.Equals(other.Servings)
+                ) && 
+                (
+                    ServingSize == other.ServingSize ||
+                    ServingSize != null &&
+                    ServingSize.Equals(other.ServingSize)
                 );
         }
 
@@ -121,12 +134,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Small != null)
-                    hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (PrepTime != null)
+                    hashCode = hashCode * 59 + PrepTime.GetHashCode();
+                    if (TotalTime != null)
+                    hashCode = hashCode * 59 + TotalTime.GetHashCode();
+                    if (Servings != null)
+                    hashCode = hashCode * 59 + Servings.GetHashCode();
+                    if (ServingSize != null)
+                    hashCode = hashCode * 59 + ServingSize.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +149,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObjectAttributes left, RecipeObjectAttributes right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObjectAttributes left, RecipeObjectAttributes right)
         {
             return !Equals(left, right);
         }

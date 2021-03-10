@@ -1,7 +1,7 @@
 /*
- * Chomp Food Database API Documentation
+ * Chomp Food & Recipe Database API Documentation
  *
- * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. Get yours at **[https://chompthis.com/api](https://chompthis.com/api/)**.  ### Getting Started   * **[Subscribe](https://chompthis.com/api/#pricing)** to the API.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Subscription Options &raquo;](https://chompthis.com/api/)     * [Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
+ * ## Important An **[API key](https://chompthis.com/api/)** is required for access to this API. * Get a **Food Data API** key at **[https://chompthis.com/api](https://chompthis.com/api/)**. * Get a **Recipe Data API** key at **[https://chompthis.com/api/recipes](https://chompthis.com/api/recipes/)**.  ### Getting Started   * Subscribe to the **[Food Data API](https://chompthis.com/api/#pricing)** or the **[Recipe Data API](https://chompthis.com/api/recipes/#pricing)**.   * Scroll down and click the \"**Authorize**\" button.   * Enter your API key into the \"**value**\" input, click the \"**Authorize**\" button, then click the \"**Close**\" button.   * Scroll down to the section titled \"**default**\" and click on the API endpoint you wish to use.   * Click the \"**Try it out**\" button.   * Enter the information the endpoint requires.   * Click the \"**Execute**\" button.  ### Example    * Branded food response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/branded-food-response-object.json)**   * Ingredient response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/ingredient-response-object.json)**   * Recipe response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/example-recipe-response.json)**   * Error response object: **[View example &raquo;](https://raw.githubusercontent.com/chompfoods/examples/master/error-response-object.json)**  ### How Do I Find My API Key?   * Your API key was sent to the email address you used to create your subscription.   * You will also find your API key in the **[Client Center](https://chompthis.com/api/manage.php)**.   * Read **[this article](https://desk.zoho.com/portal/chompthis/kb/articles/how-do-i-find-my-api-key)** for more information.  ### I'm a Premium subscriber. How do I access the API?   * All Premium subscribers must pass in a unique user ID for each user on their platform that is accessing data from the Chomp API. A user ID can be any string of letters and numbers that you assign to your user. Simply add \"user_id\" as a URL parameter when calling the API. *You must add a \"user_id\" URL parameter to every call you make to ANY endpoint.*     * **Example**        > ```ENDPOINT.php?api_key=API_KEY&code=CODE&user_id=USER_ID```  ### Helpful Links   * **Help & Support**     * [Knowledge Base &raquo;](https://desk.zoho.com/portal/chompthis/kb/chomp)     * [Support &raquo;](https://chompthis.com/api/ticket-new.php)     * [Client Center &raquo;](https://chompthis.com/api/manage.php)   * **Pricing**     * [Food Data API Subscription Options &raquo;](https://chompthis.com/api/)     * [Recipe Data API Subscription Options &raquo;](https://chompthis.com/api/recipes/)     * [Food Data API Cost Calculator &raquo;](https://chompthis.com/api/cost-calculator.php)     * [Recipe Data API Cost Calculator &raquo;](https://chompthis.com/api/recipes/cost-calculator.php)   * **Guidelines**     * [Terms & License &raquo;](https://chompthis.com/api/terms.php)     * [Attribution &raquo;](https://chompthis.com/api/docs/attribution.php) 
  *
  * OpenAPI spec version: 1.0.0-oas3
  * 
@@ -30,8 +30,9 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get a branded food item using a barcode
         /// </summary>
-        /// <remarks>## Get data for a branded food using the food&#x27;s UPC/EAN barcode.  **Example**  &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/barcode.php?api_key&#x3D;API_KEY&amp;code&#x3D;CODE&#x60;&#x60;&#x60;  **Tips**   * Read our **[Knowledge Base article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do)** for helpful tips and tricks. </remarks>
+        /// <remarks>## Get data for a branded food using the food&#x27;s UPC/EAN barcode.  **You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).  **Example**  &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/barcode.php?api_key&#x3D;API_KEY&amp;code&#x3D;CODE&#x60;&#x60;&#x60;  **Tips**   * Read our **[Knowledge Base article](https://desk.zoho.com/portal/chompthis/kb/articles/im-having-trouble-getting-matches-for-barcodes-what-can-id-do)** for helpful tips and tricks.   * Perform a [check-digit](https://en.wikipedia.org/wiki/Check_digit#UPC) on the barcode you are using.   * Use a barcode from our website [ChompThis.com](https://chompthis.com/?r&#x3D;api). Search for a food and use the barcode shown in the search results.   * It is possible that our database contains the food you&#x27;re looking for, but does not have the same barcode you are using. This can happen if a manufacturer introduces a variation of the same food, or the barcode you got was from a 2 oz bag of chips when our database has the food packaged in a 4 oz bag.   * [Contact us](https://chompthis.com/contact.php?api&#x3D;y) if you are having trouble. </remarks>
         /// <param name="code">#### UPC/EAN barcode  **Example** &gt; &#x60;&#x60;&#x60;&amp;code&#x3D;0842234000988&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
@@ -43,7 +44,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("FoodBrandedBarcodePhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(BrandedFoodObject), description: "**Valid** - Will return an object containing any matching foods.  ")]
-        public virtual IActionResult FoodBrandedBarcodePhpGet([FromQuery][Required()]string code)
+        public virtual IActionResult FoodBrandedBarcodePhpGet([FromQuery][Required()]string code, [FromQuery]string userId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(BrandedFoodObject));
@@ -71,10 +72,11 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get a branded food item by name
         /// </summary>
-        /// <remarks>## Search for branded food items by name.  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/name.php?api_key&#x3D;API_KEY&amp;name&#x3D;NAME&#x60;&#x60;&#x60;  **Tips**   * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
+        /// <remarks>## Search for branded food items by name.  **You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/name.php?api_key&#x3D;API_KEY&amp;name&#x3D;NAME&#x60;&#x60;&#x60;  **Tips**   * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
         /// <param name="name">#### Search for branded food items using a general food name keyword. This does not have to exactly match the \&quot;official\&quot; name for the food.  **Example** &gt; &#x60;&#x60;&#x60;&amp;name&#x3D;Starburst&#x60;&#x60;&#x60; </param>
         /// <param name="limit">#### Set maximum number of records you want the API to return. The default value is \&quot;**10**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;10&#x60;&#x60;&#x60; </param>
         /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is \&quot;**1**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
@@ -86,7 +88,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("FoodBrandedNamePhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(BrandedFoodObject), description: "**Valid** - Will return an object containing any matching foods.  ")]
-        public virtual IActionResult FoodBrandedNamePhpGet([FromQuery][Required()]string name, [FromQuery]int? limit, [FromQuery]int? page)
+        public virtual IActionResult FoodBrandedNamePhpGet([FromQuery][Required()]string name, [FromQuery]int? limit, [FromQuery]int? page, [FromQuery]string userId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(BrandedFoodObject));
@@ -114,7 +116,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get data for branded food items using various search parameters
         /// </summary>
-        /// <remarks>## Search for branded food items using various parameters.  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/search.php?api_key&#x3D;API_KEY&amp;brand&#x3D;BRAND&amp;country&#x3D;COUNTRY&amp;page&#x3D;1&#x60;&#x60;&#x60;  **Tips**    * Get started by using the **[Query Builder](https://chompthis.com/api/build.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
+        /// <remarks>## Search for branded food items using various parameters.  **You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/search.php?api_key&#x3D;API_KEY&amp;brand&#x3D;BRAND&amp;country&#x3D;COUNTRY&amp;page&#x3D;1&#x60;&#x60;&#x60;  **Tips**    * Get started by using the **[Query Builder](https://chompthis.com/api/build.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
         /// <param name="allergen">#### Filter the search to only include branded foods that contain a specific allergen.  **Example** &gt; &#x60;&#x60;&#x60;&amp;allergen&#x3D;Peanuts&#x60;&#x60;&#x60;  **Important Note**: This parameter cannot be used alone. It must be paired with at least 1 additional parameter. </param>
         /// <param name="brand">#### Filter the search to only include branded foods that are owned by a specific brand.  **Example** &gt; &#x60;&#x60;&#x60;&amp;brand&#x3D;Starbucks&#x60;&#x60;&#x60; </param>
         /// <param name="category">#### Filter the search to only include branded foods from a specific category.  **Example** &gt; &#x60;&#x60;&#x60;&amp;category&#x3D;Plant Based Foods&#x60;&#x60;&#x60; </param>
@@ -129,6 +131,7 @@ namespace IO.Swagger.Controllers
         /// <param name="vitamin">#### Filter the search to only include branded foods that contain a specific vitamin.  **Example** &gt; &#x60;&#x60;&#x60;&amp;vitamin&#x3D;Biotin&#x60;&#x60;&#x60; </param>
         /// <param name="limit">#### Set maximum number of records you want the API to return. The default value is \&quot;**10**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;10&#x60;&#x60;&#x60; </param>
         /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 10 records. You must increment the page number to access the next 10 records, and so on. The default value is \&quot;**1**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
@@ -140,7 +143,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("FoodBrandedSearchPhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(BrandedFoodObject), description: "**Valid** - Will return an object containing any matching foods.  ")]
-        public virtual IActionResult FoodBrandedSearchPhpGet([FromQuery]string allergen, [FromQuery]string brand, [FromQuery]string category, [FromQuery]string country, [FromQuery]string diet, [FromQuery]string ingredient, [FromQuery]string keyword, [FromQuery]string mineral, [FromQuery]string nutrient, [FromQuery]string palmOil, [FromQuery]string trace, [FromQuery]string vitamin, [FromQuery]int? limit, [FromQuery]int? page)
+        public virtual IActionResult FoodBrandedSearchPhpGet([FromQuery]string allergen, [FromQuery]string brand, [FromQuery]string category, [FromQuery]string country, [FromQuery]string diet, [FromQuery]string ingredient, [FromQuery]string keyword, [FromQuery]string mineral, [FromQuery]string nutrient, [FromQuery]string palmOil, [FromQuery]string trace, [FromQuery]string vitamin, [FromQuery]int? limit, [FromQuery]int? page, [FromQuery]string userId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(BrandedFoodObject));
@@ -168,9 +171,10 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get raw/generic food ingredient item(s)
         /// </summary>
-        /// <remarks>## Get data for a specific ingredient or a specific set of ingredients.  **Example #1: Single Ingredient** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/ingredient/search.php?api_key&#x3D;API_KEY&amp;find&#x3D;raw broccoli&#x60;&#x60;&#x60;  **Example #2: Set of Ingredients** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/ingredient/search.php?api_key&#x3D;API_KEY&amp;find&#x3D;raw broccoli,mashed potatoes,chicken drumstick&#x60;&#x60;&#x60;  **Tips**   * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
+        /// <remarks>## Get data for a specific ingredient or a specific set of ingredients.  **You must have a Food API key to use this endpoint.** Get a [Food API key](https://chompthis.com/api/).  **Example #1: Single Ingredient** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/ingredient/search.php?api_key&#x3D;API_KEY&amp;find&#x3D;raw broccoli&#x60;&#x60;&#x60;  **Example #2: Set of Ingredients** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/ingredient/search.php?api_key&#x3D;API_KEY&amp;find&#x3D;raw broccoli,mashed potatoes,chicken drumstick&#x60;&#x60;&#x60;  **Tips**   * Expose ingredient endpoints by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. </remarks>
         /// <param name="find">Search our database for a single ingredient or a specific set of ingredients.  **Example #1: Single Ingredient** &gt; &#x60;&#x60;&#x60;&amp;find&#x3D;raw broccoli&#x60;&#x60;&#x60;  **Example #2: Set of Ingredients** &gt; &#x60;&#x60;&#x60;&amp;find&#x3D;raw broccoli,buttermilk waffle,mashed potatoes&#x60;&#x60;&#x60;  **Important Notes**    * Comma-separated lists cannot contain more than **10 ingredients**. You must perform additional API calls if you are looking up more than 10 ingredients. </param>
         /// <param name="limit">#### Set maximum number of records you want the API to return, per search term. The default value is \&quot;**1**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;3&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
         /// <response code="200">**Valid** - Will return an object containing any matching ingredient foods.  </response>
         /// <response code="400">**Validation error** - Invalid parameters or request. </response>
         /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
@@ -182,7 +186,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("FoodIngredientSearchPhpGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(IngredientObject), description: "**Valid** - Will return an object containing any matching ingredient foods.  ")]
-        public virtual IActionResult FoodIngredientSearchPhpGet([FromQuery][Required()]string find, [FromQuery]int? limit)
+        public virtual IActionResult FoodIngredientSearchPhpGet([FromQuery][Required()]string find, [FromQuery]int? limit, [FromQuery]string userId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(IngredientObject));
@@ -204,6 +208,183 @@ namespace IO.Swagger.Controllers
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<IngredientObject>(exampleJson)
                         : default(IngredientObject);            //TODO: Change the data returned
+            return new ObjectResult(example);
+        }
+
+        /// <summary>
+        /// Get a recipe by ID
+        /// </summary>
+        /// <remarks>## Get a specific recipe using an ID.  **You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/recipe/id.php?api_key&#x3D;API_KEY&amp;id&#x3D;RECIPE_ID&#x60;&#x60;&#x60; </remarks>
+        /// <param name="id">#### A recipe ID. Recipe IDs are exposed in the /recipe/search and /recipe/ingredient endpoints.  **Example** &gt; &#x60;&#x60;&#x60;&amp;list&#x3D;tdm_1143_0459d0028fcf8990724785b9e6775037&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
+        /// <response code="200">**Valid** - Will return an object containing any matching recipes.  </response>
+        /// <response code="400">**Validation error** - Invalid parameters or request. </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="404">**Not found** - No food items were found. </response>
+        /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
+        [HttpGet]
+        [Route("/api/v2/recipe/id.php")]
+        [Authorize(AuthenticationSchemes = ApiKeyAuthenticationHandler.SchemeName)]
+        [ValidateModelState]
+        [SwaggerOperation("RecipeIdPhpGet")]
+        [SwaggerResponse(statusCode: 200, type: typeof(RecipeObject), description: "**Valid** - Will return an object containing any matching recipes.  ")]
+        public virtual IActionResult RecipeIdPhpGet([FromQuery][Required()]string id, [FromQuery]string userId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(RecipeObject));
+
+            //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(400);
+
+            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(401);
+
+            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(404);
+
+            //TODO: Uncomment the next line to return response 500 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(500);
+            string exampleJson = null;
+            exampleJson = "{\n  \"items\" : [ {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  }, {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  } ]\n}";
+            
+                        var example = exampleJson != null
+                        ? JsonConvert.DeserializeObject<RecipeObject>(exampleJson)
+                        : default(RecipeObject);            //TODO: Change the data returned
+            return new ObjectResult(example);
+        }
+
+        /// <summary>
+        /// Get recipes using a list of ingredients
+        /// </summary>
+        /// <remarks>## Get recipes that include all ingredients from a list.  **You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).  **Example #1** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/recipe/ingredient.php?api_key&#x3D;API_KEY&amp;list&#x3D;INGREDIENT&#x60;&#x60;&#x60;  **Example #2** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/recipe/ingredient.php?api_key&#x3D;API_KEY&amp;list&#x3D;INGREDIENT,INGREDIENT,INGREDIENT&#x60;&#x60;&#x60; </remarks>
+        /// <param name="list">#### A single ingredient, or a comma-separated list of up to 3 ingredients. Recipes with each of these ingredients will be returned. **You can pass in up to 3 ingredients at a time.**  **Example** &gt; &#x60;&#x60;&#x60;&amp;list&#x3D;cheese,tomato,milk&#x60;&#x60;&#x60; </param>
+        /// <param name="limit">#### Set maximum number of records you want the API to return. The default value is \&quot;**3**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;3&#x60;&#x60;&#x60; </param>
+        /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 3 records. You must increment the page number to access the next 3 records, and so on. The default value is \&quot;**1**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
+        /// <response code="200">**Valid** - Will return an object containing any matching recipes.  </response>
+        /// <response code="400">**Validation error** - Invalid parameters or request. </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="404">**Not found** - No food items were found. </response>
+        /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
+        [HttpGet]
+        [Route("/api/v2/recipe/ingredient.php")]
+        [Authorize(AuthenticationSchemes = ApiKeyAuthenticationHandler.SchemeName)]
+        [ValidateModelState]
+        [SwaggerOperation("RecipeIngredientPhpGet")]
+        [SwaggerResponse(statusCode: 200, type: typeof(RecipeObject), description: "**Valid** - Will return an object containing any matching recipes.  ")]
+        public virtual IActionResult RecipeIngredientPhpGet([FromQuery][Required()]string list, [FromQuery]int? limit, [FromQuery]int? page, [FromQuery]string userId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(RecipeObject));
+
+            //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(400);
+
+            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(401);
+
+            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(404);
+
+            //TODO: Uncomment the next line to return response 500 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(500);
+            string exampleJson = null;
+            exampleJson = "{\n  \"items\" : [ {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  }, {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  } ]\n}";
+            
+                        var example = exampleJson != null
+                        ? JsonConvert.DeserializeObject<RecipeObject>(exampleJson)
+                        : default(RecipeObject);            //TODO: Change the data returned
+            return new ObjectResult(example);
+        }
+
+        /// <summary>
+        /// Get random popular recipes
+        /// </summary>
+        /// <remarks>## Get random recipes that have instructions and nutrients  **You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/recipe/random.php?api_key&#x3D;API_KEY&#x60;&#x60;&#x60; </remarks>
+        /// <param name="limit">#### Set maximum number of records you want the API to return. The default value is \&quot;**5**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;5&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
+        /// <response code="200">**Valid** - Will return an object containing any matching recipes.  </response>
+        /// <response code="400">**Validation error** - Invalid parameters or request. </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="404">**Not found** - No food items were found. </response>
+        /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
+        [HttpGet]
+        [Route("/api/v2/recipe/random.php")]
+        [Authorize(AuthenticationSchemes = ApiKeyAuthenticationHandler.SchemeName)]
+        [ValidateModelState]
+        [SwaggerOperation("RecipeRandomPhpGet")]
+        [SwaggerResponse(statusCode: 200, type: typeof(RecipeObject), description: "**Valid** - Will return an object containing any matching recipes.  ")]
+        public virtual IActionResult RecipeRandomPhpGet([FromQuery]int? limit, [FromQuery]string userId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(RecipeObject));
+
+            //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(400);
+
+            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(401);
+
+            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(404);
+
+            //TODO: Uncomment the next line to return response 500 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(500);
+            string exampleJson = null;
+            exampleJson = "{\n  \"items\" : [ {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  }, {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  } ]\n}";
+            
+                        var example = exampleJson != null
+                        ? JsonConvert.DeserializeObject<RecipeObject>(exampleJson)
+                        : default(RecipeObject);            //TODO: Change the data returned
+            return new ObjectResult(example);
+        }
+
+        /// <summary>
+        /// Get recipes using a title and optional filters
+        /// </summary>
+        /// <remarks>## Get recipes using a title and optional filters.  **You must have a Recipe API key to use this endpoint.** Get a [Recipe API key](https://chompthis.com/api/recipes/).  **Example**  &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/recipe/search.php?api_key&#x3D;API_KEY&amp;title&#x3D;TITLE&#x60;&#x60;&#x60; </remarks>
+        /// <param name="title">#### A recipe title  **Example** &gt; &#x60;&#x60;&#x60;&amp;title&#x3D;Banana Bread&#x60;&#x60;&#x60; </param>
+        /// <param name="excludedCuisine">#### A specific cuisine you want excluded from results  **Example** &gt; &#x60;&#x60;&#x60;&amp;excluded_cuisine&#x3D;Italian&#x60;&#x60;&#x60; </param>
+        /// <param name="includedCuisine">#### A specific cuisine you want included in results  **Example** &gt; &#x60;&#x60;&#x60;&amp;included_cuisine&#x3D;Chinese&#x60;&#x60;&#x60; </param>
+        /// <param name="excludedIngredient">#### Recipes with this ingredient will be excluded from results  **Example** &gt; &#x60;&#x60;&#x60;&amp;excluded_ingredient&#x3D;egg&#x60;&#x60;&#x60; </param>
+        /// <param name="includedIngredient">#### Only recipes with this ingredient will be returned  **Example** &gt; &#x60;&#x60;&#x60;&amp;included_ingredient&#x3D;apple&#x60;&#x60;&#x60; </param>
+        /// <param name="nutrientsRequired">#### Optionally require all recipes to include nutrition info. Recipes with, or without, nutrition info are returned by default.  **Example** &gt; &#x60;&#x60;&#x60;&amp;nutrients_required&#x3D;1&#x60;&#x60;&#x60; </param>
+        /// <param name="limit">#### Set maximum number of records you want the API to return. The default value is \&quot;**5**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;limit&#x3D;3&#x60;&#x60;&#x60; </param>
+        /// <param name="page">#### This is how you paginate the search result. By default, you will see the first 5 records. You must increment the page number to access the next 5 records, and so on. The default value is \&quot;**1**.\&quot;  **Example** &gt; &#x60;&#x60;&#x60;&amp;page&#x3D;1&#x60;&#x60;&#x60; </param>
+        /// <param name="userId">#### **Only required for Premium subscribers.** The unique identifier assigned to each user on your platform. This can be any string of letters or numbers and doesn&#x27;t have to relate to your own database. [Learn more](https://desk.zoho.com/portal/chompthis/en/kb/articles/monthly-active-users)  **Example** &gt; &#x60;&#x60;&#x60;&amp;user_id&#x3D;fehef8w4ha&#x60;&#x60;&#x60; </param>
+        /// <response code="200">**Valid** - Will return an object containing any matching recipes.  </response>
+        /// <response code="400">**Validation error** - Invalid parameters or request. </response>
+        /// <response code="401">**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &amp;raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** </response>
+        /// <response code="404">**Not found** - No food items were found. </response>
+        /// <response code="500">**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* </response>
+        [HttpGet]
+        [Route("/api/v2/recipe/search.php")]
+        [Authorize(AuthenticationSchemes = ApiKeyAuthenticationHandler.SchemeName)]
+        [ValidateModelState]
+        [SwaggerOperation("RecipeSearchPhpGet")]
+        [SwaggerResponse(statusCode: 200, type: typeof(RecipeObject), description: "**Valid** - Will return an object containing any matching recipes.  ")]
+        public virtual IActionResult RecipeSearchPhpGet([FromQuery][Required()]string title, [FromQuery]string excludedCuisine, [FromQuery]string includedCuisine, [FromQuery]string excludedIngredient, [FromQuery]string includedIngredient, [FromQuery]int? nutrientsRequired, [FromQuery]int? limit, [FromQuery]int? page, [FromQuery]string userId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(RecipeObject));
+
+            //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(400);
+
+            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(401);
+
+            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(404);
+
+            //TODO: Uncomment the next line to return response 500 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(500);
+            string exampleJson = null;
+            exampleJson = "{\n  \"items\" : [ {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  }, {\n    \"base_ingredients\" : [ \"base_ingredients\", \"base_ingredients\" ],\n    \"diabetic_exchanges\" : [ \"diabetic_exchanges\", \"diabetic_exchanges\" ],\n    \"keywords\" : [ \"keywords\", \"keywords\" ],\n    \"meta\" : {\n      \"images\" : {\n        \"standard\" : \"standard\",\n        \"small\" : \"small\",\n        \"thumbnail\" : \"thumbnail\",\n        \"extra_large\" : \"extra_large\",\n        \"large\" : \"large\",\n        \"extra_small\" : \"extra_small\",\n        \"grid_view\" : \"grid_view\"\n      },\n      \"created\" : \"created\",\n      \"cuisine\" : \"cuisine\",\n      \"modified\" : \"modified\",\n      \"source\" : \"source\",\n      \"url\" : \"url\",\n      \"nutrients_notice\" : \"nutrients_notice\"\n    },\n    \"author\" : \"author\",\n    \"topics\" : [ \"topics\", \"topics\" ],\n    \"ingredients\" : [ {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    }, {\n      \"quantity\" : \"quantity\",\n      \"description\" : \"description\"\n    } ],\n    \"attributes\" : {\n      \"servings\" : \"servings\",\n      \"prep_time\" : \"prep_time\",\n      \"serving_size\" : \"serving_size\",\n      \"total_time\" : \"total_time\"\n    },\n    \"id\" : \"id\",\n    \"categories\" : [ \"categories\", \"categories\" ],\n    \"title\" : \"title\",\n    \"nutrients\" : {\n      \"vitamins\" : [ null, null ],\n      \"carbs\" : [ null, null ],\n      \"daily_values\" : [ null, null ],\n      \"fat\" : [ null, null ],\n      \"calories\" : [ {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      }, {\n        \"title\" : \"title\",\n        \"value\" : \"value\",\n        \"percent\" : \"percent\"\n      } ]\n    }\n  } ]\n}";
+            
+                        var example = exampleJson != null
+                        ? JsonConvert.DeserializeObject<RecipeObject>(exampleJson)
+                        : default(RecipeObject);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }

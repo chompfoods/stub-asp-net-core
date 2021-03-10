@@ -21,31 +21,17 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// Please read the description of each field in this API response object example. By default, the value of each field is **null**. This indicates an unknown state or that no data exists.
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObject : IEquatable<RecipeObject>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// An array containing an object for each individual item returned by your API call.
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="small")]
-        public string Small { get; set; }
-
-        /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
-        /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
-
-        /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
-        /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>An array containing an object for each individual item returned by your API call.</value>
+        [DataMember(Name="items")]
+        public List<RecipeObjectItems> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +40,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
-            sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("class RecipeObject {\n");
+            sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +64,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObject)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObject instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObject to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObject other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Small == other.Small ||
-                    Small != null &&
-                    Small.Equals(other.Small)
-                ) && 
-                (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
-                ) && 
-                (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    Items == other.Items ||
+                    Items != null &&
+                    Items.SequenceEqual(other.Items)
                 );
         }
 
@@ -121,12 +95,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Small != null)
-                    hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (Items != null)
+                    hashCode = hashCode * 59 + Items.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +104,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObject left, RecipeObject right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObject left, RecipeObject right)
         {
             return !Equals(left, right);
         }

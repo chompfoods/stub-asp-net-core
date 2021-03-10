@@ -21,31 +21,58 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// An object containing this item&#x27;s compatibility grades for each supported diet
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObjectMeta : IEquatable<RecipeObjectMeta>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// URL to the recipe. You must link back to the recipe when displaying it.
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="small")]
-        public string Small { get; set; }
+        /// <value>URL to the recipe. You must link back to the recipe when displaying it.</value>
+        [DataMember(Name="url")]
+        public string Url { get; set; }
 
         /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
+        /// Gets or Sets Images
         /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
+        [DataMember(Name="images")]
+        public RecipeObjectMetaImages Images { get; set; }
 
         /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
+        /// The source of the recipe. You must attribute this source when displaying this recipe.
         /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>The source of the recipe. You must attribute this source when displaying this recipe.</value>
+        [DataMember(Name="source")]
+        public string Source { get; set; }
+
+        /// <summary>
+        /// This recipe&#x27;s cuisine
+        /// </summary>
+        /// <value>This recipe&#x27;s cuisine</value>
+        [DataMember(Name="cuisine")]
+        public string Cuisine { get; set; }
+
+        /// <summary>
+        /// The date when this recipe was created
+        /// </summary>
+        /// <value>The date when this recipe was created</value>
+        [DataMember(Name="created")]
+        public string Created { get; set; }
+
+        /// <summary>
+        /// The date when this recipe was most recently modified
+        /// </summary>
+        /// <value>The date when this recipe was most recently modified</value>
+        [DataMember(Name="modified")]
+        public string Modified { get; set; }
+
+        /// <summary>
+        /// Additional information about this recipe&#x27;s nutrients
+        /// </summary>
+        /// <value>Additional information about this recipe&#x27;s nutrients</value>
+        [DataMember(Name="nutrients_notice")]
+        public string NutrientsNotice { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +81,14 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
-            sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("class RecipeObjectMeta {\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Images: ").Append(Images).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  Cuisine: ").Append(Cuisine).Append("\n");
+            sb.Append("  Created: ").Append(Created).Append("\n");
+            sb.Append("  Modified: ").Append(Modified).Append("\n");
+            sb.Append("  NutrientsNotice: ").Append(NutrientsNotice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +111,54 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObjectMeta)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObjectMeta instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObjectMeta to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObjectMeta other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Small == other.Small ||
-                    Small != null &&
-                    Small.Equals(other.Small)
+                    Url == other.Url ||
+                    Url != null &&
+                    Url.Equals(other.Url)
                 ) && 
                 (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
+                    Images == other.Images ||
+                    Images != null &&
+                    Images.Equals(other.Images)
                 ) && 
                 (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    Source == other.Source ||
+                    Source != null &&
+                    Source.Equals(other.Source)
+                ) && 
+                (
+                    Cuisine == other.Cuisine ||
+                    Cuisine != null &&
+                    Cuisine.Equals(other.Cuisine)
+                ) && 
+                (
+                    Created == other.Created ||
+                    Created != null &&
+                    Created.Equals(other.Created)
+                ) && 
+                (
+                    Modified == other.Modified ||
+                    Modified != null &&
+                    Modified.Equals(other.Modified)
+                ) && 
+                (
+                    NutrientsNotice == other.NutrientsNotice ||
+                    NutrientsNotice != null &&
+                    NutrientsNotice.Equals(other.NutrientsNotice)
                 );
         }
 
@@ -121,12 +172,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Small != null)
-                    hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (Url != null)
+                    hashCode = hashCode * 59 + Url.GetHashCode();
+                    if (Images != null)
+                    hashCode = hashCode * 59 + Images.GetHashCode();
+                    if (Source != null)
+                    hashCode = hashCode * 59 + Source.GetHashCode();
+                    if (Cuisine != null)
+                    hashCode = hashCode * 59 + Cuisine.GetHashCode();
+                    if (Created != null)
+                    hashCode = hashCode * 59 + Created.GetHashCode();
+                    if (Modified != null)
+                    hashCode = hashCode * 59 + Modified.GetHashCode();
+                    if (NutrientsNotice != null)
+                    hashCode = hashCode * 59 + NutrientsNotice.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +193,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObjectMeta left, RecipeObjectMeta right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObjectMeta left, RecipeObjectMeta right)
         {
             return !Equals(left, right);
         }

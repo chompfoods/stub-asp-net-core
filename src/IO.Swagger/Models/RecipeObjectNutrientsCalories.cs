@@ -21,31 +21,31 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Models
 { 
     /// <summary>
-    /// An object containing photos of the front of this item&#x27;s packaging
+    /// 
     /// </summary>
     [DataContract]
-    public partial class BrandedFoodObjectPackagingPhotosFront : IEquatable<BrandedFoodObjectPackagingPhotosFront>
+    public partial class RecipeObjectNutrientsCalories : IEquatable<RecipeObjectNutrientsCalories>
     { 
         /// <summary>
-        /// Small photo of the front of this item&#x27;s packaging
+        /// Nutrient name
         /// </summary>
-        /// <value>Small photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="small")]
-        public string Small { get; set; }
+        /// <value>Nutrient name</value>
+        [DataMember(Name="title")]
+        public string Title { get; set; }
 
         /// <summary>
-        /// Thumbnail photo of the front of this item&#x27;s packaging
+        /// The amount of this nutrient in this recipe
         /// </summary>
-        /// <value>Thumbnail photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="thumb")]
-        public string Thumb { get; set; }
+        /// <value>The amount of this nutrient in this recipe</value>
+        [DataMember(Name="value")]
+        public string Value { get; set; }
 
         /// <summary>
-        /// Full-sized photo of the front of this item&#x27;s packaging
+        /// The daily recommended percent total for this nutrient
         /// </summary>
-        /// <value>Full-sized photo of the front of this item&#x27;s packaging</value>
-        [DataMember(Name="display")]
-        public string Display { get; set; }
+        /// <value>The daily recommended percent total for this nutrient</value>
+        [DataMember(Name="percent")]
+        public string Percent { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,10 +54,10 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BrandedFoodObjectPackagingPhotosFront {\n");
-            sb.Append("  Small: ").Append(Small).Append("\n");
-            sb.Append("  Thumb: ").Append(Thumb).Append("\n");
-            sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("class RecipeObjectNutrientsCalories {\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Percent: ").Append(Percent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -80,34 +80,34 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((BrandedFoodObjectPackagingPhotosFront)obj);
+            return obj.GetType() == GetType() && Equals((RecipeObjectNutrientsCalories)obj);
         }
 
         /// <summary>
-        /// Returns true if BrandedFoodObjectPackagingPhotosFront instances are equal
+        /// Returns true if RecipeObjectNutrientsCalories instances are equal
         /// </summary>
-        /// <param name="other">Instance of BrandedFoodObjectPackagingPhotosFront to be compared</param>
+        /// <param name="other">Instance of RecipeObjectNutrientsCalories to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BrandedFoodObjectPackagingPhotosFront other)
+        public bool Equals(RecipeObjectNutrientsCalories other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Small == other.Small ||
-                    Small != null &&
-                    Small.Equals(other.Small)
+                    Title == other.Title ||
+                    Title != null &&
+                    Title.Equals(other.Title)
                 ) && 
                 (
-                    Thumb == other.Thumb ||
-                    Thumb != null &&
-                    Thumb.Equals(other.Thumb)
+                    Value == other.Value ||
+                    Value != null &&
+                    Value.Equals(other.Value)
                 ) && 
                 (
-                    Display == other.Display ||
-                    Display != null &&
-                    Display.Equals(other.Display)
+                    Percent == other.Percent ||
+                    Percent != null &&
+                    Percent.Equals(other.Percent)
                 );
         }
 
@@ -121,12 +121,12 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Small != null)
-                    hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Thumb != null)
-                    hashCode = hashCode * 59 + Thumb.GetHashCode();
-                    if (Display != null)
-                    hashCode = hashCode * 59 + Display.GetHashCode();
+                    if (Title != null)
+                    hashCode = hashCode * 59 + Title.GetHashCode();
+                    if (Value != null)
+                    hashCode = hashCode * 59 + Value.GetHashCode();
+                    if (Percent != null)
+                    hashCode = hashCode * 59 + Percent.GetHashCode();
                 return hashCode;
             }
         }
@@ -134,12 +134,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator ==(RecipeObjectNutrientsCalories left, RecipeObjectNutrientsCalories right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(BrandedFoodObjectPackagingPhotosFront left, BrandedFoodObjectPackagingPhotosFront right)
+        public static bool operator !=(RecipeObjectNutrientsCalories left, RecipeObjectNutrientsCalories right)
         {
             return !Equals(left, right);
         }
